@@ -11,6 +11,7 @@ import Rate from "./Rate"
 import Contact from "./Contact"
 import Regions from "./Regions"
 import Blog from "./Blog"
+import Visits from "./Visits"
  
 class Main extends Component {
   render() {
@@ -31,6 +32,7 @@ class Main extends Component {
             <Route path="/contact" component={Contact}/>
             <Route path="/regions" component={Regions}/>
             <Route path="/blog" component={Blog}/>
+            <Route path="/visits" component={Visits}/>
           </div>
         </div>
       </HashRouter>

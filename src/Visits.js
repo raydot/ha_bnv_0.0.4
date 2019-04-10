@@ -4,10 +4,10 @@ class Visits extends Component {
   render() {
     return (
       <div>
-          <h1>Regions</h1>
+          <h1>Visits</h1>
           
           <div className="content">
-            <p>Pay a visit to one of our Vineyards!</p>
+            <p>Super Sub Page FTW!</p>
           </div>
        </div>
     );
