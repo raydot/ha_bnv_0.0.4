@@ -18,7 +18,7 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>Wine Explorer</h1>
+          <div className="header">Wine Explorer</div>
           <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/regions">Wine Regions</NavLink></li>

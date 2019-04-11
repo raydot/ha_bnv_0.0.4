@@ -5,7 +5,17 @@ class Visits extends Component {
   render() {
     return (
       <div>
-          <h1>Visits</h1>
+		  <div className="bgImageHeader">
+		  	<div className="titleInfo">
+		  		<div className="ava">
+		  			Sierra Foothills
+		  		</div>
+		  		<h1 className="wineryTitle">Visits</h1>
+		  		<div className="wineryLocation">Murphys, California</div>
+          	</div>
+          	<div className="hero-overlay"></div>
+          	<img src="http://nautilusdesigns.com//websites/bnv-test/mustard-vines.jpg" alt="Mustard Vines" className="wineryImage" />
+          </div>
           
           <div className="content">
             <GridContainer>
