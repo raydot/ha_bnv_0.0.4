@@ -2,6 +2,7 @@ body {
 	background-color: salmon;
 	padding: 20px;
 	margin: .25em;
+	font-family: sans-serif;
 }
 
 ul.header li {

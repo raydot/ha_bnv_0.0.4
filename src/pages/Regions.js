@@ -1,18 +1,18 @@
 import React, { Component } from "react"
  
-class Contact extends Component {
+class Rate extends Component {
   render() {
     return (
       <div>
-          <h1>Contact Us.</h1>
+          <h1>Wine Regions</h1>
           
           <div className="content">
-             <p>Contact us!</p>
+            <p>Rate a wine!</p>
 
           </div>
        </div>
     );
   }
 }
- 
-export default Contact
+
+export default Rate

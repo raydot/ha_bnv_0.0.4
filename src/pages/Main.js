@@ -7,10 +7,10 @@ import {
 } from "react-router-dom"
 
 import Home from "./Home"
-import Rate from "./Rate"
-import Contact from "./Contact"
 import Regions from "./Regions"
-import Blog from "./Blog"
+import Story from "./Story"
+import Support from "./Support"
+import Membership from "./Membership"
 import Visits from "./Visits"
  
 class Main extends Component {
@@ -18,20 +18,20 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>Haydn's Awesome Wine App</h1>
+          <h1>Wine Explorer</h1>
           <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/regions">Join Our Tours</NavLink></li>
-            <li><NavLink to="/rate">Rate a Wine</NavLink></li>
-            <li><NavLink to="/blog">Haydn's thoughts</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
+            <li><NavLink to="/regions">Wine Regions</NavLink></li>
+            <li><NavLink to="/story">Our Story</NavLink></li>
+            <li><NavLink to="/support">Support</NavLink></li>
+            <li><NavLink to="/membership">Membership Benefits</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home}/>
-            <Route path="/rate" component={Rate}/>
-            <Route path="/contact" component={Contact}/>
             <Route path="/regions" component={Regions}/>
-            <Route path="/blog" component={Blog}/>
+            <Route path="/story" component={Story}/>
+            <Route path="/support" component={Support}/>
+            <Route path="/membership" component={Membership}/>
             <Route path="/visits" component={Visits}/>
           </div>
         </div>
