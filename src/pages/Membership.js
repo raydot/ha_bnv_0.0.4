@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+
+import CakePops from "../img/cake-pops.jpg"
  
 class Contact extends Component {
   render() {
@@ -7,8 +9,8 @@ class Contact extends Component {
           <h1>Membership</h1>
           
           <div className="content">
-             <p>Why Join?</p>
-
+             <p>Why Joinq?</p>
+             <img src={CakePops} alt={'Time for cake pops!'} className='foo' />
           </div>
        </div>
     );
