@@ -7,8 +7,10 @@ class Rate extends Component {
           <h1>Wine Regions</h1>
           
           <div className="content">
-            <p>Rate a wine!</p>
-
+          	<p><em>...these need to populate from DB</em></p>
+            <p>Atlas Peak</p>
+            <p>Yountville</p>
+            <p>Calistoga</p>
           </div>
        </div>
     );
