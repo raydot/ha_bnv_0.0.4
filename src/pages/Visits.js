@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
+
+import MustardVines from "../img/mustard-vines.jpg"
  
 class Visits extends Component {
   render() {
@@ -14,7 +16,7 @@ class Visits extends Component {
 		  		<div className="wineryLocation">Murphys, California</div>
           	</div>
           	<div className="hero-overlay"></div>
-          	<img src="http://nautilusdesigns.com//websites/bnv-test/mustard-vines.jpg" alt="Mustard Vines" className="wineryImage" />
+          	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
           </div>
           
           <div className="content">
