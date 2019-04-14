@@ -186,3 +186,16 @@ img.wineryImage {
     transform: translate(-50%,-50%);
 }
 
+/* FOOTER */
+.site-footer {
+    background-color: #242729;
+    background-image: none;
+    background-position: top left;
+    background-repeat: no-repeat;
+    border-top: 0;
+    background-size: auto;
+    color: #6a737c;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+

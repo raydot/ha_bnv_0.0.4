@@ -9,7 +9,7 @@ class Contact extends Component {
           <h1>Membership</h1>
           
           <div className="content">
-             <p>Why Joinq?</p>
+             <p>Why Join?</p>
              <img src={CakePops} alt={'Time for cake pops!'} className='foo' />
           </div>
        </div>

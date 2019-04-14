@@ -21,14 +21,14 @@ class Visits extends Component {
           
           <div className="content">
             <GridContainer>
-			  <Grid desktop="33" tablet="33">
-			    I am 33% wide.
+			  <Grid desktop="33" tablet="33" mobile="100">
+			    Column 1.  I am 33% wide.
 			  </Grid>
-			  <Grid desktop="33" tablet="33">
-			    I am 33% wide.
+			  <Grid desktop="33" tablet="33" mobile="100">
+			    Column 2.  I am 33% wide.
 			  </Grid>
-			  <Grid desktop="33" tablet="33">
-			    I am 33% wide.
+			  <Grid desktop="33" tablet="33" mobile="100">
+			    Column 3.  I am 33% wide.
 			  </Grid>
 			</GridContainer>
           </div>

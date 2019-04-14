@@ -12,6 +12,7 @@ import Story from "./Story"
 import Support from "./Support"
 import Membership from "./Membership"
 import Visits from "./Visits"
+import Footer from "./Footer"
  
 class Main extends Component {
   render() {
@@ -33,6 +34,9 @@ class Main extends Component {
             <Route path="/support" component={Support}/>
             <Route path="/membership" component={Membership}/>
             <Route path="/visits" component={Visits}/>
+          </div>
+          <div className="footer">
+            <Footer />
           </div>
         </div>
       </HashRouter>
