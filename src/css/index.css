@@ -195,7 +195,12 @@ img.wineryImage {
     border-top: 0;
     background-size: auto;
     color: #6a737c;
-    padding-top: 0;
-    padding-bottom: 0;
+/*    padding-top: 0;
+    padding-bottom: 0;*/
+    padding: .5rem;
+    position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
 }
 

@@ -17,10 +17,12 @@ class Footer extends Component {
 			    <p>Join Us</p>
 			  </Grid>
 			  <Grid desktop="33" tablet="33" mobile="100">
-			    Column 2.  I am 33% wide.
+			    <p>Column 2.  I am 33% wide.</p>
+			    <p>My content wraps responsively!</p>
 			  </Grid>
 			  <Grid desktop="33" tablet="33" mobile="100">
-			    Column 3.  I am 33% wide.
+			    <p>Column 3.  I am also 33% wide.</p>
+			    <p>And my content also wraps responsively!</p>
 			  </Grid>
 			</GridContainer>
 			</div>
