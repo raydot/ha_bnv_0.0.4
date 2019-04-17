@@ -7,13 +7,14 @@ class Visits extends Component {
   render() {
     return (
       <div>
-		  <div className="bgImageHeader">
+		  <div className="bigImageHeader">
 		  	<div className="titleInfo">
 		  		<div className="ava">
 		  			Sierra Foothills
 		  		</div>
 		  		<h1 className="wineryTitle">Visits</h1>
-		  		<div className="wineryLocation">Murphys, California</div>
+		  		<div className="wineryLocation">Murphys, California
+		  		</div>
           	</div>
           	<div className="hero-overlay"></div>
           	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
