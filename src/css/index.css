@@ -117,7 +117,7 @@ ul.header {
 ul.header li {
 	display: inline;
 	list-style-type: none;
-	margin-right: 2em;
+	margin-right: 1.2em;
 }
 
 ul.header li:last-child {
@@ -153,6 +153,11 @@ ul.header li a.purchase:hover {
 	border: 1px solid rgba(255,255,255,1);
     padding: 3px 10px;
     color: white;
+}
+
+.noheroImageHeader {
+	background-color: #e0e0e0;
+	padding: 25px 25px 0 25px;
 }
 
 .content {
@@ -204,9 +209,13 @@ ul.header li a.purchase:hover {
     margin-bottom: 30px;
 }
 
-h1.wineryTitle, h1.pageTitle {
-	font-size: 3.5em;
+h1.wineryTitle, h1.pageTitle, .noheroImageHeader h1 {
+	font-size: 3.2em;
 	font-family: 'Alegreya Sans', sans-serif;
+}
+
+.noheroImageHeader h1 {
+	text-align: center;
 }
 
 .ava:after {
@@ -401,7 +410,7 @@ img.wineryImage {
 	color: white;
 }
 
-.mainContent p, .mainContent ul li {
+.mainContent p, .mainContent ul li, section {
 	margin-bottom: 10px;
 	font-family: Nunito, sans-serif;
 	font-size: 1.0em;
@@ -460,6 +469,65 @@ p.moneyValue {
 h1.smallerType, p.smallerType {
 	font-size: .8em;
 }
+
+ul.subNav {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+ul.subNav li {
+	margin: 0;
+	display: inline;
+	margin-right: 10px;
+}
+
+ul.subNav li:last-child {
+	margin-right: 0;
+}
+
+ul.subNav li a {
+	background-color: rgba(0,0,0,0.4);
+	display: inline-block;
+	padding: 5px 15px;
+	text-decoration: none;
+	color: white;
+}
+
+ul.subNav li a:hover {
+	background-color: rgba(0,0,0,0.7);
+}
+
+/* Table Design */
+
+.content table {
+	width: 100%;
+	background-color: #f0f0f0;
+}
+
+.contactDetails:before, .contactDetails:after {
+	content: "";
+    display: table;
+}
+
+.contactDetails:after {
+	clear: both;
+} 
+
+section {
+	margin-bottom: 50px;
+}
+
+.leftCol.label, h2.label {
+	width: 30%;
+	text-align: right;
+}
+
+.leftCol.detail {
+	margin-left: 20px;
+	font-weight: 800;
+}
+
 
 /* FOOTER */
 

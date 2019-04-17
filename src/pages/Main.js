@@ -17,6 +17,9 @@ import Visits from "./Visits"
 import Footer from "./Footer"
 import MercuryWinery from "./MercuryWinery"
 import Purchase from "./Purchase"
+import Dashboard from "./Dashboard"
+import MyVisits from "./MyVisits"
+import MyDetails from "./MyDetails"
 import redbackground from "../img/red-background.jpg"
 import logo from "../img/beyond-napa-logo.png"
  
@@ -59,6 +62,9 @@ class Main extends Component {
             <Route path="/visits" component={Visits}/>
             <Route path="/mercury-winery" component={MercuryWinery}/>
             <Route path="/purchase" component={Purchase}/>
+            <Route path="/Dashboard" component={Dashboard}/>
+            <Route path="/MyVisits" component={MyVisits}/>
+            <Route path="/MyDetails" component={MyDetails}/>
           </div>
           <div className="footer">
             <Footer />
