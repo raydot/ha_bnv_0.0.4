@@ -2,6 +2,9 @@ import React, { Component } from "react"
 
 import { Grid, GridContainer} from "unsemantic"
 
+import bnvLogo from "../img/beyond-napa-logo-2x.png"
+
+
 class Footer extends Component {
   render() {
     return (
@@ -10,48 +13,30 @@ class Footer extends Component {
 			<div className="site-footer--container">
 			
 			<GridContainer>
-				<Grid desktop="100">
-				<h2 className="center">HAYDN WINS THE INTERNET<br/>SUBSCRIBE TO OUR NEWSLETTER</h2>
-				<div id="mc_embed_signup">
-<form action="https://beyondnapavalley.us4.list-manage.com/subscribe/post?u=053255dce6db9ca87405140ec&amp;id=451d1e4190" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-		<h2>Subscribe</h2>
-			<div className="indicates-required"><span className="asterisk">*</span> indicates required</div>
-				<div className="mc-field-group">
-					<label for="mce-EMAIL">Email Address  <span className="asterisk">*</span></label>
-	<input type="email" value="" name="EMAIL" classNameName="required email" id="mce-EMAIL" />
-				</div>
-	<div id="mce-responses" className="clear">
-		<div className="response" id="mce-error-response" style="display:none"></div>
-			<div className="response" id="mce-success-response" style="display:none"></div>
-			</div> 
-				<div style="position: absolute; left: -5000px;" aria-hidden="true">
-					<input type="text" name="b_053255dce6db9ca87405140ec_451d1e4190" tabindex="-1" value="" />
-				</div>
+				<Grid desktop="50" tablet="50" mobile="100">
 				
-    </div>
-</form>
-</div>
+				<h2>Go out and explore the wine country. Discover new wines and wineries. </h2>
+				</Grid>
+				<Grid desktop="25" tablet="50" mobile="100">
+				<h3>Connect on Social Media</h3>
+					<ul>
+						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></a></li>
+						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Instagram</span></a></li>
+						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Twitter</span></a></li>
+					</ul>
+				
+				</Grid>
+				<Grid desktop="25" tablet="50" mobile="100">
+					<h3>Other Resources</h3>
+					<ul>
+						<li><a href="">Support</a></li>
+						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Privacy Policy</span></a></li>
+						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Subscribe to our Newsletter</span></a></li>
+					</ul>
+					<h3>Copyright &copy;{(new Date().getFullYear())} Beyond Napa Valley</h3>
 				</Grid>
 			</GridContainer>
 			
-			
-        		<p>Footer &copy;{(new Date().getFullYear())} Beyond Napa Valley Etc, logo, nice things...</p>
-			<GridContainer>
-			  <Grid desktop="33" tablet="33" mobile="100">
-			    <p>Investors</p>
-			    <p>Wineries</p>
-			    <p>Join Us</p>
-			  </Grid>
-			  <Grid desktop="33" tablet="33" mobile="100">
-			    <p>Column 2.  I am 33% wide.</p>
-			    <p>My content wraps responsively!</p>
-			  </Grid>
-			  <Grid desktop="33" tablet="33" mobile="100">
-			    <p>Column 3.  I am also 33% wide.</p>
-			    <p>And my content also wraps responsively!</p>
-			  </Grid>
-			</GridContainer>
 			</div>
 		</footer>
       </div>

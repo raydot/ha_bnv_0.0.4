@@ -9,7 +9,7 @@ import {
 } from "react-router-dom"
 
 import Home from "./Home"
-import Regions from "./Regions"
+import OurPartners from "./OurPartners"
 import Story from "./Story"
 import Support from "./Support"
 import Membership from "./Membership"
@@ -42,9 +42,8 @@ class Main extends Component {
         	<div className="rightCol">
         	<ul className="header">
             
-	            <li><NavLink to="/regions">Wine Regions</NavLink></li>
+	            <li><NavLink to="/our-partners">Our Partners</NavLink></li>
 	            <li><NavLink to="/story">Our Story</NavLink></li>
-	            <li><NavLink to="/support">Support</NavLink></li>
 	            <li><NavLink to="/membership">Membership Benefits</NavLink></li>
 	            <li><NavLink to="/purchase" className="purchase">Purchase</NavLink></li>
 			</ul>
@@ -55,7 +54,7 @@ class Main extends Component {
           </nav>
           <div className="mainContent">
             <Route exact path="/" component={Home}/>
-            <Route path="/regions" component={Regions}/>
+            <Route path="/our-partners" component={OurPartners}/>
             <Route path="/story" component={Story}/>
             <Route path="/support" component={Support}/>
             <Route path="/membership" component={Membership}/>
