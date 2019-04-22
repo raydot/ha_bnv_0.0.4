@@ -45,7 +45,7 @@ class Main extends Component {
 	            <li><NavLink to="/our-partners">Our Partners</NavLink></li>
 	            <li><NavLink to="/story">Our Story</NavLink></li>
 	            <li><NavLink to="/membership">Membership Benefits</NavLink></li>
-	            <li><NavLink to="/purchase" className="purchase">Purchase</NavLink></li>
+	            <li><NavLink to="/purchase" className="purchase"><strong>Join</strong></NavLink></li>
 			</ul>
         	</div>
         </div>

@@ -33,39 +33,57 @@ class Dashboard extends Component {
 	            		<p>Thank you John Spartan for becoming a Wine Explorer on this date.</p>
 	            	</Grid>
 	            </GridContainer>
-	          </div>
+	          
 	          
 	          <div className="content">
-	            <table>
-	            	<thead>
-	            		<tr>
-	            			<th className="visitDate">Visit Date</th>
-	            			<th className="winery">Winery</th>
-	            			<th>Favorite Wine</th>
-	            			<th>Other Details</th>
-	            		</tr>
-	            	</thead>
-					<tbody>
-						<tr>
-							<td className="date">
-								<div className="dateMonth">JAN</div>
-								<div className="dateDay">09</div>
-								<div className="dateYear">2019</div>
-							</td>
-							<td className="winery">
-								<div>Ramazzotti Wine</div>
-							</td>
-							<td className="favWine">
-								Port
-							</td>
-							<td className="wineryDetails">
-								Shiznit ipsizzle dolizzle sit break it down, shit adipiscing elit. Sheezy sapien velizzle, mofo volutpizzle, suscipit quizzle, gravida vizzle, i'm in the shizzle. Pellentesque bling bling shiznit. Sed eros.
-							</td>
-						</tr>
-					</tbody>
-	            </table>
+	          <GridContainer>
+	            	<Grid desktop="15">
+	            		<h2>Date</h2>
+	            	</Grid>
+	            	<Grid desktop="20">
+	            		<h2>Winery Visited</h2>
+	            	</Grid>
+	            	<Grid desktop="25">
+	            		<h2>Favorite Wine</h2>
+	            	</Grid>
+	            	<Grid desktop="40">
+	            		<h2>Notes</h2>
+	            	</Grid>
+	            </GridContainer>
+	            
+	            <GridContainer className="visitList">
+	            	<Grid desktop="15">
+	            		<p>Jan. 06, 2019<br />
+	            		14:44</p>
+	            	</Grid>
+	            	<Grid desktop="20">
+	            		<p>Ramazzotti Winery</p>
+	            	</Grid>
+	            	<Grid desktop="25">
+	            		<p>That Red Blend, Tractor</p>
+	            	</Grid>
+	            	<Grid desktop="40">
+	            		<p>Oh my gosh. This was absolutely amazing. Wow. I cant wait to go back there. Probably the best experience of the entire day!</p>
+	            	</Grid>
+	            </GridContainer>
+	            
+	            <GridContainer className="visitList">
+	            	<Grid desktop="15">
+	            		<p>Jan. 06, 2019<br />
+	            		14:44</p>
+	            	</Grid>
+	            	<Grid desktop="20">
+	            		<p>Ramazzotti Winery</p>
+	            	</Grid>
+	            	<Grid desktop="25">
+	            		<p>That Red Blend, Tractor</p>
+	            	</Grid>
+	            	<Grid desktop="40">
+	            		<p>Oh my gosh. This was absolutely amazing. Wow. I cant wait to go back there. Probably the best experience of the entire day!</p>
+	            	</Grid>
+	            </GridContainer>
 	          </div>
-	       
+	       </div>
 	       </div>
        </div> // Close mainContent
     );

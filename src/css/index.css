@@ -539,6 +539,14 @@ section {
 	display:none;
 }
 
+.visitList:nth-of-type(odd) {
+	background-color: yellow;
+}
+
+.visitList:after {
+	margin-bottom: 50px;
+}
+
 /* Social Media Icons */
 
 a.facebook {
@@ -561,6 +569,24 @@ a.facebook:hover {
 
 .footer a:hover {
 	text-decoration: underline;
+}
+
+.greyBG {
+	background-color: #2e2e2e;
+	color: white;
+	padding: 30px 0px;
+}
+
+.greyBG, .extraMargin {
+	margin-bottom: 40px;
+}
+
+.greyBG h3, .extraMargin h3 {
+	margin-top: 60px;
+}
+
+.greyBG p:last-child, .extraMargin p:last-child {
+	margin-bottom: 30px;
 }
 
 
@@ -589,5 +615,7 @@ background: radial-gradient(circle, rgba(88,0,0,1) 0%, rgba(70,0,0,1) 100%);
 	font-size: 1.1em;
 	margin-bottom: 10px;
 }
+
+
 
 
