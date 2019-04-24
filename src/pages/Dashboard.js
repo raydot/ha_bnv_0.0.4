@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
+import { Route, NavLink } from "react-router-dom"
 
 import MustardVines from "../img/mustard-vines.jpg"
  
@@ -30,7 +31,7 @@ class Dashboard extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<p>Thank you John Spartan for becoming a Wine Explorer on this date.</p>
+	            		<p><NavLink to="/our-partners">Thank you John Spartan for becoming a Wine Explorer on this date.</NavLink></p>
 	            	</Grid>
 	            </GridContainer>
 	          </div>

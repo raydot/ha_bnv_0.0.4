@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
+import { Route, NavLink } from "react-router-dom"
 
 import MustardVines from "../img/mustard-vines.jpg"
  
@@ -36,6 +37,9 @@ class MercuryWinery extends Component {
 					    	<li><strong>25%</strong> off any enhanced reserved</li> 
 					    	<li><strong>10%</strong> off all wine</li>
 					    	<li>Additional <strong>5%</strong> on your wine purchase the day you join the wine club</li>
+					    	<li><strong>+</strong> Check-in ability using our own app</li>
+					    	<li><strong>+</strong> Record notes on your visits</li>
+
 					    </ul>
 					    <p><strong><a href="#hi" className="button fullWidth">Buy Now</a></strong></p>
 				    </div>
@@ -48,7 +52,10 @@ class MercuryWinery extends Component {
 					    	<li><strong>Complimentary</strong> Tasting for you and guest</li>
 					    	<li><strong>25%</strong> off any enhanced reserved</li> 
 					    	<li><strong>10%</strong> off all wine</li>
-					    	<li>Additional <strong>5%</strong> on your wine purchase the day you join the wine club</li>
+					    	<li>Additional <strong>5%</strong> on your wine purchase the day you join the wine club</li>					    	
+					    	<li><strong>+</strong> Check-in ability using our own app</li>
+					    	<li><strong>+</strong> Record notes on your visits</li>
+
 					    </ul>
 					    <p><strong><a href="#hi" className="button fullWidth">Buy Now</a></strong></p>
 				    </div>
