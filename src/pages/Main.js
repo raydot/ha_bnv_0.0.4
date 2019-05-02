@@ -9,6 +9,7 @@ import {
 } from "react-router-dom"
 
 import Home from "./Home"
+import checkIn from "./check-in"
 import OurPartners from "./OurPartners"
 import Story from "./Story"
 import Support from "./Support"
@@ -54,6 +55,7 @@ class Main extends Component {
           </nav>
           <div className="mainContent">
             <Route exact path="/" component={Home}/>
+            <Route exact path="/check-in" component={checkIn}/>
             <Route path="/our-partners" component={OurPartners}/>
             <Route path="/story" component={Story}/>
             <Route path="/support" component={Support}/>
