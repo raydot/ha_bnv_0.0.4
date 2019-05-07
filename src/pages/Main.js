@@ -23,6 +23,8 @@ import MyVisits from "./MyVisits"
 import MyDetails from "./MyDetails"
 import redbackground from "../img/red-background.jpg"
 import logo from "../img/beyond-napa-logo.png"
+
+import Tester from "./Tester"
  
 class Main extends Component {
   render() {
