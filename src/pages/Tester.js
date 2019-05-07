@@ -2,6 +2,11 @@ import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
 import MustardVines from "../img/mustard-vines.jpg"
+
+const var1 = process.env.REACT_APP_ENVVAR
+const var2 = process.env.REACT_APP_DB_HOST
+
+//alert('var1:', process.env.REACT_APP_ENVVAR, 'var2:', var2)
  
 class Tester extends Component {
   render() {
@@ -18,6 +23,11 @@ class Tester extends Component {
           	</div>
           	<div className="hero-overlay"></div>
           	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
+          </div>
+
+          <div>
+          <span>1: { var1 } 2:{ var2 }</span>
+          	testing 1-2-3
           </div>
           
           <div className="content">
