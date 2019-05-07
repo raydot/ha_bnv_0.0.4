@@ -3,11 +3,27 @@ import { Grid, GridContainer} from "unsemantic"
 
 import MustardVines from "../img/mustard-vines.jpg"
 
-const var1 = process.env.REACT_APP_ENVVAR
-const var2 = process.env.REACT_APP_DB_HOST
+//// LETS TEST THAT MYSQL CONNECTION ////
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+	host		: process.env.REACT_APP_DB_HOST,
+	user		: process.env.REACT_APP_DB_USER,
+	password	: process.env.REACT_APP_DB_PW,
+	port		: process.env.REACT_APP_DB_PORT
+});
 
-//alert('var1:', process.env.REACT_APP_ENVVAR, 'var2:', var2)
- 
+connection.connect(function(err) {
+	if (err) {
+		console.error('Your stuff is broke!', err.stack)
+		return
+	}
+
+	console.log('Hey hey I got in!')
+})
+
+connection.end();
+
+
 class Tester extends Component {
   render() {
     return (
