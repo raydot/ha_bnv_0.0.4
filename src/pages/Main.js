@@ -10,7 +10,7 @@ import {
 
 import Home from "./Home"
 import checkIn from "./check-in"
-import OurPartners from "./OurPartners"
+import Explore from "./Explore"
 import Story from "./Story"
 import Support from "./Support"
 import Membership from "./Membership"
@@ -43,7 +43,7 @@ class Main extends Component {
         	<div className="rightCol">
         	<ul className="header">
             
-	            <li><NavLink to="/our-partners">Our Partners</NavLink></li>
+	            <li><NavLink to="/explore">Explore</NavLink></li>
 	            <li><NavLink to="/story">Our Story</NavLink></li>
 	            <li><NavLink to="/membership">Membership Benefits</NavLink></li>
 	            <li><NavLink to="/purchase" className="purchase"><strong>Join</strong></NavLink></li>
@@ -56,7 +56,7 @@ class Main extends Component {
           <div className="mainContent">
             <Route exact path="/" component={Home}/>
             <Route exact path="/check-in" component={checkIn}/>
-            <Route path="/our-partners" component={OurPartners}/>
+            <Route path="/explore" component={Explore}/>
             <Route path="/story" component={Story}/>
             <Route path="/support" component={Support}/>
             <Route path="/membership" component={Membership}/>

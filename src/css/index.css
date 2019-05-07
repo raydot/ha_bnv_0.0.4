@@ -196,6 +196,19 @@ ul.header li a.purchase:hover {
     /* -webkit-transform: translate(-50%,-50%); */
     transform: translate(0%,-50%);
     width: 100%;
+    z-index: 2;
+}
+
+.whiteBox {
+	position: relative;
+	background-color: white;
+	z-index: 2;
+	margin-top: 50px;
+	max-width: 400px;
+	margin-left: 50px;
+	padding: 15px;
+	padding-top: 20px;
+	margin-bottom: 50px;
 }
 
 .ava, .wineryTitle, .pageTitle {
@@ -252,8 +265,19 @@ h1.wineryTitle, h1.pageTitle, h1, .noheroImageHeader h1 {
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.5)
+    background-color: rgba(0,0,0,.5);
 }
+
+.hero-overlay-nobg {
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+}
+
 
 img.wineryImage {
 	object-fit:cover;
@@ -282,7 +306,7 @@ img.wineryImage {
 	margin-bottom: 10px;
 }
 
-.grid-container a {
+.grid-container a, a {
 	text-decoration: none;
 	color: #aa080a;
 }
@@ -399,7 +423,7 @@ img.wineryImage {
 	font-weight: 200;
 }
 
-.mainContent a.button {
+.mainContent a.button, a.button {
 	border: 1px solid #d3d3d3;
 	padding: 8px;
 /* 	overflow: hidden; */

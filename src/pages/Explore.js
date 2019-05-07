@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
 import MustardVines from "../img/mustard-vines.jpg"
+import exploreWineCounty from "../img/explore-wine-country.jpg"
 import MercurySquare from "../img/mercury-square.jpg"
 import jRickards from "../img/jrickards.jpg"
 import ramazzotti from "../img/ramazzotti-wine.jpg"
@@ -13,16 +14,18 @@ import camapanaranch from "../img/campana-ranch.jpg"
 import brooksnote from "../img/brooks-note-winery.jpg"
 
  
-class Regions extends Component {
+class explore extends Component {
   render() {
     return (
       <div>
-		  <div className="smallHeader">
+		  <div className="bigImageHeader">
+		  
 		  	<div className="titleInfo">
-		  		<h1 className="pageTitle">Our Partners</h1>
+		  		<h1 className="pageTitle">Explore the Wine Country</h1>
           	</div>
+          	
           	<div className="hero-overlay"></div>
-          	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
+          	<img src={ exploreWineCounty } alt="Mustard Vines" className="wineryImage" />
           </div>
           
           <div className="mainContent">
@@ -30,7 +33,7 @@ class Regions extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<p>When you become a Wine Explorer, you have access to all of the wineries below. Simply walk in and show you're membership ID and that's it. Some are by appointment so do plan in advance. We recommend no more than 3-4 wineries per day too. That wine can easily sneak up on you!</p>
+	            		<h2>When you become a Wine Explorer, you have access to all of the wineries below. Simply walk in and show you're membership ID and that's it. Some are by appointment so do plan in advance. We recommend no more than 3-4 wineries per day too. That wine can easily sneak up on you!</h2>
 	            	</Grid>
 	            </GridContainer>
 	          </div>
@@ -178,4 +181,4 @@ class Regions extends Component {
   }
 }
  
-export default Regions
+export default explore
