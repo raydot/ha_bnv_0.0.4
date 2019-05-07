@@ -1,0 +1,3 @@
+APP_ENV=app
+
+DB_HOST=12345
