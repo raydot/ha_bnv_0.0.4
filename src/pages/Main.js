@@ -8,6 +8,8 @@ import {
   HashRouter
 } from "react-router-dom"
 
+// THIS ALL NEEDS TO BE DECOUPLED!
+
 import Home from "./Home"
 import checkIn from "./check-in"
 import Explore from "./Explore"
@@ -66,6 +68,7 @@ class Main extends Component {
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/MyVisits" component={MyVisits}/>
             <Route path="/MyDetails" component={MyDetails}/>
+            <Route path="/tester" component={Tester}/>
           </div>
           <div className="footer">
             <Footer />

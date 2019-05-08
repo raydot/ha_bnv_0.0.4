@@ -2,7 +2,28 @@ import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
 import MustardVines from "../img/mustard-vines.jpg"
- 
+
+//// LETS TEST THAT MYSQL CONNECTION ////
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+	host		: process.env.REACT_APP_DB_HOST,
+	user		: process.env.REACT_APP_DB_USER,
+	password	: process.env.REACT_APP_DB_PW,
+	port		: process.env.REACT_APP_DB_PORT
+});
+
+connection.connect(function(err) {
+	if (err) {
+		console.error('Your stuff is broke!', err.stack)
+		return
+	}
+
+	console.log('Hey hey I got in!')
+})
+
+connection.end();
+
+
 class Tester extends Component {
   render() {
     return (
@@ -18,6 +39,11 @@ class Tester extends Component {
           	</div>
           	<div className="hero-overlay"></div>
           	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
+          </div>
+
+          <div>
+          <span>1: { var1 } 2:{ var2 }</span>
+          	testing 1-2-3
           </div>
           
           <div className="content">
