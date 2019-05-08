@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
-import MustardVines from "../img/mustard-vines.jpg"
+//import MustardVines from "../img/mustard-vines.jpg"
 import exploreWineCounty from "../img/explore-wine-country.jpg"
 import MercurySquare from "../img/mercury-square.jpg"
 import jRickards from "../img/jrickards.jpg"

@@ -23,8 +23,8 @@ import Purchase from "./Purchase"
 import Dashboard from "./Dashboard"
 import MyVisits from "./MyVisits"
 import MyDetails from "./MyDetails"
-import redbackground from "../img/red-background.jpg"
-import logo from "../img/beyond-napa-logo.png"
+//import redbackground from "../img/red-background.jpg"
+//import logo from "../img/beyond-napa-logo.png"
 
 import Tester from "./Tester"
  
@@ -38,7 +38,7 @@ class Main extends Component {
         <div className="clear"></div>
         <div className="columns">
         	<div className="leftCol">
-        		<a href="#" className="logo "><span>Beyond Napa Valley</span></a>
+        		<NavLink to="/" className="logo"><span>Beyond Napa Valley</span></NavLink>
         	</div>
         	
         	<div className="rightCol">
