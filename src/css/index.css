@@ -54,8 +54,8 @@ border-spacing: 0;
 
 /* End CSS Reset */
 
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300');
-@import url('https://fonts.googleapis.com/css?family=Muli|Nunito:200,200i,300,300i,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700');
 
 
 /* End font import */
@@ -65,11 +65,16 @@ body {
 }
 
 nav {
-	background-image: url(../img/red-background.jpg);
+/* 	background-image: url(../img/red-background.jpg); */
+/* 	background-color: #f14b4b; */
 	color: white;
-	box-shadow: 0px 10px 10px rgba(0,0,0,.3);
-	overflow: hidden;
-	padding: 30px;
+/* 	overflow: hidden; */
+	padding: 15px 10px;
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+/* 	min-height: 55px; */
 }
 
 ul.header, .header, .navTop, .columns {
@@ -85,12 +90,11 @@ ul.header, .header, .navTop, .columns {
 
 .logo {
 	background-image: url(../img/beyond-napa-logo-2x.png);
-	background-size: 356px 37px;
+	background-size: 178px 19px;
 	background-repeat: no-repeat;
-	width: 356px;
-	height: 37px;
+	width: 178px;
+	height: 19px;
 	display: block;
-	margin-top: 20px;
 }
 
 .logo span {
@@ -101,6 +105,11 @@ ul.header, .header, .navTop, .columns {
 	float: right;
 }
 
+.join {
+	border-left: 1px solid rgba(255,255,255,.3);
+	padding-left: 20px;
+}
+
 
 .navTop:after {
 	content: "";
@@ -108,10 +117,7 @@ ul.header, .header, .navTop, .columns {
 	display: table;
 }
 
-ul.header {
-/* 	width: 100%; */
-	margin-top: 25px;
-}
+
 
 
 ul.header li {
@@ -125,8 +131,9 @@ ul.header li:last-child {
 }
 
 ul.header {
-	font-family: 'Alegreya Sans', sans-serif;
-	font-size: 1.4em;
+	font-family: 'Assistant', sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
 }
 
 ul.header li a {
@@ -141,19 +148,7 @@ ul.header li a:hover {
 
 }
 
-ul.header li a.purchase {
-	background-color: rgba(138, 0, 0, 0.8);
-	border: 1px solid rgba(255,255,255,.5);
-    padding: 3px 10px;
-    color: white;
-}
 
-ul.header li a.purchase:hover {
-	background-color: rgba(138, 0, 0, 0.4);
-	border: 1px solid rgba(255,255,255,1);
-    padding: 3px 10px;
-    color: white;
-}
 
 .noheroImageHeader {
 	background-color: #e0e0e0;
@@ -179,11 +174,11 @@ ul.header li a.purchase:hover {
 }
 
 .smallHeader {
-    min-height: 250px;
+    min-height: 350px;
 }
 
 .bigImageHeader {
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .titleInfo {
@@ -199,6 +194,10 @@ ul.header li a.purchase:hover {
     z-index: 2;
 }
 
+.titleInfo h2 {
+	margin-bottom: 20px;
+}
+
 .whiteBox {
 	position: relative;
 	background-color: white;
@@ -209,6 +208,10 @@ ul.header li a.purchase:hover {
 	padding: 15px;
 	padding-top: 20px;
 	margin-bottom: 50px;
+}
+
+.titleInfo p {
+	color: white;
 }
 
 .ava, .wineryTitle, .pageTitle {
@@ -222,6 +225,16 @@ ul.header li a.purchase:hover {
     margin-bottom: 30px;
 }
 
+.pageTitleNoCenter {
+	display: block;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    color: #fff;
+    letter-spacing: .05rem;
+    margin-bottom: 30px;
+}
+
 .pageTitleBlack {
 	display: block;
     position: relative;
@@ -230,12 +243,13 @@ ul.header li a.purchase:hover {
     text-align: center;
     color: black;
     letter-spacing: .05rem;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 h1.wineryTitle, h1.pageTitle, h1, .noheroImageHeader h1 {
 	font-size: 3.2em;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Assistant', sans-serif;
+	font-weight: 200;
 }
 
 .noheroImageHeader h1 {
@@ -267,6 +281,18 @@ h1.wineryTitle, h1.pageTitle, h1, .noheroImageHeader h1 {
     height: 100%;
     background-color: rgba(0,0,0,.5);
 }
+
+.hero-overlay-graident {
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6096813725490196) 61%);
+
+}
+
 
 .hero-overlay-nobg {
 	position: absolute;
@@ -311,6 +337,12 @@ img.wineryImage {
 	color: #aa080a;
 }
 
+a.white {
+	color: white;
+	font-weight: 200;
+	letter-spacing: .2em;
+}
+
 .grid-container a:hover {
 	color: #323232;
 }
@@ -324,7 +356,7 @@ img.wineryImage {
 }
 
 .mainContent strong {
-	font-weight: 800;
+	font-weight: 500;
 }
 
 .mainContent em {
@@ -333,7 +365,7 @@ img.wineryImage {
 
 .mainContent strong em, .mainContent em strong {
 	font-style: oblique;
-	font-weight: 800;
+	font-weight: 500;
 }
 
 .mainContent .center, .footer .center {
@@ -412,14 +444,15 @@ img.wineryImage {
 .mainContent h2 {
 	font-size: 2rem;
 	margin-bottom: 10px;
-	font-family: Nunito, sans-serif;
+	font-family: "Assistant", sans-serif;
 	font-weight: 200;
+	line-height: 1.3em;
 }
 
 .mainContent h3 {
 	font-size: 1.6rem;
 	margin-bottom: 10px;
-	font-family: Nunito, sans-serif;
+	font-family: "Assistant", sans-serif;
 	font-weight: 200;
 }
 
@@ -430,15 +463,18 @@ img.wineryImage {
 	display: inline-block;
 } 
 
-.mainContent a.button.fullWidth {
-	display: block;
+.mainContent a.button {
 	text-align: center;
 	-webkit-transition: width 2s; /* Safari */
 	transition: width 2s;
 	background-color: rgba(0,0,0,0);
 }
 
-.mainContent a.button.fullWidth:hover {
+.mainContent a.fullWidth {
+	display: block;
+}
+
+.mainContent a.button:hover {
 	-webkit-transition: width 2s; /* Safari */
 	transition: width 2s;
 	background-color: #870204;
@@ -450,6 +486,11 @@ img.wineryImage {
 	font-family: Nunito, sans-serif;
 	font-size: 1.0em;
 	line-height: 1.4em;
+	color: #464646;
+}
+
+.mainContent .greyBG p {
+	color: #d2d2d2;
 }
 
 .mainContent ul {
@@ -505,6 +546,11 @@ h1.smallerType, p.smallerType {
 	font-size: .8em;
 }
 
+h1.biggerType, p.biggerType {
+	font-size: 1.4em;
+	font-weight: 200;
+}
+
 ul.subNav {
 	margin: 0;
 	padding: 0;
@@ -520,6 +566,8 @@ ul.subNav li {
 ul.subNav li:last-child {
 	margin-right: 0;
 }
+
+
 
 ul.subNav li a {
 	background-color: rgba(0,0,0,0.4);
@@ -598,13 +646,7 @@ a.facebook:hover {
 	display: none;
 }
 
-.footer a, .footer a:hover {
-	color: #ffffff;
-}
 
-.footer a:hover {
-	text-decoration: underline;
-}
 
 .greyBG {
 	background-color: #2e2e2e;
@@ -612,7 +654,7 @@ a.facebook:hover {
 	padding: 30px 0px;
 }
 
-.greyBG, .extraMargin {
+.greyBG, .extraMargin, h2.extraMargin {
 	margin-bottom: 40px;
 }
 
@@ -712,13 +754,13 @@ select{
 /* FOOTER */
 
 .footer {
-	background: rgb(88,0,0);
-background: radial-gradient(circle, rgba(88,0,0,1) 0%, rgba(70,0,0,1) 100%);
-	color: #c8c8c8;
+	
+	
 	padding: 25px 0 0 0;
 	min-height: 300px;
 	overflow: hidden;
 	margin: 0;
+	border-top: 1px solid gray;
 }
 
 .footer ul {

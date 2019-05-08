@@ -32,7 +32,6 @@ class checkIn extends Component {
 				        <option value="Nalle Winery">Nalle Winery</option>
 				        <option value="Ramazzotti Wines">Ramazzotti Wines</option>
 				        <option value="Talty Vineyards and Winery">Talty Vineyards and Winery</option>
-				        <option value="Trek Winery">Trek Winery</option>
 				        <option value="Super Sonoman Winery">Super Sonoman Winery</option>
 				        </select>
 				    </li>

@@ -9,13 +9,14 @@ class Footer extends Component {
   render() {
     return (
       <div>
+<h2 className="center">Go out and explore the wine country. Discover new wines and wineries. </h2>
 		<footer className="site-footer">
 			<div className="site-footer--container">
 			
 			<GridContainer>
 				<Grid desktop="50" tablet="50" mobile="100">
 				
-				<h2>Go out and explore the wine country. Discover new wines and wineries. </h2>
+				
 				</Grid>
 				<Grid desktop="25" tablet="50" mobile="100">
 				<h3>Connect on Social Media</h3>

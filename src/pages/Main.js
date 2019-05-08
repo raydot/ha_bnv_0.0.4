@@ -23,6 +23,8 @@ import MyVisits from "./MyVisits"
 import MyDetails from "./MyDetails"
 import redbackground from "../img/red-background.jpg"
 import logo from "../img/beyond-napa-logo.png"
+
+import Tester from "./Tester"
  
 class Main extends Component {
   render() {
@@ -30,14 +32,11 @@ class Main extends Component {
       <HashRouter>
         <div>
         <nav>
-        <div className="columns">
-          <div className="leftCol">FB | Instagram | Twitter</div>
-          <div className="rightCol">LOGIN</div>
-        </div>
+        
         <div className="clear"></div>
         <div className="columns">
         	<div className="leftCol">
-        		<a href="#" className="logo"><span>Beyond Napa Valley</span></a>
+        		<a href="#" className="logo "><span>Beyond Napa Valley</span></a>
         	</div>
         	
         	<div className="rightCol">
@@ -46,7 +45,8 @@ class Main extends Component {
 	            <li><NavLink to="/explore">Explore</NavLink></li>
 	            <li><NavLink to="/story">Our Story</NavLink></li>
 	            <li><NavLink to="/membership">Membership Benefits</NavLink></li>
-	            <li><NavLink to="/purchase" className="purchase"><strong>Join</strong></NavLink></li>
+	            <li><NavLink to="/purchase">Join</NavLink></li>
+	            <li><NavLink to="/purchase" className="join">LOG IN</NavLink></li>
 			</ul>
         	</div>
         </div>
