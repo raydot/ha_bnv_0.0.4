@@ -4,7 +4,7 @@ import { Grid, GridContainer} from "unsemantic"
 import MustardVines from "../img/mustard-vines.jpg"
 
 //// LETS TEST THAT MYSQL CONNECTION ////
-var mysql = require('mysql')
+/*var mysql = require('mysql')
 var connection = mysql.createConnection({
 	host		: process.env.REACT_APP_DB_HOST,
 	user		: process.env.REACT_APP_DB_USER,
@@ -22,7 +22,7 @@ connection.connect(function(err) {
 })
 
 connection.end();
-
+*/
 
 class Tester extends Component {
   render() {
@@ -42,7 +42,7 @@ class Tester extends Component {
           </div>
 
           <div>
-          <span>1: { var1 } 2:{ var2 }</span>
+          <span>This is a test span.</span>
           	testing 1-2-3
           </div>
           
