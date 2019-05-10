@@ -25,10 +25,25 @@ import MyVisits from "./MyVisits"
 import MyDetails from "./MyDetails"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Tester from "./Tester"
+
+//font awesome "hamburger"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+const elementx = <FontAwesomeIcon icon={faBars} />
+
  
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.hbClick = this.hbClick.bind(this);
+  }
+
+  hbClick() {
+    console.warn('beep');
+  }
+
   render() {
     return (
       <HashRouter>
@@ -44,13 +59,20 @@ class Main extends Component {
         	<div className="rightCol">
         	<ul className="header">
             
-	            <li><NavLink to="/explore">Explore</NavLink></li>
-	            <li><NavLink to="/story">Our Story</NavLink></li>
-	            <li><NavLink to="/membership">Membership Benefits</NavLink></li>
-	            <li><NavLink to="/purchase">Join</NavLink></li>
-	            <li><NavLink to="/purchase" className="join">LOG IN</NavLink></li>
-			</ul>
-        	</div>
+	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
+	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
+	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
+	            <li><NavLink className="topMenuClass" to="/purchase">Join</NavLink></li>
+	            <li><NavLink className="topMenuClass join"to="/purchase">LOG IN</NavLink></li>
+              { /* THIS WILL BECOME THE HAMBURGER MENU
+              <li>
+                <button className="hbIcon" onclick="this.hbClick">
+                  <i className="fa fa-bars"></i>
+                </button>
+              </li> */ }
+
+			   </ul>
+        </div>
         </div>
           
           <div className="clear"></div>

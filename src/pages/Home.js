@@ -32,7 +32,7 @@ class Home extends Component {
           	<img src={ exploreWineCounty } alt="Mustard Vines" className="wineryImage" />
           </div>
 		
-		<GridContainer><h2 className="center">Discover New Wines & Wineries with the Wine Explorer Membership</h2>
+		<GridContainer><h2 className="center">Discover New Wines &amp; Wineries with the Wine Explorer Membership</h2>
 	            	<Grid desktop="50">
 	            	
 	            	<p></p>
