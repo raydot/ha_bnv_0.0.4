@@ -5,6 +5,7 @@ var nodemailer = require('nodemailer')
 var mongoose = require('mongoose')
 
 // Validation
+// Might want to look at https://www.npmjs.com/package/validator instead
 const { body, validationResult } = require('express-validator/check')
 const { sanitizeBody } = require('express-validator/filter')
 
