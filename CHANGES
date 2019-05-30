@@ -1,0 +1,36 @@
+Version 0.1.0
+ - Added font-awesome icons and started work on Hamburger menu css and jsx.
+ - updated the CSS
+ - Git repos should all be in sync!
+ - Trying to get both branches in sync.
+ - Trying to get both sides in synch.
+ - basic db test
+ - Reworked .env file.  Working.  Db next!
+ - Some trouble with the Node build!  Got it fixed, finally.
+ - working on home page ; changed nav
+ - Added environment variables to GitIgnore.
+ - Working on AWS
+ - added check-in page
+ - updated pages
+ - Updated some pages
+ - changed regions to parters
+ - footer issues.
+ - built the dashboard
+ - import is now on line 5 vs line 3
+ - Trying to merge with haydn's branch.
+ - Made some small changes to main.
+ - Pushed the new work.
+ - Tidied up the footer to remain on the bottom of the page.
+ - Added footer with arbitrary color and responsive sizing.
+ - Changed mustard vines to use local image reference.
+ - Added image loader to the membership page.
+ - Added note to regions that it needs to be populated from DB.
+ - updated visits page & CSS
+ - Top menu uses correct section names.
+ - Changed back to salmon
+ - Change background to red
+ - Showing Haydn whats up.
+ - Added a visit sub-page
+ - Basic app shell complete to Haydn for CSS adds.
+ - Initial commit from Create React App
+
