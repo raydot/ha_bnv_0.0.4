@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "BNV backend server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raydot/ha_bnv_0.0.4.git"
+  },
+  "keywords": [
+    "beyond",
+    "napa",
+    "valley"
+  ],
+  "author": "Dave Kanter",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/raydot/ha_bnv_0.0.4/issues"
+  },
+  "homepage": "https://github.com/raydot/ha_bnv_0.0.4#readme"
+}
