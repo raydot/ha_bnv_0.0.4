@@ -25,13 +25,13 @@ import MyVisits from "./MyVisits"
 import MyDetails from "./MyDetails"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+//import { faBars } from '@fontawesome/free-solid-svg-icons'
 
 import Tester from "./Tester"
 
 //font awesome "hamburger"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-const elementx = <FontAwesomeIcon icon={faBars} />
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//const elementx = <FontAwesomeIcon icon={faBars} />
 
  
 class Main extends Component {
