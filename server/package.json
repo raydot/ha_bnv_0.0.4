@@ -2,11 +2,10 @@
   "name": "server",
   "version": "0.0.1",
   "description": "BNV backend server",
-  "main": "server.js",
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "debug": "DEBUG=express-locallibrary-tutorial:* & nodemon start"
+    "debug": "DEBUG=ha_bnv_0.0.4:* & nodemon start"
   },
   "repository": {
     "type": "git",
@@ -43,6 +42,7 @@
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "pug": "^2.0.3"
   }
 }

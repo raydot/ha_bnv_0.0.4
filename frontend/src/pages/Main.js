@@ -23,6 +23,8 @@ import Purchase from "./Purchase"
 import Dashboard from "./Dashboard"
 import MyVisits from "./MyVisits"
 import MyDetails from "./MyDetails"
+import Login from "./Login"
+import Register from "./Register"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
 //import { faBars } from '@fontawesome/free-solid-svg-icons'
@@ -63,7 +65,7 @@ class Main extends Component {
 	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
 	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
 	            <li><NavLink className="topMenuClass" to="/purchase">Join</NavLink></li>
-	            <li><NavLink className="topMenuClass join"to="/purchase">LOG IN</NavLink></li>
+	            <li><NavLink className="topMenuClass join"to="/login">LOG IN</NavLink></li>
               { /* THIS WILL BECOME THE HAMBURGER MENU
               <li>
                 <button className="hbIcon" onclick="this.hbClick">
@@ -91,6 +93,8 @@ class Main extends Component {
             <Route path="/MyVisits" component={MyVisits}/>
             <Route path="/MyDetails" component={MyDetails}/>
             <Route path="/tester" component={Tester}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
           </div>
           <div className="footer">
             <Footer />

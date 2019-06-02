@@ -22,14 +22,37 @@ class MercuryWinery extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<p><strong>Lorem ipsizzle dolizzle sit amizzle</strong>, consectetuer adipiscing funky fresh. Nullizzle sapien velit, away volutpizzle, suscipit boom shackalack, fo shizzle vizzle, shiz. Pellentesque eget tortor. Fizzle erizzle. <em>Yo izzle sizzle dapibus turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Stuff pellentesque nibh et turpizzle. Ass izzle tortizzle. Pellentesque fo shizzle mah nizzle fo rizzle,</em> mah home g-dizzle rhoncizzle nisi. In hac sizzle fo shizzle dictumst. Stuff dapibus. Curabitizzle tellizzle da bomb, pretizzle sheezy, mattizzle own yo, eleifend vitae, nunc. Bow wow wow suscipizzle. Integer semper velit sizzle ghetto.</p>
+	            		<p><h3>Join Beyond Napa Valley for Free! [link]</h3></p>
+	            	</Grid>
+	            </GridContainer>
+	          </div>
+	          <div className="content">
+	            <GridContainer>
+	            	<Grid desktop="100">
+	            		<p><h3>Become a Wine Explorer™</h3></p>
 	            	</Grid>
 	            </GridContainer>
 	          </div>
 	          <div className="mainContent">
 	          <div className="content">
 	            <GridContainer>
-				  <Grid desktop="33" tablet="33" mobile="100">
+	              <Grid desktop="25" tablet="25" mobile="100">
+	              	<div className="buyBox">
+	            	    <h2>Become a Wine Explorer</h2>
+	            	    <p>Free!™</p>
+	            	    <ul>
+	            	    	<li><strong>Complimentary</strong> Tasting for you and guest</li>
+	            	    	<li><strong>25%</strong> off any enhanced reserved</li> 
+	            	    	<li><strong>10%</strong> off all wine</li>
+	            	    	<li>Additional <strong>5%</strong> on your wine purchase the day you join the wine club</li>
+	            	    	<li><strong>+</strong> Check-in ability using our own app</li>
+	            	    	<li><strong>+</strong> Record notes on your visits</li>
+
+	            	    </ul>
+	            	    <p><strong><NavLink to="/Register" className="button fullWidth">Join Now</NavLink></strong></p>
+	                </div>
+	              </Grid>
+				  <Grid desktop="25" tablet="25" mobile="100">
 				  	<div className="buyBox">
 					    <h2>For a Day</h2>
 					    <p className="moneyValue"><span className="dollar">$</span>80</p>
@@ -42,10 +65,10 @@ class MercuryWinery extends Component {
 					    	<li><strong>+</strong> Record notes on your visits</li>
 
 					    </ul>
-					    <p><strong><a href="#hi" className="button fullWidth">Buy Now</a></strong></p>
+					    <p><strong><NavLink to="/Register" className="button fullWidth">Buy One-Day Pass Now</NavLink></strong></p>
 				    </div>
 				  </Grid>
-				  <Grid desktop="33" tablet="33" mobile="100">
+				  <Grid desktop="25" tablet="25" mobile="100">
 				    <div className="buyBox">
 					    <h2>For 3 Days</h2>
 					    <p className="moneyValue"><span className="dollar">$</span>180</p>
@@ -58,10 +81,10 @@ class MercuryWinery extends Component {
 					    	<li><strong>+</strong> Record notes on your visits</li>
 
 					    </ul>
-					    <p><strong><a href="#hi" className="button fullWidth">Buy Now</a></strong></p>
+					    <p><strong><NavLink to="/Register" className="button fullWidth">Buy Three-Day Pass Now</NavLink></strong></p>
 				    </div>
 				  </Grid>
-				  <Grid desktop="33" tablet="33" mobile="100">
+				  <Grid desktop="25" tablet="25" mobile="100">
 				    <div className="buyBox">
 					    <h2>For an Entire Year</h2>
 					    <p className="moneyValue"><span className="dollar">$</span>250</p>
@@ -77,7 +100,7 @@ class MercuryWinery extends Component {
 					    	<li><strong>+</strong> Discounts on lodging **</li>
 					    	<li><strong>+</strong> In-app digital membership card</li>
 					    </ul>
-					    <p><strong><a href="#hi" className="button fullWidth">Buy Now</a></strong></p>
+					    <p><strong><NavLink to="/Register" className="button fullWidth">Buy One-Year Pass Now</NavLink></strong></p>
 					    <p className="smallerType"><em>Membership automatically renews after 1 year</em></p>
 				    </div>
 				  </Grid>

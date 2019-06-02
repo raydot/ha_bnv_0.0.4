@@ -1,52 +1,46 @@
 import React, { Component } from "react"
+import { Grid, GridContainer} from "unsemantic"
+import { NavLink } from "react-router-dom"
+import MustardVines from "../img/mustard-vines.jpg"
 
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom"
+// Login
+import LoginComponent from '../components/LoginComponent'
 
-import Main from "./Main"
-import Visits from "./Visits"
-import Rate from "./Rate"
-import Regions from "./Regions"
-import Blog from "./Blog"
-import Contact from "./Contact"
  
-class Login extends Component {
+class MercuryWinery extends Component {
   render() {
     return (
-	<HashRouter>
       <div>
-		<ul className="header">
-			<li><NavLink to="/main">Winery Visits</NavLink></li>
-            <li><NavLink to="/visits">Winery Visits</NavLink></li>
-            <li><NavLink to="/rate">Rate A Wine</NavLink></li>
-            <li><NavLink to="/regions">Wine Regions</NavLink></li>
-            <li><NavLink to="/blog">See our Blog</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
-          </ul>
-        <h2>Please enter some info, etc...</h2>
-		<p>Name: <input type="text" class="inputText" /></p>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
- 
-        <p><NavLink to="/main"><button type="button">Login</button></NavLink></p>
-		    <Route exact path="/" component={Login}/>
-            <Route path="/main" component={Main}/>
-            <Route path="/visits" component={Main}/>
-            <Route path="/rate" component={Main}/>
-            <Route path="/regions" component={Regions}/>
-            <Route path="/blog" component={Blog}/>
-            <Route path="/contact" component={Contact}/>
-      </div>
-	</HashRouter>
+		  <div className="smallHeader">
+		  	<div className="titleInfo">
+		  		<h1 className="pageTitle">Become a Wine Explorer<span className="smallerType">&trade;</span> Member</h1>
+          	</div>
+          	<div className="hero-overlay"></div>
+          	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
+          </div>
+          
+          
+          
+	          <div className="content">
+	            <GridContainer>
+	            	<Grid desktop="100">
+	            		<LoginComponent />
+
+	            		Not a member?  <NavLink>Join now!</NavLink>
+
+	            	</Grid>
+	            </GridContainer>
+	          </div>
+
+
+			  <Grid>
+			  	<GridContainer>
+	       <p className="smallerType center">* Limited to a case at select wineries | ** Coming 2019 / 2020 | All purchases are non-refundable | Please drink responsibly</p>
+	       		</GridContainer>
+		      </Grid>
+	       </div>
     );
   }
 }
  
-export default Login;
+export default MercuryWinery
