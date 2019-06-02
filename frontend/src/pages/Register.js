@@ -66,7 +66,7 @@ class Dashboard extends Component {
 		            			<div className="leftCol label" htmlFor="password2">Confirm Password:</div>
 											<div className="leftCol detail"><input type="password" name="password2" placeholder="Confirm Password"/></div>
 		            		</div>
-		            		<div className="contactDetails">
+{/*		            		<div className="contactDetails">
 		            			<div className="leftCol label" htmlFor="secques">Security Question:</div>
 											<div className="leftCol detail">
 												<select>
@@ -79,7 +79,7 @@ class Dashboard extends Component {
 		            		<div className="contactDetails">
 		            			<div className="leftCol label" htmlFor="seqans">Security Answer:</div>
 											<div className="leftCol detail"><input type="text" name="secans" placeholder="Security Answer"/></div>
-		            		</div>
+		            		</div>*/}
 		            	</section>
 		            	
 {/*		            	<section className="contactDetails">
