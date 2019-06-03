@@ -1,15 +1,17 @@
-import React, { Component } from "react"
-import { Grid, GridContainer} from "unsemantic"
+import React, { Component } from 'react'
+import { Grid, GridContainer} from 'unsemantic'
 
-import {
-  Route,
-  NavLink
-} from "react-router-dom"
+import { Route, NavLink } from 'react-router-dom'
 
 //import MustardVines from "../img/mustard-vines.jpg"
  
-class Dashboard extends Component {
-  render() {
+class Register extends Component {
+  	constructor(props) {
+		super(props)
+		//console.log('v?', this.props.location.state.viz)
+	}
+
+	render() {
     return (
       <div>
 		<div className="noheroImageHeader">
@@ -201,7 +203,7 @@ class Dashboard extends Component {
 		            		</div>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">Credit Card</div>
-								<div className="leftCol detail">********* <NavLink>Update</NavLink></div>
+								<div className="leftCol detail">********* <NavLink to='#'>Update</NavLink></div>
 		            		</div>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">Expiry Date:</div>
@@ -249,4 +251,4 @@ class Dashboard extends Component {
   }
 }
  
-export default Dashboard
+export default Register
