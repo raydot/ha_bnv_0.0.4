@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 import { NavLink } from "react-router-dom"
 import MustardVines from "../img/mustard-vines.jpg"
+import LoginMainImage from "../img/login-main-image.jpg"
 
 // Login
 import LoginComponent from '../components/LoginComponent'
@@ -13,10 +14,10 @@ class MercuryWinery extends Component {
       <div>
 		  <div className="smallHeader">
 		  	<div className="titleInfo">
-		  		<h1 className="pageTitle">Become a Wine Explorer<span className="smallerType">&trade;</span> Member</h1>
+		  		<h1 className="pageTitle">LOGIN</h1>
           	</div>
           	<div className="hero-overlay"></div>
-          	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
+          	<img src={ LoginMainImage } alt="Mustard Vines" className="wineryImage" />
           </div>
           
           
@@ -26,18 +27,14 @@ class MercuryWinery extends Component {
 	            	<Grid desktop="100">
 	            		<LoginComponent />
 
-	            		Not a member?  <NavLink>Join now!</NavLink>
+	            		<h3 className="center">Not a member? <NavLink>Join now!</NavLink></h3>
 
 	            	</Grid>
 	            </GridContainer>
 	          </div>
 
 
-			  <Grid>
-			  	<GridContainer>
-	       <p className="smallerType center">* Limited to a case at select wineries | ** Coming 2019 / 2020 | All purchases are non-refundable | Please drink responsibly</p>
-	       		</GridContainer>
-		      </Grid>
+			 
 	       </div>
     );
   }

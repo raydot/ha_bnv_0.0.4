@@ -4,6 +4,7 @@ import { Grid, GridContainer} from "unsemantic"
 import { NavLink } from "react-router-dom"
 
 import MustardVines from "../img/mustard-vines.jpg"
+import foleyWinery from "../img/foley-winery.jpg"
  
 class MercuryWinery extends Component {
   render() {
@@ -14,7 +15,7 @@ class MercuryWinery extends Component {
 		  		<h1 className="pageTitle">Become a Wine Explorer<span className="smallerType">&trade;</span> Member</h1>
           	</div>
           	<div className="hero-overlay"></div>
-          	<img src={ MustardVines } alt="Mustard Vines" className="wineryImage" />
+          	<img src={ foleyWinery } alt="Foley Winery" className="wineryImage" />
           </div>
           
           
@@ -22,14 +23,14 @@ class MercuryWinery extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<p><h3>Join Beyond Napa Valley for Free! [link]</h3></p>
+	            		<h3>Join Beyond Napa Valley for Free! [link]</h3>
 	            	</Grid>
 	            </GridContainer>
 	          </div>
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<p><h3>Become a Wine Explorer™</h3></p>
+	            		<h3>Become a Wine Explorer™</h3>
 	            	</Grid>
 	            </GridContainer>
 	          </div>

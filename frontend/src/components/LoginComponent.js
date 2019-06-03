@@ -13,28 +13,31 @@ class LoginComponent extends Component {
     return (
       <div className='center'>
         <div className='card'>
-          <h1>Login</h1>
-          <form>
-            <input
-              className='form-item'
-              placeholder='Username goes here...'
-              name='username'
-              type='text'
-              onChange={this.handleChange}
-            />
-            <input
-              className='form-item'
-              placeholder='Password goes here...'
-              name='password'
-              type='password'
-              onChange={this.handleChange}
-            />
-            <input
-              className='form-submit'
-              value='SUBMIT'
-              type='submit'
-            />
+          <div className="signup-content centerForm">
+                    	<form method="POST" id="signup-form" className="signup-form centerForm">
+                    		<div className="form-group">
+					            <input
+					              className='form-input'
+					              placeholder='Username'
+					              name='username'
+					              type='text'
+					              onChange={this.handleChange}
+					            />
+					        </div>
+					        <div className="form-group">
+					            <input
+					              className='form-input'
+					              placeholder='Password'
+					              name='password'
+					              type='password'
+					              onChange={this.handleChange}
+					            />
+					        </div>
+					        <div className="form-group">
+					            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+					        </div>
           </form>
+          </div>
         </div>
       </div>
     )
