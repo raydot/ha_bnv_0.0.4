@@ -21,7 +21,7 @@ class Join extends Component {
 
 	constructor(props) {
 			super(props)
-			console.log('v?', this.props.location.state.viz)
+			//console.log('v?', this.props.location.state.viz)
 		}
 
   render() {
