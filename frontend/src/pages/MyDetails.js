@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
-import MustardVines from "../img/mustard-vines.jpg"
+//import MustardVines from "../img/mustard-vines.jpg"
  
 class Dashboard extends Component {
   render() {

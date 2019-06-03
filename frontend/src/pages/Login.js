@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 import { NavLink } from "react-router-dom"
-import MustardVines from "../img/mustard-vines.jpg"
+//import MustardVines from "../img/mustard-vines.jpg"
 import LoginMainImage from "../img/login-main-image.jpg"
 
 // Login
@@ -26,9 +26,7 @@ class MercuryWinery extends Component {
 	            <GridContainer>
 	            	<Grid desktop="100">
 	            		<LoginComponent />
-
 	            		<h3 className="center">Not a member? <NavLink>Join now!</NavLink></h3>
-
 	            	</Grid>
 	            </GridContainer>
 	          </div>

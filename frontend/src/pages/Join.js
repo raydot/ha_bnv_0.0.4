@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom"
 import MustardVines from "../img/mustard-vines.jpg"
 import foleyWinery from "../img/foley-winery.jpg"
  
-class MercuryWinery extends Component {
+class Join extends Component {
   render() {
     return (
       <div>
@@ -120,4 +120,4 @@ class MercuryWinery extends Component {
   }
 }
  
-export default MercuryWinery
+export default Join

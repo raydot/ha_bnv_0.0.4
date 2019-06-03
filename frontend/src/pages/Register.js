@@ -16,15 +16,15 @@ class Dashboard extends Component {
 			<div className="content">
 		            <GridContainer>
 		            	<Grid desktop="100">
-							<h1>Wineries I Have Visited</h1>
+							<h1>Registration</h1>
 			  			</Grid>
 			  		</GridContainer>
 			  		
-			  			<ul className="subNav">
-			  				<li><a href="#">MY MEMBERSHIP</a></li>
-			  				<li><a href="#">MY VISITS</a></li>
-			  				<li><a href="#">MY DETAILS</a></li>
-			  			</ul>
+			  			{/*<ul className="subNav">
+			  				<li><NavLink to="#">MY MEMBERSHIP</NavLink></li>
+			  				<li><NavLink to="#">MY VISITS</NavLink></li>
+			  				<li><NavLink to="#">MY DETAILS</NavLink></li>
+			  			</ul>*/}
 			  			<div className="clear"></div>
 			</div>
 				  	
@@ -62,7 +62,7 @@ class Dashboard extends Component {
 							
 							<div className="form-group">
 	                            <input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />
-	                            <label for="agree-term" className="label-agree-term"><span><span></span></span>I agree all statements in  <NavLink to="#" className="term-service">Terms of service</NavLink></label>
+	                            <label htmlFor="agree-term" className="label-agree-term"><span><span></span></span>I agree all statements in  <NavLink to="#" className="term-service">Terms of service</NavLink></label>
 							</div>
 							
 							<div className="form-group">
@@ -171,15 +171,15 @@ class Dashboard extends Component {
 		            		<h2 className="label">Account Details</h2>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">Password:</div>
-								<div className="leftCol detail">********* <a>Edit</a></div>
+								<div className="leftCol detail">********* <NavLink>Edit</NavLink></div>
 		            		</div>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">Security Question:</div>
-								<div className="leftCol detail">What is your mothers maiden name? <a>Edit</a></div>
+								<div className="leftCol detail">What is your mothers maiden name? <NavLink>Edit</NavLink></div>
 		            		</div>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">E-mail:</div>
-								<div className="leftCol detail"><a>Edit</a></div>
+								<div className="leftCol detail"><NavLink>Edit</NavLink></div>
 		            		</div>
 		            	</section>*/}
 		            	
@@ -201,7 +201,7 @@ class Dashboard extends Component {
 		            		</div>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">Credit Card</div>
-								<div className="leftCol detail">********* <a>Update</a></div>
+								<div className="leftCol detail">********* <NavLink>Update</NavLink></div>
 		            		</div>
 		            		<div className="contactDetails">
 		            			<div className="leftCol label">Expiry Date:</div>
@@ -212,32 +212,32 @@ class Dashboard extends Component {
 	            	</Grid>
 	            </GridContainer>
 	            
-	            <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
-                        <h2 class="form-title">Create account</h2>
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
+	            <div className="signup-content">
+                    <form method="POST" id="signup-form" className="signup-form">
+                        <h2 className="form-title">Create account</h2>
+                        <div className="form-group">
+                            <input type="text" className="form-input" name="name" id="name" placeholder="Your Name"/>
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                        <div className="form-group">
+                            <input type="email" className="form-input" name="email" id="email" placeholder="Your Email"/>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
-                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        <div className="form-group">
+                            <input type="text" className="form-input" name="password" id="password" placeholder="Password"/>
+                            <span toggle="#password" className="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                        <div className="form-group">
+                            <input type="password" className="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
                         </div>
-                        <div class="form-group">
-                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        <div className="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />
+                            <label htmlFor="agree-term" className="label-agree-term"><span><span></span></span>I agree all statements in  <NavLink to="#" className="term-service">Terms of service</NavLink></label>
                         </div>
-                        <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        <div className="form-group">
+                            <input type="submit" name="submit" id="submit" className="form-submit" value="Sign up"/>
                         </div>
                     </form>
                     <p className="loginhere">
-                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                        Have already an account ? <NavLink to="#" className="loginhere-link">Login here</NavLink>
                     </p>
                 </div>
 	          </div>
