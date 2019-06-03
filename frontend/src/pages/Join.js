@@ -1,12 +1,29 @@
-import React, { Component } from "react"
-import { Grid, GridContainer} from "unsemantic"
+import React, { Component } from 'react'
+import { Grid, GridContainer} from 'unsemantic'
 //import { Route, NavLink } from "react-router-dom"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from 'react-router-dom'
 
-import MustardVines from "../img/mustard-vines.jpg"
-import foleyWinery from "../img/foley-winery.jpg"
+import MustardVines from '../img/mustard-vines.jpg'
+import foleyWinery from '../img/foley-winery.jpg'
  
 class Join extends Component {
+	// handleSubmit(event) {
+	// 	event.preventDefault()
+	// 	const data = new FormData(event.target)
+	
+	// 	console.log(data)
+
+	// 	// fetch('/register', {
+	// 	// 	method: 'GET',
+	// 	// 	body: data
+	// 	// })
+	// }
+
+	constructor(props) {
+			super(props)
+			//console.log('v?', this.props.location.state.viz)
+		}
+
   render() {
     return (
       <div>
@@ -21,6 +38,7 @@ class Join extends Component {
           
           
 	          <div className="content">
+	          	
 	            <GridContainer>
 	            	<Grid desktop="100">
 	            		<h3>Join Beyond Napa Valley for Free! [link]</h3>
@@ -37,6 +55,7 @@ class Join extends Component {
 	          <div className="mainContent">
 	          <div className="content">
 	            <GridContainer>
+	            <form onSubmit={this.handleSubmit}>
 	              <Grid desktop="25" tablet="25" mobile="100">
 	              	<div className="buyBox">
 	            	    <h2>Become a Wine Explorer</h2>
@@ -50,7 +69,7 @@ class Join extends Component {
 	            	    	<li><strong>+</strong> Record notes on your visits</li>
 
 	            	    </ul>
-	            	    <p><strong><NavLink to="/Register" className="button fullWidth">Join Now</NavLink></strong></p>
+	            	    <p><strong><button to="/Register" className="button fullWidth">Join Now</button></strong></p>
 	                </div>
 	              </Grid>
 				  <Grid desktop="25" tablet="25" mobile="100">
@@ -66,7 +85,7 @@ class Join extends Component {
 					    	<li><strong>+</strong> Record notes on your visits</li>
 
 					    </ul>
-					    <p><strong><NavLink to="/Register" className="button fullWidth">Buy One-Day Pass Now</NavLink></strong></p>
+					    <p><strong><button to="/Register" className="button fullWidth" name="1">Buy One-Day Pass Now</button></strong></p>
 				    </div>
 				  </Grid>
 				  <Grid desktop="25" tablet="25" mobile="100">
@@ -82,7 +101,7 @@ class Join extends Component {
 					    	<li><strong>+</strong> Record notes on your visits</li>
 
 					    </ul>
-					    <p><strong><NavLink to="/Register" className="button fullWidth">Buy Three-Day Pass Now</NavLink></strong></p>
+					    <p><strong><button to="/Register" className="button fullWidth" name="3">Buy Three-Day Pass Now</button></strong></p>
 				    </div>
 				  </Grid>
 				  <Grid desktop="25" tablet="25" mobile="100">
@@ -101,11 +120,12 @@ class Join extends Component {
 					    	<li><strong>+</strong> Discounts on lodging **</li>
 					    	<li><strong>+</strong> In-app digital membership card</li>
 					    </ul>
-					    <p><strong><NavLink to="/Register" className="button fullWidth">Buy One-Year Pass Now</NavLink></strong></p>
+					    <p><strong><Link className="button fullWidth" to={{ pathname:'/Register', state:{ 'viz':5 } }}>Buy One-Year Pass Now</Link></strong></p>
 					    <p className="smallerType"><em>Membership automatically renews after 1 year</em></p>
+					    
 				    </div>
 				  </Grid>
-				  
+				  </form>
 				</GridContainer>
 				
 	          </div>
