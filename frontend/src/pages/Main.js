@@ -24,7 +24,9 @@ import MyVisits from "./MyVisits"
 //import Dashboard from "./Dashboard"
 import Login from "./Login"
 import Register from "./Register"
+import error404 from "./404"
 import TOS from "./TOS"
+import JoinV2 from "./JoinV2"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
 //import { faBars } from '@fontawesome/free-solid-svg-icons'
@@ -94,6 +96,7 @@ class Main extends Component {
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/TOS" component={TOS}/>
+            <Route path="/JoinV2" component={JoinV2}/>
           </div>
           <div className="footer">
             <Footer />
