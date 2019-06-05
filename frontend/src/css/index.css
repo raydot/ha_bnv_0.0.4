@@ -167,7 +167,7 @@ ul.header {
 }
 
 ul.header li a {
-	color: #ffdede;
+	color: rgba(255,255,255,.8);
 	text-decoration: none;
 	-webkit-transition: width 1s;
 	transition: width 1s;
