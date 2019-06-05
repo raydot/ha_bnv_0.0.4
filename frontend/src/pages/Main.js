@@ -21,7 +21,7 @@ import Footer from "./Footer"
 import MercuryWinery from "./MercuryWinery"
 import Join from "./Join"
 import MyVisits from "./MyVisits"
-//import Dashboard from "./Dashboard"
+import Dashboard from "./Dashboard"
 import Login from "./Login"
 import Register from "./Register"
 import error404 from "./404"
@@ -97,6 +97,7 @@ class Main extends Component {
             <Route path="/register" component={Register}/>
             <Route path="/TOS" component={TOS}/>
             <Route path="/JoinV2" component={JoinV2}/>
+            <Route path="/Dashboard" component={Dashboard}/>
           </div>
           <div className="footer">
             <Footer />
