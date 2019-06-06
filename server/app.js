@@ -13,7 +13,13 @@ var mongoose = require('mongoose')
 var mongoDB = process.env.DB_CREDS
 mongoose.connect(mongoDB, { useNewUrlParser: true, useCreateIndex: true })
 var db = mongoose.connection
-db.on('error', console.error.bind(console, 'MongoDB connection error'))
+db.on('error', function(err) {
+  logger.error('connection error:', err)
+})
+
+db.on('connect', function() {
+  logger.error('Mongo up and running!') // this doesn't work.  REVISIT.
+})
 
 // import the models
 var token = require('./models/token')
@@ -56,6 +62,11 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
+
+// Mongo error handler
+// function handleMongoErr() {
+//   console.error("Error!"")
+// }
 
 //console.log('Running on port: ' + process.env.PORT + '. Lets light this candle!')
 
