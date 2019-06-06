@@ -29,7 +29,7 @@ class Dashboard extends Component {
           
 	          
 	          
-	          <div className="content greyBg">
+	          <div className="content greyBG">
 	          
 	          <GridContainer>
 	            	<Grid desktop="100">
