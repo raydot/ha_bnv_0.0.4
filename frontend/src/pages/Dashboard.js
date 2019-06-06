@@ -1,130 +1,71 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
-//import MustardVines from "../img/mustard-vines.jpg"
+import exploreWineCountry from "../img/explore-wine-country.jpg"
+import digitalCard from "../img/wine-explorer-digital-card.jpg"
+
  
 class Dashboard extends Component {
   render() {
     return (
       <div>
-		<div className="noheroImageHeader">
-			<div className="content">
-		            <GridContainer>
-		            	<Grid desktop="100">
-							<h1>Wineries I Have Visited</h1>
-			  			</Grid>
-			  		</GridContainer>
-			  		
-			  			<ul className="subNav">
+		<div className="smallHeader">
+		  	<div className="titleInfo">
+		  		<h1 className="pageTitle">Welcome John Spartan</h1>
+          	</div>
+          	
+          	<div className="hero-overlay"></div>
+          	<img src={ exploreWineCountry } alt="Explore the Wine Country" className="wineryImage" />
+          	<ul className="subNav">
 			  				<li><a href="#">MY MEMBERSHIP</a></li>
 			  				<li><a href="#">MY VISITS</a></li>
 			  				<li><a href="#">MY DETAILS</a></li>
 			  			</ul>
 			  			<div className="clear"></div>
-			</div>
+          </div>
 				  	
-		</div>
           
           <div className="mainContent">
           
-	          <div className="content">
+	          
+	          
+	          <div className="content greyBg">
+	          
+	          <GridContainer>
+	            	<Grid desktop="100">
+	            		<h2>A Snapshot</h2>
+	            	</Grid>
+	            </GridContainer>
+	          
+	          
+	            <GridContainer>
+	            	<Grid desktop="30">
+	            		
+	            		
+	            		<img src={ digitalCard } alt="Digital Membership Card" className="imgFullCol" />
+	            		<p><strong>Show Digital Membership Card to Winery</strong></p>
+	            		<p>Only show image if yearly membership or if dates are current</p>
+	            	</Grid>
+	            	
+	            	<Grid desktop="70">
+	            		<h3>My Plan:</h3>
+	            		<p><em>Your membership refreshes 08 Jul 2022</em></p>
+	            		<p>or</p>
+	            		<p>Your membership runs from July 1 2019 to July 4 2019</p>
+	            		<p>or</p>
+	            		<p>Your currently on the free membership plan. Upgrade to start utilizing the discounts full membership has to offer.</p>
+	            	</Grid>
+	            </GridContainer>
+	            
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<p>Thank you John Spartan for becoming a Wine Explorer on this date.</p>
+	            		<h2>Upcoming Events</h2>
+	            		<p>There are none at this time. But keep checking back.</p>
 	            	</Grid>
 	            </GridContainer>
 	          </div>
 	          
-	          <div className="content">
-	            <GridContainer>
-	            	<Grid desktop="100">
-		            	<section className="contactDetails">
-		            		<h2 className="label">Personal details</h2>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Name:</div>
-								<div className="leftCol detail">John Spartan</div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Telephone:</div>
-								<div className="leftCol detail">N/A</div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Your name on the membership:</div>
-								<div className="leftCol detail">John Spartan</div>
-		            		</div>
-		            	</section>
-		            	
-		            	<section className="contactDetails">
-		            		<h2 className="label">Account Details</h2>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Username:</div>
-								<div className="leftCol detail">john316</div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Password:</div>
-								<div className="leftCol detail">********* <a>Edit</a></div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Security Question:</div>
-								<div className="leftCol detail">What is your mothers maiden name? <a>Edit</a></div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">E-mail:</div>
-								<div className="leftCol detail"><a>Edit</a></div>
-		            		</div>
-		            	</section>
-		            	
-		            	<section className="contactDetails">
-		            		<h2 className="label">Address</h2>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Company Name::</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Address 1:</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Address 2:</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Address 3:</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">City</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">State</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">ZIP</div>
-								<div className="leftCol detail"> </div>
-		            		</div>
-		            	</section>
-		            	
-		            	<section className="contactDetails">
-		            		<h2 className="label">Billing Details</h2>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Renewal Date</div>
-								<div className="leftCol detail">July 3, 2019</div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Credit Card</div>
-								<div className="leftCol detail">********* <a>Update</a></div>
-		            		</div>
-		            		<div className="contactDetails">
-		            			<div className="leftCol label">Expiry Date:</div>
-								<div className="leftCol detail">01 / 20</div>
-		            		</div>
-		            		
-		            	</section>
-	            	</Grid>
-	            </GridContainer>
-	          </div>
+	          
 	          
 	          	       
 	       </div>

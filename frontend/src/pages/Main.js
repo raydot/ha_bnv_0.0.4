@@ -18,7 +18,6 @@ import MercuryWinery from "./MercuryWinery"
 import Join from "./Join"
 import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
-
 import Dashboard from "./Dashboard"
 import Login from "./Login"
 import Register from "./Register"

@@ -9,7 +9,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-<h2 className="center">Go out and explore the wine country. Discover new wines and wineries. </h2>
+<h2>Go out and explore the wine country. Discover new wines and wineries. </h2>
 		<footer className="site-footer">
 			<div className="site-footer--container">
 			
@@ -34,10 +34,10 @@ class Footer extends Component {
 						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Privacy Policy</span></a></li>
 						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Subscribe to our Newsletter</span></a></li>
 					</ul>
-					<h3>Copyright &copy;{(new Date().getFullYear())} Beyond Napa Valley</h3>
+					
 				</Grid>
 			</GridContainer>
-			
+				<p className="center">Copyright &copy;{(new Date().getFullYear())} Beyond Napa Valley | Please drink responsibly</p>
 			</div>
 		</footer>
       </div>

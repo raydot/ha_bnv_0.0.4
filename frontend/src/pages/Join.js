@@ -33,6 +33,7 @@ class Join extends Component {
           	</div>
           	<div className="hero-overlay"></div>
           	<img src={ foleyWinery } alt="Foley Winery" className="wineryImage" />
+          	
           </div>
           
           
