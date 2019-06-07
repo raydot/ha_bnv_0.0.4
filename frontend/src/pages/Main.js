@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
-
-
-import { Route, NavLink, HashRouter } from "react-router-dom"
+// Hashrouter removed in favor of browser router
 
 // THIS ALL NEEDS TO BE DECOUPLED!
 
@@ -37,17 +36,46 @@ import Tester from "./Tester"
  
 class Main extends Component {
   constructor(props) {
-    super(props);
-    this.hbClick = this.hbClick.bind(this);
+    super(props)
+    //this.hbClick = this.hbClick.bind(this);
+    this.state = { data: null }
   }
 
-  hbClick() {
-    console.warn('beep');
-  }
+  // THIS NEEDS TO BE SPLIT OFF, but for now...
+  // Also, use hooks!
+  // componentDidMount() {
+  //   // this.callBackendAPI('/calvin')
+  //   //   .then(res => this.setState({ data: res.express }))
+  //   //   .catch(err => console.log(err))
+  //   this.callBackendAPI('/users/calvin')
+  // }
+
+
+  // callBackendAPI = async (whichRoute) => {
+  //   // console.log(whichRoute)
+  //   // const response = await fetch(whichRoute)
+  //   // const body = await response.json()
+
+  //   // if (response.status !== 200) {
+  //   //   throw Error(body.message)
+  //   // }
+  //   // return body
+  //   fetch(whichRoute)
+  //     .then(res => this.setState({ data: res.json }))
+  //     //.then( data => this.setState({ data }))
+
+  //   //console.log({ this.state })
+  //   console.log(this.state.data)
+  // }
+
+  // hbClick() {
+  //   console.warn('beep');
+  // }
 
   render() {
+    const { data } = this.state
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div>
         <nav>
         
@@ -100,7 +128,7 @@ class Main extends Component {
             <Footer />
           </div>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

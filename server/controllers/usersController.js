@@ -2,7 +2,7 @@
 var crypto = require('crypto')
 var nodemailer = require('nodemailer')
 
-var mongoose = require('mongoose')
+//var mongoose = require('mongoose')
 
 // Validation
 // Might want to look at https://www.npmjs.com/package/validator instead
@@ -29,6 +29,7 @@ exports.signupPost = function (req, res, next) {
   // VALIDATE
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
+    console.log(errors.array())
     return res.status(422).json({ errors: errors.array() })
   }
 
@@ -222,5 +223,5 @@ exports.dataDump = function (req, res, next) {
 }
 
 exports.calvinPost = function (req, res, next) {
-  res.send('<h1>Calvin rules!</h1>')
+  res.send('{"calvin":"rules"}')
 }

@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var cors = require('cors')
 
 var usersController = require('../controllers/usersController.js')
 // const { check, validationResult } = require('express-validator/check')
@@ -18,6 +19,7 @@ router.post(
 // login
 router.post(
   '/login',
+  cors(),
   usersController.validate('loginPost'),
   usersController.loginPost
 )
