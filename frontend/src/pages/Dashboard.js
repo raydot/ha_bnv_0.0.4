@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
 import exploreWineCountry from "../img/explore-wine-country.jpg"
-import digitalCard from "../img/wine-explorer-digital-card.jpg"
+import digitalCard from "../img/wine-explorer-digital-card.png"
 
  
 class Dashboard extends Component {
@@ -29,7 +29,7 @@ class Dashboard extends Component {
           
 	          
 	          
-	          <div className="content greyBg">
+	          <div className="content greyBG">
 	          
 	          <GridContainer>
 	            	<Grid desktop="100">
@@ -57,6 +57,10 @@ class Dashboard extends Component {
 	            	</Grid>
 	            </GridContainer>
 	            
+	            </div>
+	            
+	            
+	            
 	            <GridContainer>
 	            	<Grid desktop="100">
 	            		<h2>Upcoming Events</h2>
@@ -68,7 +72,7 @@ class Dashboard extends Component {
 	          
 	          
 	          	       
-	       </div>
+	       
        </div> // Close mainContent
     );
   }
