@@ -1,14 +1,27 @@
 import React, { Component } from 'react'
+import axiosBridge from '../utils/axiosBridge'
 //import AuthService from './AuthService'
 
-import fetch from 'isomorphic-fetch'
+//import fetch from 'isomorphic-fetch'
+
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+
+import { FormErrors } from './FormErrors'
 
 class LoginComponent extends Component {
   constructor() {
     super()
     this.handleChange = this.handleChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
-    this.state={ username: '', password: '' }
+    this.state= { 
+      email: '', 
+      password: '',
+      formErrors: {email: '', password: ''} ,
+      emailValid: false,
+      passwordValid: false,
+      formValid: false,
+      serverErrors: ''
+    }
     //this.Auth = new AuthService() // this needs to GO
   }
 
@@ -17,14 +30,20 @@ class LoginComponent extends Component {
       <div className='center'>
         <div className='card'>
           <div className="signup-content centerForm">
+                      <div className="formErrors">
+                        <FormErrors formErrors={this.state.formErrors} />
+                      </div>
+                      <div className="serverErrors">
+                        <p>{  this.state.serverErrors }</p>
+                      </div>
                     	<form onSubmit={ this.handleFormSubmit } id="signup-form" className="signup-form centerForm">
-                    		<div className="form-group">
+                    		<div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
 					            <input
 					              className='form-input'
-					              placeholder='Username'
-					              name='username'
-					              type='text'
-                        value={this.state.username}
+					              placeholder='Username (e-mail address)'
+					              name='email'
+					              type='email' required
+                        value={this.state.email}
 					              onChange={this.handleChange}
 					            />
 					        </div>
@@ -34,12 +53,12 @@ class LoginComponent extends Component {
 					              placeholder='Password'
 					              name='password'
 					              type='password'
-                        value={this.password}
+                        value={this.state.password}
 					              onChange={this.handleChange}
 					            />
 					        </div>
 					        <div className="form-group">
-					            <button className="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+					            <button className="btn btn--radius-2 btn--blue" type="submit" disabled={!this.state.formValid}>Submit</button>
 					        </div>
           </form>
           </div>
@@ -48,38 +67,89 @@ class LoginComponent extends Component {
     )
   }
 
+  // handleChange(e, username, password){
   handleChange(e, username, password){
-    this.setState(
-      {
-        [e.target.name]: e.target.value
-      }
-    )
+    // this.setState(
+    //   {
+    //     [e.target.name]: e.target.value
+    //   }
+    // )
+    const name = e.target.name
+    const value = e.target.value
+    this.setState({ [name]: value }, () => { this.validateField(name, value) })
+    //console.log("formvalid?", this.state.formValid, "disabled:", this.disabled)
   } // handleChange()
 
   handleFormSubmit(e, username, password) {
+    //console.log("formstate:", this.state.formValid)
     e.preventDefault()
 
-    return fetch('http://localhost:3005/users/login/', {
-      method: 'POST',
-      body: JSON.stringify({
-        username,
-        password
-      }),
-      headers: {
-        'Content-Type': 'application/JSON'
-      }
-    }).then(response => {
-      if (response.status >= 200 && response.status < 300) {
-        console.log(response)
-        return response;
-        
-        //window.location.reload() {
+    if (this.state.formValid) {
 
-      } else {
-          console.log(response)
-          console.log('something is wrong with the login request')
-      } 
-    }).catch(err => err)
+    // axiosBridge({
+    //   method: 'post',
+    //   url: '/users/login',
+    //   data: {
+    //     'email': 'foo@bar.com',
+    //     'password': '12345'
+    //   }
+    // })
+
+    // THIRD TIME'S THE CHARM!  // This is without async/await (obvs)
+    axiosBridge.post('/users/login', {
+        email: 'joa@toto.com',
+        password: 'huhuhuhu'
+    })
+      .then(response => {
+        console.log(response)
+        //dispatch(response)
+      })
+      .catch(error => {
+        // console.log(error.data.error.message)
+        //console.log('error: ', error.response)
+        console.log('status:', error.response.status)
+        //console.log('error!')
+        if (error.response.status === 401) {
+          //his.errorClass('This does not appear to be a username or password that\'s in our system')
+          this.setState({
+            serverErrors: 'This does not appear to be a valid username or password'
+          })
+          console.log(this.state.serverErrors)
+        } else {
+          console.log('some other server error')
+        }
+      })
+
+    } else {
+      console.log('form invalid!')
+    }
+    // return fetch('http://localhost:3005/users/login/', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     'username': 'foo',
+    //     'password': 'bar'
+    //   }),
+    //   // body:{
+    //   //   'username': 'foo@bar.com',
+    //   //   'password': '12334'
+    //   // },
+    //   headers: {
+    //     'Content-Type': 'application/JSON'
+    //   }
+    // }).then(response => {
+    //   if (response.status >= 200 && response.status < 300) {
+    //     console.log(response)
+    //     return response;
+        
+    //     //window.location.reload() {
+
+    //   } else {
+    //       console.log(response)
+    //       console.log('something is wrong with the login request')
+    //   } 
+    // }).catch(err => err)
+
+
     // this.Auth.login(this.state.username, this.state.password)
     //   .then (res => {
     //     this.props.history.replace('/')
@@ -90,6 +160,45 @@ class LoginComponent extends Component {
     //   })
 
   } // handleFormSubmit
+
+  // Handle validation and errors:
+  validateField(fieldName, value) {
+    //console.log('fieldname:', fieldName, 'value:', value)
+    let fieldValidationErrors = this.state.formErrors
+    //console.log('FVE', fieldValidationErrors)
+    let emailValid = this.state.emailValid
+    let passwordValid = this.state.passwordValid
+
+    switch(fieldName) {
+      case 'email':
+        //FIX THIS!
+        //emailValid = value.match(\u005c[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)
+        emailValid = value.length >= 7
+        fieldValidationErrors.email = emailValid ? '' : ' is invalid'
+        break
+      case 'password':
+        passwordValid = value.length >= 8
+        fieldValidationErrors.password = passwordValid ? '' : ' is too short'
+        break
+      default:
+        console.log('VALIDATEFIELD FAIL!', fieldName)
+    }
+    this.setState({
+      formErrors: fieldValidationErrors,
+      emailValid: emailValid,
+      passwordValid: passwordValid
+    }, this.validateForm)
+  }
+
+  validateForm() {
+    this.setState({
+      formValid: this.state.emailValid && this.state.passwordValid
+    })
+  }
+
+  errorClass(error) {
+    return (error.length === 0 ? '' : 'has-error')
+  }
 
   // Add redirection if we are already logged in
   // We don't want to stay on the login page if we are logged in, so add this to prevent that.

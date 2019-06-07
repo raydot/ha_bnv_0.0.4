@@ -15,7 +15,7 @@ import Visits from "./Visits"
 import Footer from "./Footer"
 import MercuryWinery from "./MercuryWinery"
 import Join from "./Join"
-import JoinV2 from './JoinV2'
+// import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
 import Dashboard from "./Dashboard"
 import Login from "./Login"
@@ -121,7 +121,7 @@ class Main extends Component {
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/TOS" component={TOS}/>
-            <Route path="/JoinV2" component={JoinV2}/>
+            {/*<Route path="/JoinV2" component={JoinV2}/>*/}
             <Route path="/Dashboard" component={Dashboard}/>
           </div>
           <div className="footer">

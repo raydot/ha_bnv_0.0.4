@@ -23,9 +23,9 @@
     "unsemantic": "^1.2.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "HTTPS=true&&react-scripts start",
+    "build": "HTTPS=true&&react-scripts build",
+    "test": "HTTPS=true&&eact-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +42,6 @@
     "@babel/preset-env": "^7.4.4",
     "babel-loader": "^8.0.4"
   },
-  "proxy": "http://localhost:3005"
+  "proxy": "http://localhost:3005",
+  "protocol": "http"
 }

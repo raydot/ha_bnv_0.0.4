@@ -5,10 +5,13 @@ import { Route, NavLink } from 'react-router-dom'
 
 //import MustardVines from "../img/mustard-vines.jpg"
  
+// This needs to be decoupled into a component...
+
 class Register extends Component {
   	constructor(props) {
 		super(props)
 		//console.log('v?', this.props.location.state.viz)
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 	}
 
 	render() {
@@ -16,19 +19,19 @@ class Register extends Component {
       <div>
 		<div className="noheroImageHeader">
 			<div className="content">
-		            <GridContainer>
-		            	<Grid desktop="100">
-							<h1>Registration</h1>
-			  			</Grid>
-			  		</GridContainer>
+	      <GridContainer>
+	      	<Grid desktop="100">
+						<h1>Registration</h1>
+					</Grid>
+				</GridContainer>
 			  		
 			  			{/*<ul className="subNav">
 			  				<li><NavLink to="#">MY MEMBERSHIP</NavLink></li>
 			  				<li><NavLink to="#">MY VISITS</NavLink></li>
 			  				<li><NavLink to="#">MY DETAILS</NavLink></li>
 			  			</ul>*/}
-			  			<div className="clear"></div>
-			</div>
+				<div className="clear"></div>
+		</div>
 				  	
 		</div>
           
@@ -41,7 +44,7 @@ class Register extends Component {
 	            	<Grid desktop="100">
 	            	
 	            	<div className="signup-content">
-                    	<form method="POST" id="signup-form" className="signup-form">
+                    	<form onSubmit="this.handleFormSubmit" id="signup-form" className="signup-form">
                         	<h2 className="form-title">Create account</h2>
 							<div className="form-group">
 								<input type="text" className="form-input" name="firstName" placeholder="First Name"/>
