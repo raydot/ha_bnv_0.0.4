@@ -7,8 +7,11 @@ import LoginMainImage from "../img/login-main-image.jpg"
 // Login
 import LoginComponent from '../components/LoginComponent'
 
+
+
  
-class MercuryWinery extends Component {
+class Login extends Component {
+
   render() {
     return (
       <div>
@@ -26,7 +29,7 @@ class MercuryWinery extends Component {
 	            <GridContainer>
 	            	<Grid desktop="100">
 	            		<LoginComponent />
-	            		<h3 className="center">Not a member? <NavLink>Join now!</NavLink></h3>
+	            		<h3 className="center">Not a member? <NavLink to='/join'>Join now!</NavLink></h3>
 	            	</Grid>
 	            </GridContainer>
 	          </div>
@@ -38,4 +41,4 @@ class MercuryWinery extends Component {
   }
 }
  
-export default MercuryWinery
+export default Login

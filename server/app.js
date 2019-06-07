@@ -3,6 +3,7 @@ var express = require('express')
 var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
+var cors = require('cors')
 
 // To read .env...
 const dotenv = require('dotenv')
@@ -13,7 +14,13 @@ var mongoose = require('mongoose')
 var mongoDB = process.env.DB_CREDS
 mongoose.connect(mongoDB, { useNewUrlParser: true, useCreateIndex: true })
 var db = mongoose.connection
-db.on('error', console.error.bind(console, 'MongoDB connection error'))
+db.on('error', function(err) {
+  logger.error('connection error:', err)
+})
+
+db.on('connect', function() {
+  logger.error('Mongo up and running!') // this doesn't work.  REVISIT.
+})
 
 // import the models
 var token = require('./models/token')
@@ -23,6 +30,7 @@ var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/userRoutes')
 
 var app = express()
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -32,6 +40,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+
 //app.use(express.static(path.join(__dirname, 'public')))
 
 // for validation
@@ -56,6 +65,11 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
+
+// Mongo error handler
+// function handleMongoErr() {
+//   console.error("Error!"")
+// }
 
 //console.log('Running on port: ' + process.env.PORT + '. Lets light this candle!')
 

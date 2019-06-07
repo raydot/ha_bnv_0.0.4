@@ -1,8 +1,12 @@
+/* ****************************
+    THIS IS NOT BEING USED!!!
+*******************************/
 var createError = require('http-errors')
 var express = require('express')
 var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
+var cors = require('cors')
 
 // To read .env...
 const dotenv = require('dotenv')
@@ -24,6 +28,8 @@ var usersRouter = require('./routes/userRoutes')
 
 var app = express()
 
+app.options('*', cors())
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
@@ -36,6 +42,9 @@ app.use(cookieParser())
 
 // for validation
 app.use(express.json())
+
+// for cross-domain
+
 
 // Routing
 app.use('/', indexRouter)
@@ -57,6 +66,6 @@ app.use(function (err, req, res, next) {
   res.render('error')
 })
 
-//console.log('Running on port: ' + process.env.PORT + '. Lets light this candle!')
+console.log('Running on port: ' + process.env.PORT + '. Lets light this candle!')
 
 module.exports = app
