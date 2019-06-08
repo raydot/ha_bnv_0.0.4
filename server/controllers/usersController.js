@@ -2,8 +2,6 @@
 var crypto = require('crypto')
 var nodemailer = require('nodemailer')
 
-//var mongoose = require('mongoose')
-
 // Validation
 // Might want to look at https://www.npmjs.com/package/validator instead
 const { body, validationResult } = require('express-validator/check')
@@ -42,7 +40,7 @@ exports.signupPost = function (req, res, next) {
     if (user) { return res.status(400).send({ msg: 'The email address you have entered is already associated with an account' }) }
 
     // Create and save the user
-    user = new User({ name: req.body.name, email: req.body.email, password: req.body.password })
+    user = new User({ f_name: req.body.f_name, l_name: req.body.l_name, email: req.body.email, password: req.body.password })
     user.save(function (err) {
       if (err) { return res.status(500).send({ msg: err.message }) }
 
@@ -55,8 +53,8 @@ exports.signupPost = function (req, res, next) {
 
         // Send the email
         // removed the service: 'Sendgrid' from createTransport since we're not using sendgrid.
-        var transporter = nodemailer.createTransport({ host: 'smtp.mailtrap.io', auth: { user: process.env.SENDGRID_USERNAME, pass: process.env.SENDGRID_PASSWORD } })
-        var mailOptions = { from: 'no-reply@mytestapp.com', to: user.email, subject: 'Account Verification Token', text: 'Greetings,\n\n' + 'Verify by clicking \nhttp:\/\/' + req.headers.host + '\/users\/confirmation\/' + token.token + '\n' }
+        var transporter = nodemailer.createTransport({ host: 'smtp.mailtrap.io', auth: { user: process.env.TESTMAIL_USERNAME, pass: process.env.TESTMAIL_PASSWORD } })
+        var mailOptions = { from: 'no-reply@beyondnapavalley.com', to: user.email, subject: 'Account Verification Token', text: 'Greetings,\n\n' + 'Welcome to Beyond Napa Valley!  \n\n Verify your e-mail by clicking \nhttp:\/\/' + req.headers.host + '\/users\/confirmation?token=' + token.token + '&email=' + user.email + '\n' }
         transporter.sendMail(mailOptions, function (err) {
           if (err) { return res.status(500).send({ msg: err.message }) }
           res.status(200).send('Email on the way!  Sent to: ' + user.email + '.')
@@ -96,7 +94,7 @@ exports.loginPost = function (req, res, next) {
 // Based on the TTL in the model verification tokens will automatically
 // delete themselves after a set period of time.
 
-/*  For an extra layer of security, I prefer to have the confirmation link take the user to a token confirmation form. The user would be asked to provide their email. The confirmation token would be embedded in this form as a hidden input. The submission of this form would post to confirmationPost below. For brevity’s sake, this confirmation form is not included in this tutorial.
+/*  For an extra layer of security, I prefer to have the confirmation link take the user to a token confirmation form. The user would be asked to provide their email. The confirmation token would be embedded in this form as a hidden input. The submission of this form would post to confirmationPost below
 
 If you prefer, you can have the user automatically confirm the token by clicking the link, but the action below would need to become a Get, instead of a Post.
 */
@@ -104,6 +102,7 @@ If you prefer, you can have the user automatically confirm the token by clicking
 exports.confirmationPost = function (req, res, next) {
   // VALIDATE
   const errors = validationResult(req)
+  //const errors=[{}]
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() })
   }
@@ -113,11 +112,15 @@ exports.confirmationPost = function (req, res, next) {
   // GOOD TO GO!
 
   // Find a matching token
-  Token.findOne({ token: req.body.token }, function (err, token) {
-    if (!token) { return res.status(400).send({ type: 'not-verified', msg: 'We were unable to find a valid token.  Your token may have expired.  Please request another one.' }) }
+  //console.log('token', req.token)
+  // POST = req.body.x
+  // GET = req.query.x
+
+  Token.findOne({ token: req.query.token }, function (err, token) {
+    if (!token) { return res.status(400).send({ type: 'not-verified', msg: 'We were unable to find a valid token.  Your token may have expired.  Please request another one.' + req.body.token }) }
 
     // If we do find a token, find a matching user!
-    User.findOne({ _id: token._userId, email: req.body.email }, function (err, user) {
+    User.findOne({ _id: token._userId, email: req.query.email }, function (err, user) {
       if (!user) { return res.status(400).send({ msg: 'We are unable to find a user for this token' }) }
       if (user.isVerified) { return res.status(400).send({ type: 'already-verified', msg: 'This user has already been verified' }) }
 
@@ -157,7 +160,7 @@ exports.resendTokenPost = function (req, res, next) {
       // Send the email!
 
       var transporter = nodemailer.createTransport({ host: 'smtp.mailtrap.io', auth: { user: process.env.SENDGRID_USERNAME, pass: process.env.SENDGRID_PASSWORD } })
-      var mailOptions = { from: 'no-reply@mytestapp.com', to: user.email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/users\/confirmation\/' + token.token + '.\n' }
+      var mailOptions = { from: 'no-reply@mytestapp.com', to: user.email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/users\/confirmation?token=' + token.token + '&email=' + user.email + '.\n' }
 
       transporter.sendMail(mailOptions, function (err) {
         if (err) { return res.status(500).send({ msg: err.message }) }
@@ -173,7 +176,9 @@ exports.validate = (method) => {
   switch (method) {
     case 'signupPost' : {
       return [
-        body('name').exists().withMessage('Name missing'),
+        //body('name').exists().withMessage('Name missing'),
+        body('f_name').exists().withMessage('First name missing'),
+        body('l_name').exists().withMessage('Last name missing'),
         body('email').exists().withMessage('Email missing'),
         body('email').isEmail().withMessage('Email invalid'),
         body('password').isLength({ min: 5, max: 256 }).withMessage('Email wrong number of characters'),
@@ -193,10 +198,10 @@ exports.validate = (method) => {
     }
     case 'confirmationPost' : {
       return [
-        body('email').exists().withMessage('Email missing'),
-        body('email').isEmail().withMessage('Email invalid'),
-        body('token').exists().withMessage('Token missing'),
-        sanitizeBody('email').normalizeEmail({ gmail_remove_dots: false })
+        // body('email').exists().withMessage('Email missing'),
+        // body('email').isEmail().withMessage('Email invalid'),
+        // body('token').exists().withMessage('Token missing'),
+        // sanitizeBody('email').normalizeEmail({ gmail_remove_dots: false })
       ]
       break
     }

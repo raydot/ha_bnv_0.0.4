@@ -13,7 +13,8 @@ var schemaOptions = {}
 // Notice the default value for isVerified is false.
 
 var userSchema = Schema({
-  name: String,
+  f_name: String,
+  l_name: String,
   email: { type: String, unique: true },
   roles: [{ type: String }],
   isVerified: { type: Boolean, default: false },

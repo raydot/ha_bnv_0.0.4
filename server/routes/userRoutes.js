@@ -19,15 +19,14 @@ router.post(
 // login
 router.post(
   '/login',
-  cors(),
   usersController.validate('loginPost'),
   usersController.loginPost
 )
 
 // confirm email address
-router.post(
+router.get(
   '/confirmation',
-  usersController.validate('confirmationPost'),
+  //usersController.validate('confirmationPost'),
   usersController.confirmationPost
 )
 

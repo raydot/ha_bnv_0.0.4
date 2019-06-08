@@ -4,6 +4,8 @@ import exploreWineCountry from "../img/explore-wine-country.jpg"
 
 import { Route, NavLink } from 'react-router-dom'
 
+import RegistrationDetails from '../components/RegistrationDetails.js'
+
 //import MustardVines from "../img/mustard-vines.jpg"
  
 // This needs to be decoupled into a component...
@@ -36,6 +38,9 @@ class Register extends Component {
 	            <GridContainer>
 	            	<Grid desktop="100">
 	            	
+	            	{ /* COMPONENTS GO HERE */ }
+	            	<RegistrationDetails />
+
 
 	            	</Grid>
 	            </GridContainer>
