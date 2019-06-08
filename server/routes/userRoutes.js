@@ -26,7 +26,7 @@ router.post(
 // confirm email address
 router.get(
   '/confirmation',
-  //usersController.validate('confirmationPost'),
+  // usersController.validate('confirmationPost'),
   usersController.confirmationPost
 )
 
