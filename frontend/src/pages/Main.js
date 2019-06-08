@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
-import { Route, NavLink, BrowserRouter } from 'react-router-dom'
+import { Route, NavLink, BrowserRouter, Switch } from 'react-router-dom'
 
-// Hashrouter removed in favor of browser router
+// Token Management
+import jwt_decode from 'jwt_decode'
+import setAuthToken from './utils/setAuthToken'
+import { setCurrentUser, logoutUser } from './actions/authActions'
+// COOKIES FOR TOKEN MANAGEMENT
+import { CookiesProvider } from 'react-cookie'
 
 // THIS ALL NEEDS TO BE DECOUPLED!
 
 // REDUX FOR STATE MANAGEMENT!
 import { Provider } from 'react-redux'
+import store from './store'
 
-// COOKIES
-import { CookiesProvider } from 'react-cookie'
+// PRIVATE ROUTING
+import PrivateRoute from './components/private-route/PrivateRoute'
+
+import myAxios from 'axios'
+
+import * as express from 'express'
+import * as cookieParser from 'cookie-parser'
+import { authenticate } from './middleware/authenticate'
+
+
 
 
 import Home from "./Home"
@@ -34,13 +48,59 @@ import TOS from "./TOS"
 //import logo from "../img/beyond-napa-logo.png"
 //import { faBars } from '@fontawesome/free-solid-svg-icons'
 
-import Tester from "./Tester"
+//import Tester from "./Tester"
+
+// This refreshes a dead token.
+// myAxios.interceptors.response.use (
+//   function (response){
+//     // we're good!
+//     return response
+//   },
+//     function(error) {
+//       const errorResponse = error.response
+//       if (isTokenExpiredError(errorResponse)) {
+//         return resetTokenAndReattemptRequest(error)
+//       }
+//       // If it's something more than that, throw it back to axios
+//       return Promise.reject(error)
+//     }
+// )
+
+// function isTokenExpiredError(errorResponse) {
+//   // logic
+// }
+
 
 //font awesome "hamburger"
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //const elementx = <FontAwesomeIcon icon={faBars} />
 
+// // CHECK TOKEN STATE TO KEEP USER LOGGED IN
+// if (the DAMN TOKEN) {
+//   // set auth token header auth
+//   const token = // NOT LOCAL STORAGE
+//   setAuthToken(token)
+
+//   // DECODE TOKEN AND GET USER INFO AND EXPIRY
+//   const decoded = jwt_decode(token)
+//   //Set user and isAuthenticated
+//   store.dispatch(setCurrentUser(decoded))
+
+//   // Check expired token
+//   const currentTime = Date.now() / 1000
+//   if (decoded.exp) < currentTime) {
+//     // Party over, oops, out of time!
+//     store.dispatch(logoutUser())
+//   }
+
+//   // Redirect to login
+//   window.location.href = './login'
+// }
  
+const app = express()
+app.use(cookieParser())
+app.use(authenticate)
+
 class Main extends Component {
   constructor(props) {
     super(props)
@@ -82,7 +142,7 @@ class Main extends Component {
   render() {
     const { data } = this.state
     return (
-      <CookiesProvider>
+      <CookiesProvider store={store}>
       <BrowserRouter>
         <div>
         <nav>

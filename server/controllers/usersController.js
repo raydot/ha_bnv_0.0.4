@@ -14,9 +14,9 @@ const jwt = require('jsonwebtoken')
 const keys = require('../config/keys')
 
 // Passport middleware
-const passport = require('passport')
-passport.initialize()
-require('../config/passport')(passport)
+// const passport = require('passport')
+// passport.initialize()
+// require('../config/passport')(passport)
 
 // Model = how the routes display
 var User = require('../models/user')
