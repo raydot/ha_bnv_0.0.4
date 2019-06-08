@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "BNV backend server",
   "scripts": {
-    "start": "HTTPS=true&&node ./bin/www",
-    "devstart": "HTTPS=true&&nodemon ./bin/www",
-    "debug": "HTTPS=true&&DEBUG=ha_bnv_0.0.4:* && nodemon start"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "debug": "DEBUG=ha_bnv_0.0.4:* && nodemon start"
   },
   "repository": {
     "type": "git",
