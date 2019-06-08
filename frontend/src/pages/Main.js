@@ -5,6 +5,13 @@ import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
 // THIS ALL NEEDS TO BE DECOUPLED!
 
+// REDUX FOR STATE MANAGEMENT!
+import { Provider } from 'react-redux'
+
+// COOKIES
+import { CookiesProvider } from 'react-cookie'
+
+
 import Home from "./Home"
 import checkIn from "./check-in"
 import Explore from "./Explore"
@@ -75,6 +82,7 @@ class Main extends Component {
   render() {
     const { data } = this.state
     return (
+      <CookiesProvider>
       <BrowserRouter>
         <div>
         <nav>
@@ -129,6 +137,7 @@ class Main extends Component {
           </div>
         </div>
       </BrowserRouter>
+      </CookiesProvider>
     );
   }
 }

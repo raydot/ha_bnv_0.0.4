@@ -124,6 +124,9 @@ exports.loginPost = function (req, res, next) {
           })
         }
       )
+
+      // place in a cookie
+      res.cookie('jwt', jwt, { httpOnly: true, secure: true })
     })// user.comparePassword
   }) // User.findOne
 } // exports.login
