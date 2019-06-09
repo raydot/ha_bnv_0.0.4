@@ -1,18 +1,16 @@
 var mongoose = require('mongoose')
 
-var Schema = mongoose.Schema
-
 var bcrypt = require('bcrypt')
 
 var SALT_WORK_FACTOR = 10
 
 // For later use, if needed
-var schemaOptions = {}
+var schemaOptions = { timestamps: true }
 
 // We need a way to distinguish which users have been verified.
 // Notice the default value for isVerified is false.
 
-var userSchema = Schema({
+var userSchema = new mongoose.Schema({
   f_name: String,
   l_name: String,
   email: { type: String, unique: true },
