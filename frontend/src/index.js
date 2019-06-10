@@ -5,6 +5,5 @@ import "./css/index.css"
 import "./css/unsemantic-grid-responsive-tablet-no-ie7.css"
  
 ReactDOM.render(
-  <Main/>, 
-document.getElementById("root")
+  <Main/>, document.getElementById("root")
 );

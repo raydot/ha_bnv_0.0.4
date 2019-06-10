@@ -7,10 +7,29 @@ import LoginMainImage from "../img/login-main-image.jpg"
 // Login
 import LoginComponent from '../components/LoginComponent'
 
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
 
 
  
 class Login extends Component {
+
+  constructor() {
+    super()
+  }
+
+  componentWillReceiveProps(nextProps) {
+      if (nextProps.auth.isAuthenticated) {
+        this.props.history.push('/dashboard') // push user to dashboard
+      }
+
+      if (nextProps.errors) {
+        this.setState({
+          errors: nextProps.errors
+        })
+      }
+  }
 
   render() {
     return (
@@ -40,5 +59,13 @@ class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+})
  
-export default Login
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login)

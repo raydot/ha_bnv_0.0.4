@@ -7,6 +7,17 @@ var nodemailer = require('nodemailer')
 const { body, validationResult } = require('express-validator/check')
 const { sanitizeBody } = require('express-validator/filter')
 
+// These are used by the 'GenerateToken()' function
+
+// Authentication management
+const jwt = require('jsonwebtoken')
+const keys = require('../config/keys')
+
+// Passport middleware
+// const passport = require('passport')
+// passport.initialize()
+// require('../config/passport')(passport)
+
 // Model = how the routes display
 var User = require('../models/user')
 var Token = require('../models/token')
@@ -66,6 +77,10 @@ exports.signupPost = function (req, res, next) {
 
 // This uses token based authentication.  It could be easy to change the code to
 // use passport instead
+
+// @route POST api/users/login
+// @desc Login user (or not) and return JWT token
+// @access Public
 exports.loginPost = function (req, res, next) {
   // VALIDATE
   const errors = validationResult(req)
@@ -85,7 +100,33 @@ exports.loginPost = function (req, res, next) {
       // Make sure the user has been verified
       if (!user.isVerified) { return res.status(401).send({ type: 'not-verified', msg: 'Your account has not been verified!' }) }
       // Login successful!  Write token, and send back user
-      res.send({ token: generateToken(user), user: user.toJSON() }) // generateToken is not defined!
+      // res.send({ token: generateToken(user.toJSON()), user: user.toJSON() }) // generateToken is not defined!
+      // res.json(generateToken(user.toJSON))
+      // res.send(generateToken(user))
+      let fullname = user.firstname + ' ' + user.lastname
+
+      // Create JWT payload
+      const payload = {
+        id: user.email,
+        name: fullname
+      }
+      // sign token
+      jwt.sign(
+        payload,
+        keys.secretOrKey,
+        {
+          expiresIn: 86400 // 1 day in seconds
+        },
+        (err, token) => {
+          res.json({
+            success: true,
+            token: 'Bearer ' + token
+          })
+        }
+      )
+
+      // place in a cookie
+      res.cookie('jwt', jwt, { httpOnly: true, secure: true })
     })// user.comparePassword
   }) // User.findOne
 } // exports.login
@@ -102,7 +143,7 @@ If you prefer, you can have the user automatically confirm the token by clicking
 exports.confirmationPost = function (req, res, next) {
   // VALIDATE
   const errors = validationResult(req)
-  //const errors=[{}]
+  // const errors=[{}]
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() })
   }
@@ -112,7 +153,7 @@ exports.confirmationPost = function (req, res, next) {
   // GOOD TO GO!
 
   // Find a matching token
-  //console.log('token', req.token)
+  // console.log('token', req.token)
   // POST = req.body.x
   // GET = req.query.x
 
@@ -176,7 +217,7 @@ exports.validate = (method) => {
   switch (method) {
     case 'signupPost' : {
       return [
-        //body('name').exists().withMessage('Name missing'),
+        // body('name').exists().withMessage('Name missing'),
         body('f_name').exists().withMessage('First name missing'),
         body('l_name').exists().withMessage('Last name missing'),
         body('email').exists().withMessage('Email missing'),
@@ -219,8 +260,8 @@ exports.validate = (method) => {
   } // switch
 } // exports.validate
 
-exports.generateToken = function (user) {
-  console.log('token generated for:', user)
+const generateToken = (user) => {
+  // console.log('token generated for:', user)
 }
 
 exports.dataDump = function (req, res, next) {
