@@ -1094,18 +1094,26 @@ input[type=checkbox]:not(old):checked + label > span:before {
 /* FOOTER */
 
 .footer {
-	
-	background-color: #262626;
+/* 	background-image: url('../img/footer-bg.png'); */
+/* 	background-color: #262626; */
+	background-color: #e8e8e8;
+	border-top: 1px solid #cfcfcf;
 	padding: 25px 0 0 0;
 	min-height: 300px;
 	overflow: hidden;
 	margin: 0;
-	color: #b7b7b7;
+	color: #4a3b3b;
+/* 	color: #b7b7b7; */
+/* 	box-shadow: 0px 30px 20px rgba(0,0,0,.35) inset; */
+}
+
+.footer p {
+	font-weight: 200;
 }
 
 .footer a {
 	border-bottom: 1px #e1e1e1 dashed;
-	color: #b7b7b7;
+/* 	color: #b7b7b7; */
 }
 
 .footer a:hover {
@@ -1115,6 +1123,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 
 .footer ul {
 	margin-bottom: 10px;
+	font-weight: 200;
 }
 
 .footer ul li {
@@ -1125,11 +1134,17 @@ input[type=checkbox]:not(old):checked + label > span:before {
 	font-size: 1.1em;
 	margin-bottom: 10px;
 	font-weight: 200;
+	text-align: center;
+    border-bottom: 1px solid rgba(169, 161, 153, 1);
 }
 
 .footer h3 {
 	font-size: 1.1em;
 	margin-bottom: 10px;
+	font-weight: 200;
+	text-align: center;
+	padding-bottom: 5px;
+    border-bottom: 1px solid rgba(169, 161, 153, 1);
 }
 
 
