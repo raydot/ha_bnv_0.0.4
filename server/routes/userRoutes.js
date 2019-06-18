@@ -37,6 +37,14 @@ router.post(
   usersController.resendTokenPost
 )
 
+router.post(
+  '/callback'
+)
+
+router.post(
+  '/authentication'
+)
+
 router.get('/calvin', usersController.calvinPost)
 
 module.exports = router

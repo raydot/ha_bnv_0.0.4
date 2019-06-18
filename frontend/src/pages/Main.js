@@ -2,27 +2,28 @@ import React, { Component } from 'react'
 import { Route, NavLink, BrowserRouter, Switch } from 'react-router-dom'
 
 // Token Management
-import jwt_decode from 'jwt_decode'
-import setAuthToken from './utils/setAuthToken'
-import { setCurrentUser, logoutUser } from './actions/authActions'
+// import jwt_decode from 'jwt_decode'
+// import setAuthToken from './utils/setAuthToken'
+// import { setCurrentUser, logoutUser } from './actions/authActions'
 // COOKIES FOR TOKEN MANAGEMENT
-import { CookiesProvider } from 'react-cookie'
+// import { CookiesProvider } from 'react-cookie'
 
 // THIS ALL NEEDS TO BE DECOUPLED!
 
 // REDUX FOR STATE MANAGEMENT!
-import { Provider } from 'react-redux'
-import store from './store'
+// import { Provider } from 'react-redux'
+// import store from './store'
 
 // PRIVATE ROUTING
-import PrivateRoute from './components/private-route/PrivateRoute'
+// import PrivateRoute from './components/private-route/PrivateRoute'
 
-import myAxios from 'axios'
+// import myAxios from 'axios'
 
-import * as express from 'express'
-import * as cookieParser from 'cookie-parser'
-import { authenticate } from './middleware/authenticate'
+//import * as express from 'express'
+// import * as cookieParser from 'cookie-parser'
+// import { authenticate } from './middleware/authenticate'
 
+import auth0 from 'auth0-js'
 
 
 
@@ -39,8 +40,8 @@ import Join from "./Join"
 // import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
 import Dashboard from "./Dashboard"
-import Login from "./Login"
-import Register from "./Register"
+// import Login from "./Login"
+//import Register from "./Register"
 import error404 from "./404"
 import TOS from "./TOS"
 //import JoinV2 from "./JoinV2"
@@ -98,11 +99,17 @@ import TOS from "./TOS"
 // }
 
 
-
  
-const app = express()
-app.use(cookieParser())
-app.use(authenticate)
+// const app = express()
+// app.use(cookieParser())
+// app.use(authenticate)
+
+// AUTH0
+import Auth from '../Auth/Auth.js'
+require('dotenv').config()
+
+const auth = new Auth()
+auth.login()
 
 class Main extends Component {
   constructor(props) {
@@ -145,10 +152,7 @@ class Main extends Component {
   // }
 
   render() {
-    const { data } = this.state
     return (
-      <CookiesProvider store={store}>
-      <BrowserRouter>
         <div>
         <nav>
         
@@ -190,19 +194,13 @@ class Main extends Component {
             <Route path="/mercury-winery" component={MercuryWinery}/>
             <Route path="/join" component={Join}/>
             <Route path="/MyVisits" component={MyVisits}/>
-            {/*<Route path="/tester" component={Tester}/>*/}
-            <Route path="/login" component={Login}/>
-            <Route path="/register" component={Register}/>
             <Route path="/TOS" component={TOS}/>
-            {/*<Route path="/JoinV2" component={JoinV2}/>*/}
             <Route path="/Dashboard" component={Dashboard}/>
           </div>
           <div className="footer">
             <Footer />
           </div>
         </div>
-      </BrowserRouter>
-      </CookiesProvider>
     );
   }
 }
