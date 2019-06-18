@@ -10,7 +10,7 @@ var cors = require('cors')
 
 // To read .env...
 const dotenv = require('dotenv')
-dotenv.config({ path: '../.env'})
+dotenv.config({ path: '../.env' })
 
 // Mongoose
 var mongoose = require('mongoose')
@@ -38,13 +38,21 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-//app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, 'public')))
 
 // for validation
 app.use(express.json())
 
 // for cross-domain
 
+// Initialize Auth0Lock
+// const x =
+// const y = process.env.DOM_STUFF
+
+var lock = new Auth0Lock(
+  process.env.SEC_STUFF,
+  process.env.DOM_STUFF
+)
 
 // Routing
 app.use('/', indexRouter)

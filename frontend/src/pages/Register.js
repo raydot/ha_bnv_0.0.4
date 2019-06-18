@@ -31,6 +31,10 @@ class Register extends Component {
 		super(props)
 		//console.log('v?', this.props.location.state.viz)
 		//this.handleFormSubmit = this.handleFormSubmit.bind(this)
+		// let this.props.newUser = null
+		// let this.props.registerUser = null
+		// let this.props.withRouter = null
+		this.setState({ newUser: null, registerUser: null, withRouter: null})
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -55,7 +59,7 @@ class Register extends Component {
 		// 	password2: this.state.password2
 		// }
 
-		this.props.registerUser(newUser, this.props.history)
+		this.state.registerUser(newUser, this.props.history)
 	}
 
 	render() {

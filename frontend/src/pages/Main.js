@@ -96,6 +96,9 @@ import TOS from "./TOS"
 //   // Redirect to login
 //   window.location.href = './login'
 // }
+
+
+
  
 const app = express()
 app.use(cookieParser())
@@ -107,6 +110,8 @@ class Main extends Component {
     //this.hbClick = this.hbClick.bind(this);
     this.state = { data: null }
   }
+
+
 
   // THIS NEEDS TO BE SPLIT OFF, but for now...
   // Also, use hooks!
@@ -185,7 +190,7 @@ class Main extends Component {
             <Route path="/mercury-winery" component={MercuryWinery}/>
             <Route path="/join" component={Join}/>
             <Route path="/MyVisits" component={MyVisits}/>
-            <Route path="/tester" component={Tester}/>
+            {/*<Route path="/tester" component={Tester}/>*/}
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/TOS" component={TOS}/>
