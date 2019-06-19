@@ -154,35 +154,39 @@ class Main extends Component {
   render() {
     return (
         <div>
-        <nav>
-        
-        <div className="clear"></div>
-        <div className="columns">
-        	<div className="leftCol">
-        		<NavLink to="/" className="logo"><span>Beyond Napa Valley</span></NavLink>
-        	</div>
-        	
-        	<div className="rightCol">
-        	<ul className="header">
-            
-	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
-	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
-	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
-	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
-	            <li><NavLink className="topMenuClass join" to="/login">LOG IN</NavLink></li>
-              { /* THIS WILL BECOME THE HAMBURGER MENU
-              <li>
-                <button className="hbIcon" onclick="this.hbClick">
-                  <i className="fa fa-bars"></i>
-                </button>
-              </li> */ }
-
-			   </ul>
-        </div>
-        </div>
+        <BrowserRouter>
+          <nav>
           
           <div className="clear"></div>
-          </nav>
+          <div className="columns">
+          	<div className="leftCol">
+          		<NavLink to="/" className="logo"><span>Beyond Napa Valley</span></NavLink>
+          	</div>
+          	
+          	<div className="rightCol">
+              
+              	<ul className="header">
+                  
+      	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
+      	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
+      	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
+      	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
+      	            <li><NavLink className="topMenuClass join" to="/login">LOG IN</NavLink></li>
+                    { /* THIS WILL BECOME THE HAMBURGER MENU
+                    <li>
+                      <button className="hbIcon" onclick="this.hbClick">
+                        <i className="fa fa-bars"></i>
+                      </button>
+                    </li> */ }
+
+          			 </ul>
+               
+            </div>
+          </div>
+            
+            <div className="clear"></div>
+            </nav>
+
           <div className="mainContent">
             <Route exact path="/" component={Home}/>
             <Route exact path="/check-in" component={checkIn}/>
@@ -200,6 +204,7 @@ class Main extends Component {
           <div className="footer">
             <Footer />
           </div>
+          </BrowserRouter>
         </div>
     );
   }
