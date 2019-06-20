@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Route, NavLink, BrowserRouter, Switch } from 'react-router-dom'
 
+//import { Navbar, Button } from 'react-bootstrap'
+//import { Navbar, Button } from 'react-bootstrap'
 // Token Management
 // import jwt_decode from 'jwt_decode'
 // import setAuthToken from './utils/setAuthToken'
@@ -105,11 +107,11 @@ import TOS from "./TOS"
 // app.use(authenticate)
 
 // AUTH0
-import Auth from '../Auth/Auth.js'
-require('dotenv').config()
+// import Auth from '../Auth/Auth.js'
+// require('dotenv').config()
 
-const auth = new Auth()
-auth.login()
+// const auth = new Auth()
+// auth.login()
 
 class Main extends Component {
   constructor(props) {
@@ -117,6 +119,26 @@ class Main extends Component {
     //this.hbClick = this.hbClick.bind(this);
     this.state = { data: null }
   }
+
+  goTo(route) {
+      this.props.history.replace(`/${route}`)
+    }
+
+    login() {
+      this.props.auth.login();
+    }
+
+    logout() {
+      this.props.auth.logout();
+    }
+
+    componentDidMount() {
+      const { renewSession } = this.props.auth;
+
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        renewSession();
+      }
+    }
 
 
 
@@ -152,6 +174,14 @@ class Main extends Component {
   // }
 
   render() {
+    const { isAuthenticated } = this.props.auth
+    //console.log(isAuthenticated())
+    // if ( isAuthenticated() ) {
+
+    const menuAuthItem = (!isAuthenticated())
+      ? <NavLink className='topMenuClass join' onClick={this.login.bind(this)}>LOG IN</NavLink>
+      : <NavLink className='topMenuClass join' onClick={this.logout.bind(this)}>LOG OUT</NavLink>
+
     return (
         <div>
         <BrowserRouter>
@@ -171,7 +201,7 @@ class Main extends Component {
       	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
-      	            <li><NavLink className="topMenuClass join" to="/login">LOG IN</NavLink></li>
+      	            <li>{ menuAuthItem }</li>
                     { /* THIS WILL BECOME THE HAMBURGER MENU
                     <li>
                       <button className="hbIcon" onclick="this.hbClick">
@@ -207,7 +237,28 @@ class Main extends Component {
           </BrowserRouter>
         </div>
     );
-  }
-}
+    // } else {
+    //   return (
+    //     <div>
+    //           <button
+    //             bsStyle="primary"
+    //             className="btn-margin"
+    //             onClick={this.login.bind(this)}
+    //           >
+    //             Login
+    //           </button>
+    //           <button
+    //             id="qsLogoutBtn"
+    //             bsStyle="primary"
+    //             className="btn-margin"
+    //             onClick={this.logout.bind(this)}
+    //           >
+    //             Log Out
+    //           </button>
+    //     </div>
+    //   );
+    // }// if
+  } // render
+} // class
 
 export default Main
