@@ -7,6 +7,9 @@ import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
 
+require('dotenv').config()
+console.log('routes .env:', process.env)
+
 const auth = new Auth();
 
 const handleAuthentication = (nextState, replace) => {

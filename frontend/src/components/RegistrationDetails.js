@@ -16,6 +16,7 @@ class RegistrationDetails extends Component {
 			<div className="signup-content">
             	<form method="POST" id="signup-form" className="signup-form">
                 	<h2 className="form-title">Create account</h2>
+                	<h2>We need text like you are joining Wine Expl for [term] kinda thing.</h2>
 					<div className="form-group">
 						<input type="text" className="form-input" name="firstName" placeholder="First Name"/>
 					</div>
@@ -28,16 +29,8 @@ class RegistrationDetails extends Component {
 					</div>
 					
 					<div className="form-group">
-						<input type="password" className="form-input" name="password1" placeholder="Password"/>
-					</div>
-					
-					<div className="form-group">
-						<input type="password" className="form-input" name="password2" placeholder="Confirm Password"/>
-					</div>
-					
-					<div className="form-group">
                         <input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />
-                        <label htmlFor="agree-term" className="label-agree-term"><span><span></span></span>I agree all statements in  <NavLink to="#" className="term-service">Terms of service</NavLink></label>
+                        <label htmlFor="agree-term" className="label-agree-term"><span><span></span></span>I agree to the <NavLink to="tos" className="term-service">Terms of service</NavLink></label>
 					</div>
 					
 					<div className="form-group">

@@ -1,0 +1,10 @@
+"AUTH0_KEYWORD_REPLACE_MAPPINGS": {
+  "AUZ_DOMAIN": "beyondnapavalley.auth0.com",
+  "AUZ_REDIRECT_URL": "http://localhost:3000/callback",
+  "AUZ_RESP_TYPE": "token id_token",
+  "AUZ_CLIENT_ID": "Oaph33YXjfkEcdVIrE7YT6qeksUt03dy",
+  "AUZ_CL_SECRET": "pX4Qag4VBwDXIQyHNCGLEIIoCA9C255CCXsxIpPIkNDakVF4TI-ezb6Fh7_Efkl1",
+  "AUZ_EXP_SESS_SECRET": "zarT]jTUmpN&8F2kQSevG3z+pEF5G?5z"
+}
+
+

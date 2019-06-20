@@ -1,33 +1,7 @@
 import React, { Component } from 'react'
 import { Route, NavLink, BrowserRouter, Switch } from 'react-router-dom'
 
-//import { Navbar, Button } from 'react-bootstrap'
-//import { Navbar, Button } from 'react-bootstrap'
-// Token Management
-// import jwt_decode from 'jwt_decode'
-// import setAuthToken from './utils/setAuthToken'
-// import { setCurrentUser, logoutUser } from './actions/authActions'
-// COOKIES FOR TOKEN MANAGEMENT
-// import { CookiesProvider } from 'react-cookie'
-
-// THIS ALL NEEDS TO BE DECOUPLED!
-
-// REDUX FOR STATE MANAGEMENT!
-// import { Provider } from 'react-redux'
-// import store from './store'
-
-// PRIVATE ROUTING
-// import PrivateRoute from './components/private-route/PrivateRoute'
-
-// import myAxios from 'axios'
-
-//import * as express from 'express'
-// import * as cookieParser from 'cookie-parser'
-// import { authenticate } from './middleware/authenticate'
-
 import auth0 from 'auth0-js'
-
-
 
 import Home from "./Home"
 import checkIn from "./check-in"
@@ -43,72 +17,27 @@ import Join from "./Join"
 import MyVisits from "./MyVisits"
 import Dashboard from "./Dashboard"
 // import Login from "./Login"
-//import Register from "./Register"
+import Register from './Register'
 import error404 from "./404"
 import TOS from "./TOS"
+import ErrorBoundary from '../components/ErrorBoundary'
 //import JoinV2 from "./JoinV2"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
 //import { faBars } from '@fontawesome/free-solid-svg-icons'
 
-//import Tester from "./Tester"
-
-// This refreshes a dead token.
-// myAxios.interceptors.response.use (
-//   function (response){
-//     // we're good!
-//     return response
-//   },
-//     function(error) {
-//       const errorResponse = error.response
-//       if (isTokenExpiredError(errorResponse)) {
-//         return resetTokenAndReattemptRequest(error)
-//       }
-//       // If it's something more than that, throw it back to axios
-//       return Promise.reject(error)
-//     }
-// )
-
-// function isTokenExpiredError(errorResponse) {
-//   // logic
-// }
 
 
 //font awesome "hamburger"
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //const elementx = <FontAwesomeIcon icon={faBars} />
 
-// // CHECK TOKEN STATE TO KEEP USER LOGGED IN
-// if (the DAMN TOKEN) {
-//   // set auth token header auth
-//   const token = // NOT LOCAL STORAGE
-//   setAuthToken(token)
 
-//   // DECODE TOKEN AND GET USER INFO AND EXPIRY
-//   const decoded = jwt_decode(token)
-//   //Set user and isAuthenticated
-//   store.dispatch(setCurrentUser(decoded))
-
-//   // Check expired token
-//   const currentTime = Date.now() / 1000
-//   if (decoded.exp) < currentTime) {
-//     // Party over, oops, out of time!
-//     store.dispatch(logoutUser())
-//   }
-
-//   // Redirect to login
-//   window.location.href = './login'
-// }
-
-
- 
 // const app = express()
-// app.use(cookieParser())
-// app.use(authenticate)
 
 // AUTH0
 // import Auth from '../Auth/Auth.js'
-// require('dotenv').config()
+
 
 // const auth = new Auth()
 // auth.login()
@@ -117,57 +46,33 @@ class Main extends Component {
   constructor(props) {
     super(props)
     //this.hbClick = this.hbClick.bind(this);
-    this.state = { data: null }
+    //this.state = { data: null }
+    this.login = this.login.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   goTo(route) {
       this.props.history.replace(`/${route}`)
+  }
+
+  login(e) {
+    e.preventDefault()
+    this.props.auth.login();
+  }
+
+  logout(e) {
+    e.preventDefault()
+    this.props.auth.logout();
+  }
+
+  componentDidMount() {
+    const { renewSession } = this.props.auth;
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      renewSession();
     }
+  }
 
-    login() {
-      this.props.auth.login();
-    }
-
-    logout() {
-      this.props.auth.logout();
-    }
-
-    componentDidMount() {
-      const { renewSession } = this.props.auth;
-
-      if (localStorage.getItem('isLoggedIn') === 'true') {
-        renewSession();
-      }
-    }
-
-
-
-  // THIS NEEDS TO BE SPLIT OFF, but for now...
-  // Also, use hooks!
-  // componentDidMount() {
-  //   // this.callBackendAPI('/calvin')
-  //   //   .then(res => this.setState({ data: res.express }))
-  //   //   .catch(err => console.log(err))
-  //   this.callBackendAPI('/users/calvin')
-  // }
-
-
-  // callBackendAPI = async (whichRoute) => {
-  //   // console.log(whichRoute)
-  //   // const response = await fetch(whichRoute)
-  //   // const body = await response.json()
-
-  //   // if (response.status !== 200) {
-  //   //   throw Error(body.message)
-  //   // }
-  //   // return body
-  //   fetch(whichRoute)
-  //     .then(res => this.setState({ data: res.json }))
-  //     //.then( data => this.setState({ data }))
-
-  //   //console.log({ this.state })
-  //   console.log(this.state.data)
-  // }
 
   // hbClick() {
   //   console.warn('beep');
@@ -175,12 +80,15 @@ class Main extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth
-    //console.log(isAuthenticated())
-    // if ( isAuthenticated() ) {
 
-    const menuAuthItem = (!isAuthenticated())
-      ? <NavLink className='topMenuClass join' onClick={this.login.bind(this)}>LOG IN</NavLink>
-      : <NavLink className='topMenuClass join' onClick={this.logout.bind(this)}>LOG OUT</NavLink>
+    if (!isAuthenticated()) {
+      var outItemClick = this.login
+      var outItemText = 'LOG IN'
+    } else {
+      var outItemClick = this.logout
+      var outItemText = 'LOG OUT'
+    }
+
 
     return (
         <div>
@@ -201,7 +109,7 @@ class Main extends Component {
       	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
-      	            <li>{ menuAuthItem }</li>
+      	            <li><NavLink className='topMenuClass join' to="/" onClick={ outItemClick }>{ outItemText }</NavLink></li>
                     { /* THIS WILL BECOME THE HAMBURGER MENU
                     <li>
                       <button className="hbIcon" onclick="this.hbClick">
@@ -217,6 +125,7 @@ class Main extends Component {
             <div className="clear"></div>
             </nav>
 
+            <ErrorBoundary>
           <div className="mainContent">
             <Route exact path="/" component={Home}/>
             <Route exact path="/check-in" component={checkIn}/>
@@ -227,37 +136,18 @@ class Main extends Component {
             <Route path="/visits" component={Visits}/>
             <Route path="/mercury-winery" component={MercuryWinery}/>
             <Route path="/join" component={Join}/>
-            <Route path="/MyVisits" component={MyVisits}/>
-            <Route path="/TOS" component={TOS}/>
-            <Route path="/Dashboard" component={Dashboard}/>
+            <Route path="/myvisits" component={MyVisits}/>
+            <Route path="/tos" component={TOS}/>
+            <Route path="/dashboard" component={Dashboard}/>
+            <Route path="/register" component={Register} />
           </div>
+            </ErrorBoundary>
           <div className="footer">
             <Footer />
           </div>
           </BrowserRouter>
         </div>
     );
-    // } else {
-    //   return (
-    //     <div>
-    //           <button
-    //             bsStyle="primary"
-    //             className="btn-margin"
-    //             onClick={this.login.bind(this)}
-    //           >
-    //             Login
-    //           </button>
-    //           <button
-    //             id="qsLogoutBtn"
-    //             bsStyle="primary"
-    //             className="btn-margin"
-    //             onClick={this.logout.bind(this)}
-    //           >
-    //             Log Out
-    //           </button>
-    //     </div>
-    //   );
-    // }// if
   } // render
 } // class
 
