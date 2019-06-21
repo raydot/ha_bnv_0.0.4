@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
+import { NavLink } from 'react-router-dom'
 
 //import MustardVines from "../img/mustard-vines.jpg"
 import exploreWineCounty from "../img/explore-wine-country.jpg"
@@ -41,14 +42,14 @@ class explore extends Component {
 	          <div className="content">
 	            <GridContainer>
 				  <Grid desktop="50">
-				    <h2><a href="/#">Download Our Partner List</a></h2>
+				    <h2><NavLink to='/'>Download Our Partner List</NavLink></h2>
 				    <p>Sometimes you just need a paper list to take with you.</p>
-				    <a href="#hi" className="button">Download the List</a>
+				    <NavLink to='/' className="button">Download the List</NavLink>
 				  </Grid>
 				  <Grid desktop="50">
-				    <h2><a href="#">Wineries Near Ne</a></h2>
+				    <h2><NavLink to='/'>Wineries Near Ne</NavLink></h2>
 				    <p>Find the closet winery to where you are.</p>
-				    <p><a href="#" className="button">Find The Closet Winery</a></p>
+				    <p><NavLink to='/' className="button">Find The Closet Winery</NavLink></p>
 				  </Grid>
 				</GridContainer>
 	          </div>
@@ -147,7 +148,7 @@ class explore extends Component {
 		   			<ul>
 		   				<li>By Appointment, call for reservation</li>
 		   				<li>Sebastapol, CA (Address provided upon booking)</li>
-		   				<li><a href="">m.me/hambycellarswine</a></li>
+		   				<li><NavLink to='/'>m.me/hambycellarswine</NavLink></li>
 		   			</ul>
 	       		</Grid>
 	       </GridContainer>

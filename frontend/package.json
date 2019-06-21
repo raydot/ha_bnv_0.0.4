@@ -9,7 +9,6 @@
     "@hapi/hoek": "^7.1.0",
     "auth0-js": "^9.10.4",
     "auth0-lock": "^11.16.3",
-    "axios": "^0.19.0",
     "braces": "^3.0.2",
     "browserslist": "^4.6.3",
     "chalk": "^2.4.2",

@@ -1,5 +1,6 @@
-import React, { Component } from "react"
-import { Grid, GridContainer} from "unsemantic"
+import React, { Component } from 'react'
+import { Grid, GridContainer} from 'unsemantic'
+import { NavLink } from 'react-router-dom'
 
 //import MustardVines from "../img/mustard-vines.jpg"
  
@@ -16,9 +17,9 @@ class Dashboard extends Component {
 			  		</GridContainer>
 			  		
 			  			<ul className="subNav">
-			  				<li><a href="#">MY MEMBERSHIP</a></li>
-			  				<li><a href="#">MY VISITS</a></li>
-			  				<li><a href="#">MY DETAILS</a></li>
+			  				<li><NavLink to='/'>MY MEMBERSHIP</NavLink></li>
+			  				<li><NavLink to='/'>MY VISITS</NavLink></li>
+			  				<li><NavLink to='/'>MY DETAILS</NavLink></li>
 			  			</ul>
 			  			<div className="clear"></div>
 			</div>

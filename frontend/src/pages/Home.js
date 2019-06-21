@@ -3,7 +3,7 @@ import { Grid, GridContainer} from "unsemantic"
 
 import exploreWineCounty from "../img/explore-wine-country.jpg"
 import nallewinery from "../img/nalle-winery.jpg"
-import tastingRoom from "../img/tasting-room.jpg"
+//import tastingRoom from "../img/tasting-room.jpg"
 import wineBarrels from "../img/wine-barrels.jpg"
 import wineExplorerText from "../img/wine-explorer-text.png"
 

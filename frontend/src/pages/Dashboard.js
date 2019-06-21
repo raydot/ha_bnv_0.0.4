@@ -1,8 +1,9 @@
-import React, { Component } from "react"
-import { Grid, GridContainer} from "unsemantic"
+import React, { Component } from 'react'
+import { Grid, GridContainer} from 'unsemantic'
+import { NavLink } from 'react-router-dom'
 
-import exploreWineCountry from "../img/explore-wine-country.jpg"
-import digitalCard from "../img/wine-explorer-digital-card.png"
+import exploreWineCountry from '../img/explore-wine-country.jpg'
+import digitalCard from '../img/wine-explorer-digital-card.png'
 
  
 class Dashboard extends Component {
@@ -17,9 +18,9 @@ class Dashboard extends Component {
           	<div className="hero-overlay"></div>
           	<img src={ exploreWineCountry } alt="Explore the Wine Country" className="wineryImage" />
           	<ul className="subNav">
-			  				<li><a href="#">MY MEMBERSHIP</a></li>
-			  				<li><a href="#">MY VISITS</a></li>
-			  				<li><a href="#">MY DETAILS</a></li>
+			  				<li><NavLink to='/'>MY MEMBERSHIP</NavLink></li>
+			  				<li><NavLink to='/'>MY VISITS</NavLink></li>
+			  				<li><NavLink to='/'>MY DETAILS</NavLink></li>
 			  			</ul>
 			  			<div className="clear"></div>
           </div>

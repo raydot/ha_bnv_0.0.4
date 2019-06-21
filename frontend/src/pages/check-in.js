@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 
-import { NavLink } from "react-router-dom"
+//import { NavLink } from "react-router-dom"
  
 class checkIn extends Component {
   render() {
@@ -69,4 +69,4 @@ class checkIn extends Component {
   }
 }
  
-export default checkIn;
+export default checkIn

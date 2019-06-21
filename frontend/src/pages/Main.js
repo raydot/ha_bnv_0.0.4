@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Route, NavLink, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
-import auth0 from 'auth0-js'
+// import auth0 from 'auth0-js'
 
 import Home from "./Home"
 import checkIn from "./check-in"
@@ -85,8 +85,8 @@ class Main extends Component {
       var outItemClick = this.login
       var outItemText = 'LOG IN'
     } else {
-      var outItemClick = this.logout
-      var outItemText = 'LOG OUT'
+      outItemClick = this.logout
+      outItemText = 'LOG OUT'
     }
 
 
@@ -140,6 +140,7 @@ class Main extends Component {
             <Route path="/tos" component={TOS}/>
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/register" component={Register} />
+            <Route path='/404' component={error404} />
           </div>
             </ErrorBoundary>
           <div className="footer">

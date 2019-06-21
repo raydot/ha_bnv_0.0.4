@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Grid, GridContainer} from 'unsemantic'
 import exploreWineCountry from "../img/explore-wine-country.jpg"
 
-import { Route, NavLink } from 'react-router-dom'
+//import { Route, NavLink } from 'react-router-dom'
 
 import RegistrationDetails from '../components/RegistrationDetails.js'
 
@@ -25,39 +25,14 @@ import RegistrationDetails from '../components/RegistrationDetails.js'
 
 
 class Register extends Component {
-  	constructor(props) {
-		super(props)
-		//console.log('v?', this.props.location.state.viz)
-		//this.handleFormSubmit = this.handleFormSubmit.bind(this)
-		// let this.props.newUser = null
-		// let this.props.registerUser = null
-		// let this.props.withRouter = null
-		// this.setState({ newUser: null, registerUser: null, withRouter: null})
-	}
+//   constructor(props) {
+// 		super(props)
+		
+// 	}
 
 	componentWillReceiveProps(nextProps) {
-		// if (nextProps.errors) {
-		// 	this.setState({
-		// 		errors: nextProps.errors
-		// 	})
-		// }
+		
 	}
-
-	// GET THIS TO PLAY NICE WITH EXISTING REG SCHEME!
-	//onSubmit = e => {
-
-		// THIS WILL NEED TO BE ACCOUNTED FOR!
-
-		// e.preventDefault()
-
-		// const newUser = {
-		// 	name: this.state.name,
-		// 	email: this.state.email,
-		// 	password: this.state.password,
-		// 	password2: this.state.password2
-		// }
-
-		//this.state.registerUser(newUser, this.props.history)
 
 	render() {
     return (
