@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
+import { NavLink } from 'react-router-dom'
 
 import exploreWineCounty from "../img/explore-wine-country.jpg"
 import nallewinery from "../img/nalle-winery.jpg"
@@ -20,7 +21,7 @@ class Home extends Component {
 		  			<Grid desktop="50">
 		  			<h1 className="pageTitleNoCenter">The Finest Membership to the Wine Country</h1>
 		  			<p className="pageTitleNoCenter"><img src={ wineExplorerText } alt="Mustard Vines" className="imgFullCol pageTitleNoCenter" /></p>
-		  			<strong><a href="#membership" className="white button fullWidth">LEARN MORE</a></strong>
+		  			<strong><NavLink to="membership" className="white button fullWidth">LEARN MORE</NavLink></strong>
 		  			</Grid>
 		  			<Grid desktop="50">
 		  				
@@ -94,4 +95,4 @@ class Home extends Component {
   }
 }
  
-export default Home;
+export default Home
