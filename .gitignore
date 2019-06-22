@@ -34,4 +34,5 @@ yarn-error.log*
 !.elasticbeanstalk/*.global.yml
 
 Auth.js
+config.json
 

@@ -6,11 +6,11 @@ import exploreWineCountry from "../img/explore-wine-country.jpg"
 
 import RegistrationDetails from '../components/RegistrationDetails.js'
 
-//import { withCookies } from 'react-cookie'
+// REDUX FOR USER STATE
+import { connect } from 'react-redux'
+import actions from '../redux/actions'
 
-//import { Provider } from 'react-redux'
 
-//import PropTypes from 'prop-types'
 
 
 //import HomeContainer from '../components/Home'
@@ -18,6 +18,7 @@ import RegistrationDetails from '../components/RegistrationDetails.js'
 //import MustardVines from "../img/mustard-vines.jpg"
  
 // This needs to be decoupled into a component...
+
 
 
 
@@ -62,4 +63,4 @@ class Register extends Component {
   }
 } // class
  
-export default Register
+export default connect(store => store, actions)(Register)
