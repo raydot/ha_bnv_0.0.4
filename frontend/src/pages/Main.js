@@ -42,7 +42,7 @@ import ErrorBoundary from '../components/ErrorBoundary'
 // const auth = new Auth()
 // auth.login()
 
-console.log('REACT VERSION =',React.version)
+console.log('REACT VERSION =', React.version)
 
 class Main extends Component {
   constructor(props) {
