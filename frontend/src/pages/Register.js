@@ -26,14 +26,9 @@ import actions from '../redux/actions'
 
 
 class Register extends Component {
-//   constructor(props) {
-// 		super(props)
-		
-// 	}
 
-	componentWillReceiveProps(nextProps) {
-		
-	}
+
+
 
 	render() {
     return (
@@ -62,5 +57,6 @@ class Register extends Component {
     );
   }
 } // class
- 
+
+// THIS WILL HAVE TO BE CHANGED IF ANYTHING BUT THE REG PAGE NEEDS REDUX 
 export default connect(store => store, actions)(Register)

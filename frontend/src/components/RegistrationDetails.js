@@ -6,6 +6,11 @@ import { NavLink } from 'react-router-dom'
 //import MustardVines from "../img/mustard-vines.jpg"
  
 class RegistrationDetails extends Component {
+	
+		constructor(props) {
+			super(props)
+			console.log('RegD Props:', this.props)
+		}
 //   	constructor(props) {
 // 		super(props)
 // 		//console.log('v?', this.props.location.state.viz)
@@ -25,7 +30,7 @@ class RegistrationDetails extends Component {
 					</div>
 					
 					<div className="form-group">
-						<input type="text" className="form-input" name="email" placeholder="E-mail Address"/>
+						<input type="text" className="form-input" name="email" placeholder={ this.props.uEml }/>
 					</div>
 					
 					<div className="form-group">

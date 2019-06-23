@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
+// REDUX
+//import helpers from '../redux/helpers'
+
 // import auth0 from 'auth0-js'
 
 import Home from "./Home"
@@ -36,11 +39,13 @@ import ErrorBoundary from '../components/ErrorBoundary'
 // const app = express()
 
 // AUTH0
-// import Auth from '../Auth/Auth.js'
+//import Auth from '../Auth/Auth.js'
 
 
 // const auth = new Auth()
 // auth.login()
+
+
 
 console.log('REACT VERSION =', React.version)
 

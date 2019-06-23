@@ -1,3 +1,5 @@
+// NOT USED
+
 import axios from 'axios'
 
 const setAuthToken = token => {
