@@ -5,31 +5,33 @@ import { NavLink } from "react-router-dom"
 import LoginMainImage from "../img/login-main-image.jpg"
 
 // Login
-import LoginComponent from '../components/LoginComponent'
+// import LoginComponent from '../components/LoginComponent'
 
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+//import PropTypes from 'prop-types'
+//import { connect } from 'react-redux'
 
 
 
  
 class Login extends Component {
 
-  constructor() {
-    super()
-  }
+  // constructor() {
+  //   super()
+  // }
 
-  componentWillReceiveProps(nextProps) {
-      if (nextProps.auth.isAuthenticated) {
-        this.props.history.push('/dashboard') // push user to dashboard
-      }
+  // HAVE TO ACCOUNT OF WHERE USER IS SENT IF ALREADY LOGGED IN
 
-      if (nextProps.errors) {
-        this.setState({
-          errors: nextProps.errors
-        })
-      }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //     if (nextProps.auth.isAuthenticated) {
+  //       this.props.history.push('/dashboard') // push user to dashboard
+  //     }
+
+  //     if (nextProps.errors) {
+  //       this.setState({
+  //         errors: nextProps.errors
+  //       })
+  //     }
+  // }
 
   render() {
     return (
@@ -47,7 +49,11 @@ class Login extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<LoginComponent />
+	            		<form>
+                    EMAIL: <input type='text' name='uEml' /><br />
+                    PASSWORD: <input type='password' name='pw1' /><br />
+                    <button type='submit'>Submit</button>
+                  </form>
 	            		<h3 className="center">Not a member? <NavLink to='/join'>Join now!</NavLink></h3>
 	            	</Grid>
 	            </GridContainer>
@@ -60,12 +66,13 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
-})
- 
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(Login)
+// const mapStateToProps = state => ({
+//   auth: state.auth,
+//   errors: state.errors
+// })
+//  
+// export default connect(
+//   mapStateToProps,
+//   { loginUser }
+// )(Login)
+export default Login

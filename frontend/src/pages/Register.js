@@ -20,15 +20,7 @@ import actions from '../redux/actions'
 // This needs to be decoupled into a component...
 
 
-
-
-
-
-
 class Register extends Component {
-
-
-
 
 	render() {
     return (
@@ -46,9 +38,7 @@ class Register extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            	{ /* COMPONENTS GO HERE */ }
-	            	<RegistrationDetails />
-
+	            	<RegistrationDetails uName={ this.props.uName } />
 	            	</Grid>
 	            </GridContainer>
 	            </div>  
@@ -59,4 +49,5 @@ class Register extends Component {
 } // class
 
 // THIS WILL HAVE TO BE CHANGED IF ANYTHING BUT THE REG PAGE NEEDS REDUX 
+// ACUTALLY NO IT DOESN'T BUT LEAVING THIS HERE FOR THE FUTURE
 export default connect(store => store, actions)(Register)

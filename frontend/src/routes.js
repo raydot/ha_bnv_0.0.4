@@ -27,6 +27,8 @@ const handleAuthentication = (nextState, replace) => {
   }
 }
 
+// REDUX might be overkill here, but good to have for the future...maybe?
+
 export const makeMainRoutes = () => {
   return (
     <Router history={history} component={Main}>
@@ -46,7 +48,7 @@ export const makeMainRoutes = () => {
 // REDUX HELPER FUNCTIONS:
 // THIS DEF BELONGS IN ITS OWN FILE.
 /*
-    Maps Redux sispatch function into function passed to react component.  
+    Maps Redux dispatch function into function passed to React component.  
     Pass the loggedInUser action with the value parameter into dispatch
     and then that gets passed on as a prop.
 */
