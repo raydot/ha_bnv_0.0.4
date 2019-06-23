@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Grid, GridContainer} from 'unsemantic'
+//import { Grid, GridContainer} from 'unsemantic'
 //import { Route, NavLink } from "react-router-dom"
-import { Link, NavLink } from 'react-router-dom'
+//import { Link, NavLink } from 'react-router-dom'
 
-import MustardVines from '../img/mustard-vines.jpg'
+import  { NavLink } from 'react-router-dom'
+
+//import MustardVines from '../img/mustard-vines.jpg'
 import foleyWinery from '../img/foley-winery.jpg'
  
 class Join extends Component {
@@ -19,10 +21,10 @@ class Join extends Component {
 	// 	// })
 	// }
 
-	constructor(props) {
-			super(props)
-			//console.log('v?', this.props.location.state.viz)
-		}
+	// constructor(props) {
+	// 		super(props)
+	// 		//console.log('v?', this.props.location.state.viz)
+	// }
 
   render() {
     return (
@@ -48,7 +50,7 @@ class Join extends Component {
       Free Membership
     </h3>
     <div className="plan-cost"><span className="plan-price">$0</span></div>
-    <div className="plan-select"><a href="">Sign Up</a></div>
+    <div className="plan-select"><NavLink to="/">Sign Up</NavLink></div>
     <ul className="plan-features">
       <li><i className="ion-checkmark"> </i>Read Exclusive Articles on BNV</li>
       <li><i className="ion-checkmark"> </i>Check-in Ability in-app</li>
@@ -60,7 +62,7 @@ class Join extends Component {
       Just for a Day
     </h3>
     <div className="plan-cost"><span className="plan-price">$80</span></div>
-    <div className="plan-select"><a href="">Buy Now</a></div>
+    <div className="plan-select"><NavLink to="/">Buy Now</NavLink></div>
     <ul className="plan-features">
       <li><i className="ion-checkmark"> </i>Read Exclusive Articles on BNV</li>
       <li><i className="ion-checkmark"> </i>Check-in Ability in-app</li>
@@ -77,7 +79,7 @@ class Join extends Component {
       For 3 Days
     </h3>
     <div className="plan-cost"><span className="plan-price">$180</span></div>
-    <div className="plan-select"><a href="">Buy Now</a></div>
+    <div className="plan-select"><NavLink to='/'>Buy Now</NavLink></div>
     <ul className="plan-features">
       <li><i className="ion-checkmark"> </i>Read Exclusive Articles on BNV</li>
       <li><i className="ion-checkmark"> </i>Check-in Ability in-app</li>
@@ -94,7 +96,7 @@ class Join extends Component {
       Yearly Membership
     </h3>
     <div className="plan-cost"><span className="plan-price">$250</span><span className="plan-type">/ Yearly</span></div>
-    <div className="plan-select"><a href="">BUY NOW</a></div>
+    <div className="plan-select"><NavLink to='/'>BUY NOW</NavLink></div>
     <ul className="plan-features">
       <li><i className="ion-checkmark"> </i>Read Exclusive Articles on BNV</li>
       <li><i className="ion-checkmark"> </i>Check-in Ability in-app</li>

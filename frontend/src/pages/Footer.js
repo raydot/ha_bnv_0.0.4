@@ -2,7 +2,9 @@ import React, { Component } from "react"
 
 import { Grid, GridContainer} from "unsemantic"
 
-import bnvLogo from "../img/beyond-napa-logo-2x.png"
+import { NavLink } from 'react-router-dom'
+
+// import bnvLogo from "../img/beyond-napa-logo-2x.png"
 
 
 class Footer extends Component {
@@ -22,18 +24,18 @@ class Footer extends Component {
 				<Grid desktop="33">
 				<h3>Connect on Social Media</h3>
 					<ul>
-						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></a></li>
-						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Instagram</span></a></li>
-						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Twitter</span></a></li>
+						<li><NavLink to="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></NavLink></li>
+						<li><NavLink to="https://www.facebook.com/beyondnapavalley/"><span>Instagram</span></NavLink></li>
+						<li><NavLink to="https://www.facebook.com/beyondnapavalley/"><span>Twitter</span></NavLink></li>
 					</ul>
 				
 				</Grid>
 				<Grid desktop="33">
 					<h3>Other Resources</h3>
 					<ul>
-						<li><a href="">Support</a></li>
-						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Privacy Policy</span></a></li>
-						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Subscribe to our Newsletter</span></a></li>
+						<li><NavLink to="/">Support</NavLink></li>
+						<li><NavLink to="https://www.facebook.com/beyondnapavalley/"><span>Privacy Policy</span></NavLink></li>
+						<li><NavLink to="https://www.facebook.com/beyondnapavalley/"><span>Subscribe to our Newsletter</span></NavLink></li>
 					</ul>
 					
 				</Grid>

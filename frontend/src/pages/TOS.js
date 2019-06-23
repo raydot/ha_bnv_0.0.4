@@ -1,12 +1,8 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
-import { NavLink } from "react-router-dom"
+//import { NavLink } from "react-router-dom"
 //import MustardVines from "../img/mustard-vines.jpg"
 import LoginMainImage from "../img/login-main-image.jpg"
-
-// Login
-import LoginComponent from '../components/LoginComponent'
-
  
 class MercuryWinery extends Component {
   render() {

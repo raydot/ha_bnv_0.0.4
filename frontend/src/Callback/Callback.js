@@ -1,8 +1,6 @@
 // src/Callback/Callback.js
 
-
 import React, { Component } from 'react'
-//import loading from '../img/cake-pops.jpg'
 import loading from './loading.svg'
 
 class Callback extends Component {
@@ -17,7 +15,7 @@ class Callback extends Component {
       bottom: 0,
       left: 0,
       right: 0,
-      backgroundColor: 'white',
+      backgroundColor: 'white'
     }
 
     return (
@@ -28,4 +26,4 @@ class Callback extends Component {
   }
 }
 
-export default Callback;
+export default Callback
