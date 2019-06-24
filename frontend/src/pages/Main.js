@@ -16,7 +16,7 @@ import Join from "./Join"
 // import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
 import Dashboard from "./Dashboard"
-// import Login from "./Login"
+import Login from "./Login"
 import Register from './Register'
 import error404 from "./404"
 import TOS from "./TOS"
@@ -142,6 +142,7 @@ class Main extends Component {
             <Route path="/tos" component={TOS}/>
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path='/404' component={error404} />
           </div>
             </ErrorBoundary>
