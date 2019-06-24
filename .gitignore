@@ -35,4 +35,6 @@ yarn-error.log*
 
 Auth.js
 config.json
+Login.js
+login.js
 

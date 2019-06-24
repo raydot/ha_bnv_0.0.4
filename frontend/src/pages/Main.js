@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, NavLink, BrowserRouter, Redirect } from 'react-router-dom'
+import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
 // REDUX
 //import helpers from '../redux/helpers'
@@ -169,7 +169,9 @@ class Main extends Component {
             <Route path='/myvisits' component={MyVisits}/>
             <Route path='/tos' component={TOS}/>
             <Route path='/dashboard' component={Dashboard}/>
-            <Route path='/login' component={Login}/>
+            <Route path='/login' 
+              render={(props) => <Login {...props} authVar={ this.props.auth }/>}
+            />
             <Route path='/register' 
               render={(props) => <Register {...props} uName={ uNameX }/>}
             />

@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import { Grid, GridContainer} from "unsemantic"
 import { NavLink } from "react-router-dom"
-//import MustardVines from "../img/mustard-vines.jpg"
 import LoginMainImage from "../img/login-main-image.jpg"
+
+
 
 // Login
 // import LoginComponent from '../components/LoginComponent'
@@ -15,23 +16,18 @@ import LoginMainImage from "../img/login-main-image.jpg"
  
 class Login extends Component {
 
-  // constructor() {
-  //   super()
-  // }
+  constructor(props) {
+    super(props)
+    //this.logIn = this.logIn.bind(this)
+    const { isAuthenticated } = this.props.authVar
+    //console.log(authVar)
+    console.log('ia?', isAuthenticated())
+   }
 
-  // HAVE TO ACCOUNT OF WHERE USER IS SENT IF ALREADY LOGGED IN
 
-  // componentWillReceiveProps(nextProps) {
-  //     if (nextProps.auth.isAuthenticated) {
-  //       this.props.history.push('/dashboard') // push user to dashboard
-  //     }
 
-  //     if (nextProps.errors) {
-  //       this.setState({
-  //         errors: nextProps.errors
-  //       })
-  //     }
-  // }
+
+
 
   render() {
     return (
@@ -49,10 +45,12 @@ class Login extends Component {
 	          <div className="content">
 	            <GridContainer>
 	            	<Grid desktop="100">
-	            		<form>
+	            		<form action="beyondnapavalley.auth0.com" method="get">
+                    <input type="hidden" name="client_id" value="Oaph33YXjfkEcdVIrE7YT6qeksUt03dy" />
+                    <input type="hidden" name="redirect_uri" value="/dashboard" />
                     EMAIL: <input type='text' name='uEml' /><br />
                     PASSWORD: <input type='password' name='pw1' /><br />
-                    <button type='submit'>Submit</button>
+                    <button type='submit' onClick={ () => this.logIn() }>Submit</button>
                   </form>
 	            		<h3 className="center">Not a member? <NavLink to='/join'>Join now!</NavLink></h3>
 	            	</Grid>
