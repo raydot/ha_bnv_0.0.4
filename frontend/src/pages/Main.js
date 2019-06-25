@@ -19,7 +19,7 @@ import Join from "./Join"
 // import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
 import Dashboard from "./Dashboard"
-import Login from "./Login"
+//import Login from "./Login"
 import Register from './Register'
 import error404 from "./404"
 import TOS from "./TOS"
@@ -54,28 +54,29 @@ class Main extends Component {
     super(props)
     //this.hbClick = this.hbClick.bind(this);
     //this.state = { data: null }
-    this.login = this.login.bind(this)
-    this.logout = this.logout.bind(this)
+    // this.login = this.login.bind(this)
+    // this.logout = this.logout.bind(this)
     //this.goToLogin = this.goToLogin.bind(this)
   }
 
-  goTo(route) {
-      this.props.history.replace(`/${route}`)
-  }
+  //AUTH0
+  // goTo(route) {
+  //     this.props.history.replace(`/${route}`)
+  // }
 
-  nada() {
-    return () => {}
-  }
+  // nada() {
+  //   return () => {}
+  // }
 
-  login(e) {
-    e.preventDefault()
-    this.props.auth.login();
-  }
+  // login(e) {
+  //   e.preventDefault()
+  //   this.props.auth.login()
+  // }
 
-  logout(e) {
-    e.preventDefault()
-    this.props.auth.logout();
-  }
+  // logout(e) {
+  //   e.preventDefault()
+  //   this.props.auth.logout()
+  // }
 
 
 
@@ -89,11 +90,11 @@ class Main extends Component {
   // }
 
   componentDidMount() {
-    const { renewSession } = this.props.auth;
+    // const { renewSession } = this.props.auth;
 
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      renewSession();
-    }
+    // if (localStorage.getItem('isLoggedIn') === 'true') {
+    //   renewSession();
+    // }
   }
 
 
@@ -102,21 +103,19 @@ class Main extends Component {
   // }
 
   render() {
-    const { isAuthenticated } = this.props.auth
+    // const { isAuthenticated } = this.props.auth
 
-    if (!isAuthenticated()) {
-      // var outItemClick = '{() => this.goTo("login")}'
-      // //this.goTo('login')
-    var outItemText = 'LOG IN'
-    var outItemClick = this.nada()
-    var outItemRoute = '/login'
-    } else {
-      // outItemClick = this.logout
-      outItemText = 'LOG OUT'
-      outItemClick = this.logout
-      outItemRoute = '/'
-      var uNameX = this.uName
-    }
+    // if (!isAuthenticated()) {
+    // var outItemText = 'LOG IN'
+    // //var outItemClick = this.nada
+    // var outItemClick = this.login
+    // var outItemRoute = '/login'
+    // } else {
+    //   outItemText = 'LOG OUT'
+    //   outItemClick = this.logout
+    //   outItemRoute = '/'
+    //   var uNameX = this.uName
+    // }
 
 
     return (
@@ -137,8 +136,8 @@ class Main extends Component {
       	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
-      	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
-      	            <li><NavLink className='topMenuClass join' to={ outItemRoute } onClick={ outItemClick }>{ outItemText }</NavLink></li>
+      	            <li><NavLink className='topMenuClass' to='/join'>Join</NavLink></li>
+      	            <li><NavLink className='topMenuClass join' to='/login'>Login</NavLink></li>
                     {/*<li>{ outItem }</li>*/}
                     { /* THIS WILL BECOME THE HAMBURGER MENU
                     <li>
@@ -169,12 +168,14 @@ class Main extends Component {
             <Route path='/myvisits' component={MyVisits}/>
             <Route path='/tos' component={TOS}/>
             <Route path='/dashboard' component={Dashboard}/>
-            <Route path='/login' 
+           {/* <Route path='/login' 
               render={(props) => <Login {...props} authVar={ this.props.auth }/>}
             />
             <Route path='/register' 
               render={(props) => <Register {...props} uName={ uNameX }/>}
-            />
+            />*/}
+            {/*<Route path='/login' component={ Login } />*/}
+            <Route path='/register' component={ Register } />
             <Route path='/404' component={error404} />
           </div>
             </ErrorBoundary>

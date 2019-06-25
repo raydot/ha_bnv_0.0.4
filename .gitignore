@@ -37,4 +37,5 @@ Auth.js
 config.json
 Login.js
 login.js
+app.config.js
 

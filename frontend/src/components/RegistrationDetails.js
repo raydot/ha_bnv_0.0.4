@@ -44,6 +44,47 @@ class RegistrationDetails extends Component {
 			            <button className="btn btn--radius-2 btn--blue" type="submit">SIGN UP</button>
 			        </div>
 				</form>
+
+				<h3>OKTA TUTORIAL FORM</h3>
+					<form onSubmit={this.handleSubmit}>
+					  <div className="form-element">
+					    <label>Email:</label>
+					    <input
+					      type="email"
+					      id="email"
+					      value={this.state.email}
+					      onChange={this.handleEmailChange}
+					    />
+					  </div>
+					  <div className="form-element">
+					    <label>First Name:</label>
+					    <input
+					      type="text"
+					      id="firstName"
+					      value={this.state.firstName}
+					      onChange={this.handleFirstNameChange}
+					    />
+					  </div>
+					  <div className="form-element">
+					    <label>Last Name:</label>
+					    <input
+					      type="text"
+					      id="lastName"
+					      value={this.state.lastName}
+					      onChange={this.handleLastNameChange}
+					    />
+					  </div>
+					  <div className="form-element">
+					    <label>Password:</label>
+					    <input
+					      type="password"
+					      id="password"
+					      value={this.state.password}
+					      onChange={this.handlePasswordChange}
+					    />
+					  </div>
+					  <input type="submit" id="submit" value="Register" />
+					</form>
 			</div>
     	);
   	}
