@@ -10,6 +10,8 @@ import RegistrationDetails from '../components/RegistrationDetails.js'
 // import { connect } from 'react-redux'
 // import actions from '../redux/actions'
 
+// https://developer.okta.com/blog/2018/02/06/build-user-registration-with-node-react-and-okta
+
 // OKTA
 import OktaAuth from '@okta/okta-auth-js'
 import { withAuth } from '@okta/okta-react'

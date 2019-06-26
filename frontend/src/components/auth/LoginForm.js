@@ -14,12 +14,12 @@ export default withAuth(
       };
 
       this.oktaAuth = new OktaAuth({ url: props.baseUrl });
-
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleUsernameChange = this.handleUsernameChange.bind(this);
       this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 
+    // FUNCITONS
     handleSubmit(e) {
       e.preventDefault();
       this.oktaAuth

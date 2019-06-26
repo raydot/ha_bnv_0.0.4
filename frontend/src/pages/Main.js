@@ -6,24 +6,38 @@ import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
 // import auth0 from 'auth0-js'
 
+// IMAGES
+import MercuryWinery from "./MercuryWinery"
+
+// DISPLAY PAGES
 import Home from "./Home"
-import checkIn from "./check-in"
 import Explore from "./Explore"
 import Story from "./Story"
 import Support from "./Support"
 import Membership from "./Membership"
 import Visits from "./Visits"
 import Footer from "./Footer"
-import MercuryWinery from "./MercuryWinery"
-import Join from "./Join"
 // import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
-import Dashboard from "./Dashboard"
-//import Login from "./Login"
-import Register from './Register'
-import error404 from "./404"
+
+
 import TOS from "./TOS"
+
+// MEMBER PAGES
+import Register from './Register'
+import Join from "./Join"
+import checkIn from "./check-in"
+import Login from "../components/auth/Login"
+
+// HELPERS
 import ErrorBoundary from '../components/ErrorBoundary'
+import error404 from "./404"
+import config from '../app.config'
+
+// OKTA
+import Navigation from '../components/shared/Navigation'
+import Dashboard from "./Dashboard"
+
 //import JoinV2 from "./JoinV2"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
@@ -45,13 +59,18 @@ import ErrorBoundary from '../components/ErrorBoundary'
 // const auth = new Auth()
 // auth.login()
 
+// OKTA
+import { SecureRoute, ImplicitCallback } from '@okta/okta-react'
 
-
+// Kick the tires and light the fires!
 console.log('REACT VERSION =', React.version)
 
 class Main extends Component {
   constructor(props) {
     super(props)
+
+    // USELESS CONSTRUCTOR
+
     //this.hbClick = this.hbClick.bind(this);
     //this.state = { data: null }
     // this.login = this.login.bind(this)
@@ -120,6 +139,7 @@ class Main extends Component {
 
     return (
         <div>
+        <Navigation />
         <BrowserRouter>
           <nav>
           
