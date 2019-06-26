@@ -17,6 +17,8 @@
 
 # libraries
 /lib/
+/lib
+
 
 # misc
 .env
