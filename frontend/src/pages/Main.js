@@ -27,7 +27,7 @@ import TOS from "./TOS"
 import Register from './Register'
 import Join from "./Join"
 import checkIn from "./check-in"
-import Login from "../components/auth/Login"
+import Login from "./Login"
 
 // HELPERS
 import ErrorBoundary from '../components/ErrorBoundary'
@@ -194,7 +194,7 @@ class Main extends Component {
             <Route path='/register' 
               render={(props) => <Register {...props} uName={ uNameX }/>}
             />*/}
-            {/*<Route path='/login' component={ Login } />*/}
+            <Route path='/login' component={ Login } />
             <Route path='/register' component={ Register } />
             <Route path='/404' component={error404} />
           </div>

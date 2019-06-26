@@ -4,12 +4,12 @@ import { Grid, GridContainer} from 'unsemantic'
 import { NavLink } from 'react-router-dom'
 
 // OKTA
-import OktaAuth from '@okta/okta-auth-js'
+// import OktaAuth from '@okta/okta-auth-js'
 import { withAuth } from '@okta/okta-react'
-import LoginForm from './LoginForm'
+import LoginForm from '../components/auth/LoginForm'
 
 //AUTH0
-import LoginMainImage from "../../img/login-main-image.jpg"
+// import LoginMainImage from "../../img/login-main-image.jpg"
 //import axios from 'axios'
 
 
@@ -28,10 +28,10 @@ export default withAuth (
       super(props)
       this.state = { authenticated: null }
       this.checkAuthentication = this.checkAuthentication.bind(this)
-      this.checkAuthentiation()
+      this.checkAuthentication()
     }
 
-    async checkAuthentiation() {
+    async checkAuthentication() {
       const authenticated = await this.props.auth.isAuthenticated()
       if (authenticated !== this.state.authenticated) {
         this.setState({ authenticated })
@@ -83,12 +83,12 @@ export default withAuth (
         		  		<h1 className="pageTitle">LOGIN</h1>
               	</div>
               	<div className="hero-overlay"></div>
-              	<img src={ LoginMainImage } alt="Mustard Vines" className="wineryImage" />
+              	<LoginForm />
               </div>
   	          <div className="content">
   	            <GridContainer>
   	            	<Grid desktop="100">
-  	            		 <LoginForm baseUrl = { this.props.baseUrl } />
+  	            		 <LoginForm />
   	            	</Grid>
   	            </GridContainer>
   	          </div>

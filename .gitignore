@@ -15,6 +15,9 @@
 # configuration
 /server/config
 
+# libraries
+/lib/
+
 # misc
 .env
 .DS_Store
@@ -36,4 +39,6 @@ yarn-error.log*
 Auth.js
 config.json
 app.config.js
+
+
 
