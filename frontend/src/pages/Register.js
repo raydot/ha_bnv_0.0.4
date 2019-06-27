@@ -113,13 +113,9 @@ export default withAuth(
 		      <div className="mainContent">
 		        <div className="content">
 		          <GridContainer>
-			          <Grid desktop="25">
-				      </Grid>
-			          	<Grid desktop="50">
+			          	<Grid desktop="100">
 				          	<RegistrationDetails uName={ this.props.uName } />
 			          	</Grid>
-		          	<Grid desktop="25">
-				      </Grid>
 		          </GridContainer>
 	          </div>  
 	        </div>     

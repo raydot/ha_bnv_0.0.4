@@ -94,56 +94,56 @@ export default withAuth(
 				return null
 			}
     	return (
-				<div className="signup-content">
-					<h3>RegistrationDetails.js</h3>
-						<form onSubmit={this.handleSubmit}>
-						  <div className="form-element">
-						    <label>Email:</label>
+				<div className="form-setup grey-signup-box">
+							<h2>Create Account</h2>
+							<form onSubmit={this.handleSubmit}>
+								<div className="form-group">
+									<label>E-mail Address</label>
+									<input
+								      className="form-input"
+								      type="email"
+								      id="email"
+								      value={this.state.email}
+								      onChange={this.handleEmailChange}
+								      
+								    />
+							<label>First Name</label>
 						    <input
-						      type="email"
-						      id="email"
-						      value={this.state.email}
-						      onChange={this.handleEmailChange}
-						    />
-						  </div>
-						  <div className="form-element">
-						    <label>First Name:</label>
-						    <input
+						      className="form-input"
 						      type="text"
 						      id="firstName"
 						      value={this.state.firstName}
 						      onChange={this.handleFirstNameChange}
 						    />
-						  </div>
-						  <div className="form-element">
-						    <label>Last Name:</label>
+						    <label>Last Name</label>
 						    <input
+						      className="form-input"
 						      type="text"
 						      id="lastName"
 						      value={this.state.lastName}
 						      onChange={this.handleLastNameChange}
 						    />
-						  </div>
-						  <div className="form-element">
-						    <label>Password:</label>
+						    <label>Password</label>
 						    <input
+						      className="form-input"
 						      type="password"
 						      id="password"
 						      value={this.state.password}
 						      onChange={this.handlePasswordChange}
 						    />
-						  </div>
-						  <div className="form-element">
-						    <label>Verify Password:</label>
+						    <label>Confirm Password</label>
 						    <input
+						      className="form-input"
 						      type="password2"
 						      id="password2"
 						      value={this.state.password2}
 						      onChange={this.handlePassword2Change}
 						    />
 						  </div>
-						  <input type="submit" id="submit" value="Register" />
+						  <input type="submit" id="submit" className="button button-full-width" value="Become a Wine Explorer Member" />
 						</form>
+						<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="#">Terms and Conditions</NavLink></p>
+						<p className="center">Already have an account? <NavLink to="#">Sign in</NavLink></p>
 						</div>
     	)
   	}
