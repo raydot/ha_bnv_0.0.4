@@ -718,7 +718,7 @@ list-type-ulli {
   margin: 0;
   padding: 0; }
   
-  .signup-content {
+  .signup-content, .form-setup {
   background: #fff;
   border-radius: 10px;
   -moz-border-radius: 10px;
