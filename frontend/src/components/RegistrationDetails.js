@@ -19,6 +19,7 @@ export default withAuth(
 					lastName: '',
 					email: '',
 					password: '',
+					password2: '',
 					sessionToken: null
 				}
 

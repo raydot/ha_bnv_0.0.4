@@ -18,7 +18,7 @@
 # libraries
 /lib/
 /lib
-
+/config
 
 # misc
 .env
@@ -41,6 +41,7 @@ yarn-error.log*
 Auth.js
 config.json
 app.config.js
+oktaClient.js
 
 
 
