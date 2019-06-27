@@ -11,7 +11,7 @@ import { withAuth } from '@okta/okta-react'
 import config from '../app.config'
 
 export default withAuth(
-	class RegistrationDetails extends Component {
+	class PurchaseDetails extends Component {
 			constructor(props) {
 				super(props)
 				this.state = {
@@ -95,9 +95,10 @@ export default withAuth(
 			}
     	return (
 				<div className="signup-content">
-					<h3>RegistrationDetails.js</h3>
+					<h3>PurchaseDetails.js</h3>
 						<form onSubmit={this.handleSubmit}>
 						  <div className="form-element">
+						  	{/*<!-- REMEMBER WE WILL ALREADY HAVE SOME INFO (EMAIL FIRST LAST), NEED PLACE TO DISPLAY -->*/}
 						    <label>Email:</label>
 						    <input
 						      type="email"
@@ -125,7 +126,7 @@ export default withAuth(
 						    />
 						  </div>
 						  <div className="form-element">
-						    <label>Password:</label>
+						    <label>Address:</label>
 						    <input
 						      type="password"
 						      id="password"
@@ -134,7 +135,7 @@ export default withAuth(
 						    />
 						  </div>
 						  <div className="form-element">
-						    <label>Verify Password:</label>
+						    <label>City:</label>
 						    <input
 						      type="password2"
 						      id="password2"

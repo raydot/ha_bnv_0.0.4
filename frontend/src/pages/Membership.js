@@ -3,18 +3,9 @@ import { Grid, GridContainer} from "unsemantic"
 import { NavLink } from 'react-router-dom'
 
 import MustardVines from "../img/mustard-vines.jpg"
-// import MercurySquare from "../img/mercury-square.jpg"
-// import jRickards from "../img/jrickards.jpg"
-// import ramazzotti from "../img/ramazzotti-wine.jpg"
-// import nallewinery from "../img/nalle-winery.jpg"
-// import taltywine from "../img/talty-wine.jpg"
-// import alquimista from "../img/alquimista-cellars.jpg"
-// import hambycellars from "../img/hamby-cellars.jpg"
-// import camapanaranch from "../img/campana-ranch.jpg"
-// import brooksnote from "../img/brooks-note-winery.jpg"
 
  
-class Regions extends Component {
+class Membership extends Component {
   render() {
     return (
       <div>
@@ -151,4 +142,4 @@ With membership you’ll get the following:</p>
   }
 }
  
-export default Regions
+export default Membership
