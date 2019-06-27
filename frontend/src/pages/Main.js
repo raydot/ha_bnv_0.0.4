@@ -6,24 +6,38 @@ import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
 // import auth0 from 'auth0-js'
 
+// IMAGES
+import MercuryWinery from "./MercuryWinery"
+
+// DISPLAY PAGES
 import Home from "./Home"
-import checkIn from "./check-in"
 import Explore from "./Explore"
 import Story from "./Story"
 import Support from "./Support"
 import Membership from "./Membership"
 import Visits from "./Visits"
 import Footer from "./Footer"
-import MercuryWinery from "./MercuryWinery"
-import Join from "./Join"
 // import JoinV2 from './JoinV2'
 import MyVisits from "./MyVisits"
-import Dashboard from "./Dashboard"
-import Login from "./Login"
-import Register from './Register'
-import error404 from "./404"
+
+
 import TOS from "./TOS"
+
+// MEMBER PAGES
+import Register from './Register'
+import Join from "./Join"
+import checkIn from "./check-in"
+import Login from "./Login"
+
+// HELPERS
 import ErrorBoundary from '../components/ErrorBoundary'
+import error404 from "./404"
+import config from '../app.config'
+
+// OKTA
+import Navigation from '../components/shared/Navigation'
+import Dashboard from "./Dashboard"
+
 //import JoinV2 from "./JoinV2"
 //import redbackground from "../img/red-background.jpg"
 //import logo from "../img/beyond-napa-logo.png"
@@ -45,37 +59,43 @@ import ErrorBoundary from '../components/ErrorBoundary'
 // const auth = new Auth()
 // auth.login()
 
+// OKTA
+import { SecureRoute, ImplicitCallback } from '@okta/okta-react'
 
-
+// Kick the tires and light the fires!
 console.log('REACT VERSION =', React.version)
 
 class Main extends Component {
   constructor(props) {
     super(props)
+
+    // USELESS CONSTRUCTOR
+
     //this.hbClick = this.hbClick.bind(this);
     //this.state = { data: null }
-    this.login = this.login.bind(this)
-    this.logout = this.logout.bind(this)
+    // this.login = this.login.bind(this)
+    // this.logout = this.logout.bind(this)
     //this.goToLogin = this.goToLogin.bind(this)
   }
 
-  goTo(route) {
-      this.props.history.replace(`/${route}`)
-  }
+  //AUTH0
+  // goTo(route) {
+  //     this.props.history.replace(`/${route}`)
+  // }
 
-  nada() {
-    return () => {}
-  }
+  // nada() {
+  //   return () => {}
+  // }
 
-  login(e) {
-    e.preventDefault()
-    this.props.auth.login();
-  }
+  // login(e) {
+  //   e.preventDefault()
+  //   this.props.auth.login()
+  // }
 
-  logout(e) {
-    e.preventDefault()
-    this.props.auth.logout();
-  }
+  // logout(e) {
+  //   e.preventDefault()
+  //   this.props.auth.logout()
+  // }
 
 
 
@@ -89,11 +109,11 @@ class Main extends Component {
   // }
 
   componentDidMount() {
-    const { renewSession } = this.props.auth;
+    // const { renewSession } = this.props.auth;
 
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      renewSession();
-    }
+    // if (localStorage.getItem('isLoggedIn') === 'true') {
+    //   renewSession();
+    // }
   }
 
 
@@ -102,25 +122,24 @@ class Main extends Component {
   // }
 
   render() {
-    const { isAuthenticated } = this.props.auth
+    // const { isAuthenticated } = this.props.auth
 
-    if (!isAuthenticated()) {
-      // var outItemClick = '{() => this.goTo("login")}'
-      // //this.goTo('login')
-    var outItemText = 'LOG IN'
-    var outItemClick = this.nada()
-    var outItemRoute = '/login'
-    } else {
-      // outItemClick = this.logout
-      outItemText = 'LOG OUT'
-      outItemClick = this.logout
-      outItemRoute = '/'
-      var uNameX = this.uName
-    }
+    // if (!isAuthenticated()) {
+    // var outItemText = 'LOG IN'
+    // //var outItemClick = this.nada
+    // var outItemClick = this.login
+    // var outItemRoute = '/login'
+    // } else {
+    //   outItemText = 'LOG OUT'
+    //   outItemClick = this.logout
+    //   outItemRoute = '/'
+    //   var uNameX = this.uName
+    // }
 
 
     return (
         <div>
+        <Navigation />
         <BrowserRouter>
           <nav>
           
@@ -137,8 +156,8 @@ class Main extends Component {
       	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
-      	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
-      	            <li><NavLink className='topMenuClass join' to={ outItemRoute } onClick={ outItemClick }>{ outItemText }</NavLink></li>
+      	            <li><NavLink className='topMenuClass' to='/join'>Join</NavLink></li>
+      	            <li><NavLink className='topMenuClass join' to='/login'>Login</NavLink></li>
                     {/*<li>{ outItem }</li>*/}
                     { /* THIS WILL BECOME THE HAMBURGER MENU
                     <li>
@@ -186,13 +205,19 @@ class Main extends Component {
             <Route path='/myvisits' component={MyVisits}/>
             <Route path='/tos' component={TOS}/>
             <Route path='/dashboard' component={Dashboard}/>
-            <Route path='/login' 
+           {/* <Route path='/login' 
               render={(props) => <Login {...props} authVar={ this.props.auth }/>}
             />
             <Route path='/register' 
               render={(props) => <Register {...props} uName={ uNameX }/>}
+<<<<<<< HEAD
             />
 >>>>>>> fdba608e4f3610b727005da3f0313893fa588c97
+=======
+            />*/}
+            <Route path='/login' component={ Login } />
+            <Route path='/register' component={ Register } />
+>>>>>>> 818ec2454828b223b09bf505a46c6da708799258
             <Route path='/404' component={error404} />
           </div>
           <div className="footer">
