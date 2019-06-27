@@ -381,9 +381,7 @@ a.white {
 	margin-top: 10px;
 }
 
-.mainContent {
-	
-}
+
 
 .mainContent strong {
 	font-weight: 500;
@@ -625,7 +623,14 @@ ul.subNav li a:hover {
 .content table {
 	width: 100%;
 	background-color: #f0f0f0;
+	margin-bottom: 10px;
 }
+
+.content table th, .content table tbody tr td {
+	padding: 10px;
+}
+
+/* End Table Design */
 
 .contactDetails:before, .contactDetails:after {
 	content: "";
@@ -707,6 +712,11 @@ a.facebook:hover {
 
 /* Form Design */
 
+.checkout-form {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center {
   display: flex;
@@ -755,10 +765,10 @@ list-type-ulli {
 }
     }
 
-input.form-input {
+input.form-input, .form-setup input, .form-setup select {
   width: 98%;
   font-family: "Assistant", sans-serif;
-  font-weight: 700px;
+/*   font-weight: 700; */
   border: 1px solid #979797;
   border-radius: 6px;
   padding: 7px 15px;
@@ -769,11 +779,15 @@ input.form-input {
   margin-bottom: 8px;
 }
 
-    .form-input:focus {
-	    outline: none;
-	    border: solid #e5b103 1px;
-	    box-shadow: 0px 0px 5px #e5b103;
-    }
+form-setup select {
+	
+}
+
+.form-input:focus, .form-setup input:focus {
+    outline: none;
+    border: solid #e5b103 1px;
+    box-shadow: 0px 0px 5px #e5b103;
+}
 
 .form-group label {
 	margin: 0 1%;

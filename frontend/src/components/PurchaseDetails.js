@@ -94,56 +94,107 @@ export default withAuth(
 				return null
 			}
     	return (
-				<div className="signup-content">
-					<h3>PurchaseDetails.js</h3>
-						<form onSubmit={this.handleSubmit}>
-						  <div className="form-element">
-						  	{/*<!-- REMEMBER WE WILL ALREADY HAVE SOME INFO (EMAIL FIRST LAST), NEED PLACE TO DISPLAY -->*/}
-						    <label>Email:</label>
-						    <input
-						      type="email"
-						      id="email"
-						      value={this.state.email}
-						      onChange={this.handleEmailChange}
-						    />
-						  </div>
-						  <div className="form-element">
-						    <label>First Name:</label>
-						    <input
-						      type="text"
-						      id="firstName"
-						      value={this.state.firstName}
-						      onChange={this.handleFirstNameChange}
-						    />
-						  </div>
-						  <div className="form-element">
-						    <label>Last Name:</label>
-						    <input
-						      type="text"
-						      id="lastName"
-						      value={this.state.lastName}
-						      onChange={this.handleLastNameChange}
-						    />
-						  </div>
-						  <div className="form-element">
-						    <label>Address:</label>
-						    <input
-						      type="password"
-						      id="password"
-						      value={this.state.password}
-						      onChange={this.handlePasswordChange}
-						    />
-						  </div>
-						  <div className="form-element">
+				<div className="form-setup">
+							<h3>Personal Info</h3>
+							<form>
+								<div className="form-group">
+									<label>E-mail Address</label>
+									<input
+								      className="form-input"
+								      type="email"
+								    />
+									<label>First Name</label>
+								    <input
+								      className="form-input"
+								      type="text"
+								    />
+								    <label>Last Name:</label>
+								    <input
+								      className="form-input"
+								      type="text"
+								    />
+						    </div>
+						    
+						    <div className="form-group">
+							    <h3>Billing Address</h3>
+							    <label>Address:</label>
+							    <input
+							      className="form-input"
+							      type="text"
+							      id="lastName"
+							      
+							    />
+							    <input
+							      className="form-input"
+							      type="text"
+							    />
 						    <label>City:</label>
 						    <input
-						      type="password2"
-						      id="password2"
-						      value={this.state.password2}
-						      onChange={this.handlePassword2Change}
+						      className="form-input"
+							  type="text"
+						    />
+						    <label>State?</label>
+						    <select name="state" id="state">
+							  <option value="" selected="selected">Select a State</option>
+							  <option value="AL">Alabama</option>
+							  <option value="AK">Alaska</option>
+							  <option value="AZ">Arizona</option>
+							  <option value="AR">Arkansas</option>
+							  <option value="CA">California</option>
+							  <option value="CO">Colorado</option>
+							  <option value="CT">Connecticut</option>
+							  <option value="DE">Delaware</option>
+							  <option value="DC">District Of Columbia</option>
+							  <option value="FL">Florida</option>
+							  <option value="GA">Georgia</option>
+							  <option value="HI">Hawaii</option>
+							  <option value="ID">Idaho</option>
+							  <option value="IL">Illinois</option>
+							  <option value="IN">Indiana</option>
+							  <option value="IA">Iowa</option>
+							  <option value="KS">Kansas</option>
+							  <option value="KY">Kentucky</option>
+							  <option value="LA">Louisiana</option>
+							  <option value="ME">Maine</option>
+							  <option value="MD">Maryland</option>
+							  <option value="MA">Massachusetts</option>
+							  <option value="MI">Michigan</option>
+							  <option value="MN">Minnesota</option>
+							  <option value="MS">Mississippi</option>
+							  <option value="MO">Missouri</option>
+							  <option value="MT">Montana</option>
+							  <option value="NE">Nebraska</option>
+							  <option value="NV">Nevada</option>
+							  <option value="NH">New Hampshire</option>
+							  <option value="NJ">New Jersey</option>
+							  <option value="NM">New Mexico</option>
+							  <option value="NY">New York</option>
+							  <option value="NC">North Carolina</option>
+							  <option value="ND">North Dakota</option>
+							  <option value="OH">Ohio</option>
+							  <option value="OK">Oklahoma</option>
+							  <option value="OR">Oregon</option>
+							  <option value="PA">Pennsylvania</option>
+							  <option value="RI">Rhode Island</option>
+							  <option value="SC">South Carolina</option>
+							  <option value="SD">South Dakota</option>
+							  <option value="TN">Tennessee</option>
+							  <option value="TX">Texas</option>
+							  <option value="UT">Utah</option>
+							  <option value="VT">Vermont</option>
+							  <option value="VA">Virginia</option>
+							  <option value="WA">Washington</option>
+							  <option value="WV">West Virginia</option>
+							  <option value="WI">Wisconsin</option>
+							  <option value="WY">Wyoming</option>
+							</select>
+							<label>Zip Code</label>
+						    <input
+						      className="form-input"
+							  type="text"
+							  size="5"
 						    />
 						  </div>
-						  <input type="submit" id="submit" value="Register" />
 						</form>
 						</div>
     	)
