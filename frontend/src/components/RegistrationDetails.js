@@ -94,52 +94,57 @@ export default withAuth(
 				return null
 			}
     	return (
-				<div className="signup-content">
-					<h3>OKTA TUTORIAL FORM</h3>
-						<form onSubmit={this.handleSubmit}>
-						  <div className="form-element">
-						    <label>Email:</label>
+				<div className="form-setup">
+							<form onSubmit={this.handleSubmit}>
+						  <div className="form-group">
+							  <label>E-mail Address</label>
 						    <input
+						      className="form-input"
 						      type="email"
 						      id="email"
 						      value={this.state.email}
 						      onChange={this.handleEmailChange}
+						      
 						    />
 						  </div>
-						  <div className="form-element">
-						    <label>First Name:</label>
+						  <div className="form-group">
 						    <input
+						      className="form-input"
 						      type="text"
 						      id="firstName"
 						      value={this.state.firstName}
 						      onChange={this.handleFirstNameChange}
+						      placeholder="First Name"
 						    />
 						  </div>
-						  <div className="form-element">
-						    <label>Last Name:</label>
+						  <div className="form-group">
 						    <input
+						      className="form-input"
 						      type="text"
 						      id="lastName"
 						      value={this.state.lastName}
 						      onChange={this.handleLastNameChange}
+						      placeholder="Last Name"
 						    />
 						  </div>
-						  <div className="form-element">
-						    <label>Password:</label>
+						  <div className="form-group">
 						    <input
+						      className="form-input"
 						      type="password"
 						      id="password"
 						      value={this.state.password}
 						      onChange={this.handlePasswordChange}
+						      placeholder="Password"
 						    />
 						  </div>
-						  <div className="form-element">
-						    <label>Verify Password:</label>
+						  <div className="form-group">
 						    <input
+						      className="form-input"
 						      type="password2"
 						      id="password2"
 						      value={this.state.password2}
 						      onChange={this.handlePassword2Change}
+						      placeholder="Confirm Password"
 						    />
 						  </div>
 						  <input type="submit" id="submit" value="Register" />
