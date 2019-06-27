@@ -30,9 +30,9 @@ import checkIn from "./check-in"
 import Login from "./Login"
 
 // HELPERS
-import ErrorBoundary from '../components/ErrorBoundary'
+//import ErrorBoundary from '../components/ErrorBoundary'
 import error404 from "./404"
-import config from '../app.config'
+//import config from '../app.config'
 
 // OKTA
 import Navigation from '../components/shared/Navigation'
@@ -60,23 +60,23 @@ import Dashboard from "./Dashboard"
 // auth.login()
 
 // OKTA
-import { SecureRoute, ImplicitCallback } from '@okta/okta-react'
+//import { SecureRoute, ImplicitCallback } from '@okta/okta-react'
 
 // Kick the tires and light the fires!
 console.log('REACT VERSION =', React.version)
 
 class Main extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    // USELESS CONSTRUCTOR
+  //   // USELESS CONSTRUCTOR
 
-    //this.hbClick = this.hbClick.bind(this);
-    //this.state = { data: null }
-    // this.login = this.login.bind(this)
-    // this.logout = this.logout.bind(this)
-    //this.goToLogin = this.goToLogin.bind(this)
-  }
+  //   //this.hbClick = this.hbClick.bind(this);
+  //   //this.state = { data: null }
+  //   // this.login = this.login.bind(this)
+  //   // this.logout = this.logout.bind(this)
+  //   //this.goToLogin = this.goToLogin.bind(this)
+  // }
 
   //AUTH0
   // goTo(route) {
@@ -139,90 +139,61 @@ class Main extends Component {
 
     return (
         <div>
-        <Navigation />
-        <BrowserRouter>
-          <nav>
-          
-          <div className="clear"></div>
-          <div className="columns">
-          	<div className="leftCol">
-          		<NavLink to="/" className="logo"><span>Beyond Napa Valley</span></NavLink>
-          	</div>
-          	
-          	<div className="rightCol">
-              
-              	<ul className="header">
-                  
-      	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
-      	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
-      	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
-      	            <li><NavLink className='topMenuClass' to='/join'>Join</NavLink></li>
-      	            <li><NavLink className='topMenuClass join' to='/login'>Login</NavLink></li>
-                    {/*<li>{ outItem }</li>*/}
-                    { /* THIS WILL BECOME THE HAMBURGER MENU
-                    <li>
-                      <button className="hbIcon" onclick="this.hbClick">
-                        <i className="fa fa-bars"></i>
-                      </button>
-                    </li> */ }
-
-          			 </ul>
-               
-            </div>
-          </div>
+          <Navigation />
+          <BrowserRouter>
+            <nav>
             
-            <div className="clear"></div>
+              <div className="clear"></div>
+              <div className="columns">
+              	<div className="leftCol">
+              		<NavLink to="/" className="logo"><span>Beyond Napa Valley</span></NavLink>
+              	</div>
+              	
+              	<div className="rightCol">
+                  
+                  	<ul className="header">
+                      
+          	            <li><NavLink className="topMenuClass" to="/explore">Explore</NavLink></li>
+          	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
+          	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
+          	            <li><NavLink className='topMenuClass' to='/join'>Join</NavLink></li>
+          	            <li><NavLink className='topMenuClass join' to='/login'>Login</NavLink></li>
+                        { /* THIS WILL BECOME THE HAMBURGER MENU
+                        <li>
+                          <button className="hbIcon" onclick="this.hbClick">
+                            <i className="fa fa-bars"></i>
+                          </button>
+                        </li> */ }
+
+              			 </ul>
+                   
+                </div>
+              </div>
+              
+              <div className="clear"></div>
             </nav>
 
-            <ErrorBoundary>
 
-          <div className="mainContent">
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/check-in" component={checkIn}/>
-            <Route path="/explore" component={Explore}/>
-            <Route path="/story" component={Story}/>
-            <Route path="/support" component={Support}/>
-            <Route path="/membership" component={Membership}/>
-            <Route path="/visits" component={Visits}/>
-            <Route path="/mercury-winery" component={MercuryWinery}/>
-            <Route path="/join" component={Join}/>
-            <Route path="/myvisits" component={MyVisits}/>
-            <Route path="/tos" component={TOS}/>
-            <Route path="/dashboard" component={Dashboard}/>
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-=======
-          <div className='mainContent'>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/check-in' component={checkIn}/>
-            <Route path='/explore' component={Explore}/>
-            <Route path='/story' component={Story}/>
-            <Route path='/support' component={Support}/>
-            <Route path='/membership' component={Membership}/>
-            <Route path='/visits' component={Visits}/>
-            <Route path='/mercury-winery' component={MercuryWinery}/>
-            <Route path='/join' component={Join}/>
-            <Route path='/myvisits' component={MyVisits}/>
-            <Route path='/tos' component={TOS}/>
-            <Route path='/dashboard' component={Dashboard}/>
-           {/* <Route path='/login' 
-              render={(props) => <Login {...props} authVar={ this.props.auth }/>}
-            />
-            <Route path='/register' 
-              render={(props) => <Register {...props} uName={ uNameX }/>}
-<<<<<<< HEAD
-            />
->>>>>>> fdba608e4f3610b727005da3f0313893fa588c97
-=======
-            />*/}
-            <Route path='/login' component={ Login } />
-            <Route path='/register' component={ Register } />
->>>>>>> 818ec2454828b223b09bf505a46c6da708799258
-            <Route path='/404' component={error404} />
-          </div>
-          <div className="footer">
-            <Footer />
-          </div>
+            <div className="mainContent">
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/check-in" component={checkIn}/>
+              <Route path="/explore" component={Explore}/>
+              <Route path="/story" component={Story}/>
+              <Route path="/support" component={Support}/>
+              <Route path="/membership" component={Membership}/>
+              <Route path="/visits" component={Visits}/>
+              <Route path="/mercury-winery" component={MercuryWinery}/>
+              <Route path="/join" component={Join}/>
+              <Route path="/myvisits" component={MyVisits}/>
+              <Route path="/tos" component={TOS}/>
+              <Route path="/dashboard" component={Dashboard}/>
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path='/404' component={error404} />
+            </div>
+            <div className="footer">
+              <Footer />
+            </div>
           </BrowserRouter>
         </div>
     );
