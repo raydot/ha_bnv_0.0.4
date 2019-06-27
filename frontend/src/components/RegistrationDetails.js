@@ -6,10 +6,17 @@ import { NavLink } from 'react-router-dom'
 //import MustardVines from "../img/mustard-vines.jpg"
  
 class RegistrationDetails extends Component {
-//   	constructor(props) {
-// 		super(props)
-// 		//console.log('v?', this.props.location.state.viz)
-// 	}
+
+		// constructor(props) {
+		// 	super(props)
+		// 	//console.log('RegD Props:', this.props)
+		// 	//console.log('RegD uName:', this.props.uName)
+		// 	//console.log('uName stringify', JSON.stringify(this.props.uName.uName))
+		// 	const this.myUname = JSON.stringify(this.props.uName.uName)
+		// 	//console.log('mit const:', myUname )
+
+		// }
+
 
 	render() {
     	return (
@@ -25,7 +32,7 @@ class RegistrationDetails extends Component {
 					</div>
 					
 					<div className="form-group">
-						<input type="text" className="form-input" name="email" placeholder="E-mail Address"/>
+						<input type="text" className="form-input" name="email" readOnly placeholder={ this.props.uName }/>
 					</div>
 					
 					<div className="form-group">

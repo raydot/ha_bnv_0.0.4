@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 
+// REDUX
+//import helpers from '../redux/helpers'
+
 // import auth0 from 'auth0-js'
 
 import Home from "./Home"
@@ -36,11 +39,13 @@ import ErrorBoundary from '../components/ErrorBoundary'
 // const app = express()
 
 // AUTH0
-// import Auth from '../Auth/Auth.js'
+//import Auth from '../Auth/Auth.js'
 
 
 // const auth = new Auth()
 // auth.login()
+
+
 
 console.log('REACT VERSION =', React.version)
 
@@ -51,10 +56,15 @@ class Main extends Component {
     //this.state = { data: null }
     this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
+    //this.goToLogin = this.goToLogin.bind(this)
   }
 
   goTo(route) {
       this.props.history.replace(`/${route}`)
+  }
+
+  nada() {
+    return () => {}
   }
 
   login(e) {
@@ -66,6 +76,17 @@ class Main extends Component {
     e.preventDefault()
     this.props.auth.logout();
   }
+
+
+
+  // goToLogin(e) {
+  //   e.preventDefault()
+  //   //this.props.auth.goToLogin()
+    
+  //   this.props.history.replace('/login')
+  //   //return <Redirect to='/login' />
+
+  // }
 
   componentDidMount() {
     const { renewSession } = this.props.auth;
@@ -84,11 +105,17 @@ class Main extends Component {
     const { isAuthenticated } = this.props.auth
 
     if (!isAuthenticated()) {
-      var outItemClick = this.login
-      var outItemText = 'LOG IN'
+      // var outItemClick = '{() => this.goTo("login")}'
+      // //this.goTo('login')
+    var outItemText = 'LOG IN'
+    var outItemClick = this.nada()
+    var outItemRoute = '/login'
     } else {
-      outItemClick = this.logout
+      // outItemClick = this.logout
       outItemText = 'LOG OUT'
+      outItemClick = this.logout
+      outItemRoute = '/'
+      var uNameX = this.uName
     }
 
 
@@ -111,7 +138,8 @@ class Main extends Component {
       	            <li><NavLink className="topMenuClass" to="/story">Our Story</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/membership">Membership Benefits</NavLink></li>
       	            <li><NavLink className="topMenuClass" to="/join">Join</NavLink></li>
-      	            <li><NavLink className='topMenuClass join' to="/" onClick={ outItemClick }>{ outItemText }</NavLink></li>
+      	            <li><NavLink className='topMenuClass join' to={ outItemRoute } onClick={ outItemClick }>{ outItemText }</NavLink></li>
+                    {/*<li>{ outItem }</li>*/}
                     { /* THIS WILL BECOME THE HAMBURGER MENU
                     <li>
                       <button className="hbIcon" onclick="this.hbClick">
@@ -128,6 +156,7 @@ class Main extends Component {
             </nav>
 
             <ErrorBoundary>
+
           <div className="mainContent">
             <Route exact path="/" component={Home}/>
             <Route exact path="/check-in" component={checkIn}/>
@@ -143,9 +172,29 @@ class Main extends Component {
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
+=======
+          <div className='mainContent'>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/check-in' component={checkIn}/>
+            <Route path='/explore' component={Explore}/>
+            <Route path='/story' component={Story}/>
+            <Route path='/support' component={Support}/>
+            <Route path='/membership' component={Membership}/>
+            <Route path='/visits' component={Visits}/>
+            <Route path='/mercury-winery' component={MercuryWinery}/>
+            <Route path='/join' component={Join}/>
+            <Route path='/myvisits' component={MyVisits}/>
+            <Route path='/tos' component={TOS}/>
+            <Route path='/dashboard' component={Dashboard}/>
+            <Route path='/login' 
+              render={(props) => <Login {...props} authVar={ this.props.auth }/>}
+            />
+            <Route path='/register' 
+              render={(props) => <Register {...props} uName={ uNameX }/>}
+            />
+>>>>>>> fdba608e4f3610b727005da3f0313893fa588c97
             <Route path='/404' component={error404} />
           </div>
-            </ErrorBoundary>
           <div className="footer">
             <Footer />
           </div>
