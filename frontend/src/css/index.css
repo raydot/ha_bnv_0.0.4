@@ -1203,7 +1203,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 .footer a:hover {
-	color: white;
+/* 	color: white; */
 	border-bottom: 1px white dashed;
 }
 

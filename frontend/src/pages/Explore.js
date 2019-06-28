@@ -13,7 +13,10 @@ import alquimista from "../img/alquimista-cellars.jpg"
 import hambycellars from "../img/hamby-cellars.jpg"
 import camapanaranch from "../img/campana-ranch.jpg"
 import brooksnote from "../img/brooks-note-winery.jpg"
-
+import hookladderwinery from "../img/hook-and-ladder-winery.jpg"
+import beehunterwine from "../img/bee-hunter-wine.jpg"
+import seebasswine from "../img/seebass-wine.jpg"
+import barrawinery from "../img/barra-winery.jpg"
  
 class explore extends Component {
   render() {
@@ -148,10 +151,25 @@ class explore extends Component {
 		   			<ul>
 		   				<li>By Appointment, call for reservation</li>
 		   				<li>Sebastapol, CA (Address provided upon booking)</li>
-		   				<li><NavLink to='/'>m.me/hambycellarswine</NavLink></li>
+		   				<li><NavLink to='https://m.me/hambycellarswine'>m.me/hambycellarswine</NavLink></li>
 		   			</ul>
 	       		</Grid>
 	       </GridContainer>
+	       
+	       <GridContainer>
+	       		<Grid desktop="33">
+		   			<img src={hookladderwinery} alt={'Hook and Ladder Winery'} className="imgFullCol" />
+		   			<h3>Hook & Ladder Cellars</h3>
+		   			<ul>
+		   				<li>Open to the Public | 10 - 4:30pm</li>
+		   				<li>Please call ahead for reserve tasting</li>
+		   				<li>Address: 2134 Olivet Rd, Santa Rosa, CA 95401</li>
+		   				<li>Phone: (707) 526-2255</li>
+		   			</ul>
+	       		</Grid>
+	       </GridContainer>
+	       
+	       
 	       
 	       <GridContainer>
 	       <h2>Marin County - San Francisco Bay Area</h2>
@@ -175,7 +193,53 @@ class explore extends Component {
 	       		</Grid>
 	       </GridContainer>
 	       
-	       	       
+	       <GridContainer>
+	       <h2>Mendocino - Anderson Valley</h2>
+	       </GridContainer>
+	       <GridContainer>
+	       		<Grid desktop="33">
+	       			<img src={beehunterwine} alt={'Bee Hunter Winery'} className="imgFullCol" />
+		   			<h3>Bee Hunter Wine</h3>
+		   			<ul>
+		   				<li>Public | Mon - Friday 9 - 5pm | Sat/Sun 11 - 5pm</li>
+		   				<li>14251 CA-128, Boonville, CA 95415</li>
+		   				<li>Phone: (707) 895-3995</li>
+		   			</ul>
+	       		</Grid>
+	       		<Grid desktop="33">
+	       			<img src={seebasswine} alt={'Seebass Family Wines Tasting Room'} className="imgFullCol" />
+		   			<h3>Seebass Family Wines Tasting Room</h3>
+		   			<ul>
+		   				<li>Public | Sat. - Thurs. 11 - 5pm | Fri. 11 - 7pm</li>
+		   				<li>14077 CA-128, Boonville, CA 95415</li>
+		   				<li>Phone: (707) 895-9378</li>
+		   			</ul>
+	       		</Grid>
+	       		<Grid desktop="33">
+	       			
+	       		</Grid>
+	       </GridContainer>
+	       
+	       <GridContainer>
+	       <h2>Mendocino - Ukiah</h2>
+	       </GridContainer>
+	       <GridContainer>
+	       		<Grid desktop="33">
+	       			<img src={barrawinery} alt={'Barra of Mendocino Winery'} className="imgFullCol" />
+		   			<h3>Barra of Mendocino</h3>
+		   			<ul>
+		   				<li>Public | 10 - 5pm Daily</li>
+		   				<li>7051 N State St, Redwood Valley, CA 95470</li>
+		   				<li>Phone: (707) 485-0322</li>
+		   			</ul>
+	       		</Grid>
+	       		<Grid desktop="33">
+	       			
+	       		</Grid>
+	       		<Grid desktop="33">
+	       			
+	       		</Grid>
+	       </GridContainer>	       
 	       </div>
        </div> // Close mainContent
     );

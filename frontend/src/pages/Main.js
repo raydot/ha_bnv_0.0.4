@@ -155,7 +155,6 @@ class Main extends Component {
                   	<ul className='header'>
                       
           	            <li><NavLink className='topMenuClass' to='/explore'>Explore</NavLink></li>
-          	            <li><NavLink className='topMenuClass' to='/story'>Our Story</NavLink></li>
           	            <li><NavLink className='topMenuClass' to='/membership'>Membership Benefits</NavLink></li>
           	            <li><NavLink className='topMenuClass' to='/join'>Join</NavLink></li>
           	            <li><NavLink className='topMenuClass join' to='/login'>Login</NavLink></li>
