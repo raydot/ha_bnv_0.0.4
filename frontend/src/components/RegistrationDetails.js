@@ -140,7 +140,7 @@ export default withAuth(
 						      onChange={this.handlePassword2Change}
 						    />
 						  </div>
-						  <input type="submit" id="submit" className="button button-full-width" value="Become a Wine Explorer Member" />
+						  <input type="submit" id="submit" className="flat-button button-full-width" value="Become a Wine Explorer Member" />
 						</form>
 						<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="#">Terms and Conditions</NavLink></p>
 						<p className="center">Already have an account? <NavLink to="#">Sign in</NavLink></p>

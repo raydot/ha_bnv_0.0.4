@@ -116,6 +116,7 @@ class PurchaseDetailsLeft extends Component {
 				    <input
 				      className="form-input"
 				      type="text"
+				      placeholder="Optional"
 				    />
 			    <label>City:</label>
 			    <input

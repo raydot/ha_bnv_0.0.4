@@ -97,20 +97,23 @@ class PurchaseDetailsRight extends Component {
 							<td>1 Year Membership</td>
 							<td>$250</td>
 						</tr>
+					</tbody>
+					<tfoot>
 						<tr rowSpan="2">
-							<td>Automatically renews on (date) <br />
+							<td><em>Automatically renews on (date) </em><br />
 								or put date select box.
 							</td>
 						</tr>
-					</tbody>
+					</tfoot>
 				</table>
 				<h3>Have a coupon?</h3>
 					    <input
 					      className="form-input"
 						  type="text"
 					    />
+					    <button className="flat-button-small" type='submit'>Redeem Gift Code</button>
 				<h3>Pay Us!</h3>
-				<button type='submit'>Purchase</button>
+				<button className="flat-button button-full-width" type='submit'>Purchase</button>
 			</div>				
     	)
   	}
