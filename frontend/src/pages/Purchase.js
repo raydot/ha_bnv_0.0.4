@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { Grid, GridContainer} from 'unsemantic'
 import { NavLink } from 'react-router-dom'
 import MustardVines from '../img/mustard-vines.jpg'
-import PurchaseDetails from '../components/PurchaseDetails'
+//import PurchaseDetails from '../components/PurchaseDetails'
+import PurchaseDetailsLeft from '../components/PurchaseDetailsLeft'
+import PurchaseDetailsRight from '../components/PurchaseDetailsRight'
 
  
 class Purchase extends Component {
@@ -20,37 +22,14 @@ class Purchase extends Component {
 	      <div className="mainContent checkout-form">
 	        <div className="content">
 	          <GridContainer>
-	          	<Grid desktop="50">
-	          		<PurchaseDetails />
-	          	</Grid>
-	          	<Grid desktop="50">
-	          		<h3>Your Purchase</h3>
-		          	<table>
-						<thead>
-							<tr>
-								<th><strong>Product</strong></th>
-								<th><strong>Total</strong></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1 Year Membership</td>
-								<td>$250</td>
-							</tr>
-							<tr rowSpan="2">
-								<td>Automatically renews on (date) <br />
-									or put date select box.
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<h3>Have a coupon?</h3>
-						    <input
-						      className="form-input"
-							  type="text"
-						    />
-					<h3>Pay Us B!tch</h3>
-	          	</Grid>
+	          	<form>
+		          	<Grid desktop="50">
+		          		<PurchaseDetailsLeft />
+		          	</Grid>
+		          	<Grid desktop="50">
+		         			<PurchaseDetailsRight />
+		          	</Grid>
+	          	</form>
 	          </GridContainer>
 	        </div>
 		   </div>
