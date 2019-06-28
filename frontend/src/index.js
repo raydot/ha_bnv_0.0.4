@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
+// import { BrowserRouter as Router } from 'react-router-dom'
 
 //okta
-import { Security } from '@okta/okta-react'
-import config from './app.config'
+// import { Security } from '@okta/okta-react'
+// import config from './app.config'
 
 import Main from './pages/Main'
 
@@ -16,9 +16,9 @@ import './css/unsemantic-grid-responsive-tablet-no-ie7.css'
 
 //import registerServiceWorker from './registerServiceWorker'
 
-function onAuthRequired({ history }) {
-  history.push('/login')
-}
+// function onAuthRequired({ history }) {
+//   history.push('/login')
+// }
 
 
 // This can probably be moved into main...  AUTH0!

@@ -28,6 +28,7 @@ router.post('/', (req, res, next) => {
     })
     .catch(err => {
       res.status(400)
+      console.log('ERR!')
       res.send(err)
     })
 })

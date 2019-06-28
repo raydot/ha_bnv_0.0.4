@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, GridContainer} from 'unsemantic'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import MustardVines from '../img/mustard-vines.jpg'
 //import PurchaseDetails from '../components/PurchaseDetails'
 import PurchaseDetailsLeft from '../components/PurchaseDetailsLeft'

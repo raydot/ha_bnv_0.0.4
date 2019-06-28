@@ -33,6 +33,7 @@ export default withAuth(
 			  this.handleLastNameChange = this.handleLastNameChange.bind(this);
 			  this.handleEmailChange = this.handleEmailChange.bind(this);
 			  this.handlePasswordChange = this.handlePasswordChange.bind(this);
+			  this.handlePassword2Change = this.handlePassword2Change.bind(this);
 			}
 
 			async checkAuthentication() {

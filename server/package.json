@@ -7,6 +7,9 @@
     "devstart": "nodemon ./bin/www",
     "debug": "DEBUG=ha_bnv_0.0.4:* && nodemon start"
   },
+  "events": {
+    "start": "echo \"\\x1Bc\""
+  },
   "proxy": "http://localhost:3005",
   "repository": {
     "type": "git",
