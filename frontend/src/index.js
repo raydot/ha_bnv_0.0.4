@@ -11,7 +11,8 @@ import Main from './pages/Main'
 // Stylin!
 import './css/index.css'
 import './css/unsemantic-grid-responsive-tablet-no-ie7.css'
-import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap/dist/css/bootstrap.css'
+import './css/okta-sign-in.min.js'
 
 //import registerServiceWorker from './registerServiceWorker'
 
