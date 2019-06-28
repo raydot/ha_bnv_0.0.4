@@ -142,8 +142,8 @@ export default withAuth(
 						  </div>
 						  <input type="submit" id="submit" className="flat-button button-full-width" value="Become a Wine Explorer Member" />
 						</form>
-						<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="#">Terms and Conditions</NavLink></p>
-						<p className="center">Already have an account? <NavLink to="#">Sign in</NavLink></p>
+						<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="/tos">Terms and Conditions</NavLink></p>
+						<p className="center">Already have an account? <NavLink to="/login">Sign in</NavLink></p>
 						</div>
     	)
   	}

@@ -1,31 +1,9 @@
 import React, { Component } from 'react'
-//import { Grid, GridContainer} from 'unsemantic'
-//import { Route, NavLink } from "react-router-dom"
-//import { Link, NavLink } from 'react-router-dom'
 
 import  { NavLink } from 'react-router-dom'
-
-//import MustardVines from '../img/mustard-vines.jpg'
 import foleyWinery from '../img/foley-winery.jpg'
  
 class Join extends Component {
-	// handleSubmit(event) {
-	// 	event.preventDefault()
-	// 	const data = new FormData(event.target)
-	
-	// 	console.log(data)
-
-	// 	// fetch('/register', {
-	// 	// 	method: 'GET',
-	// 	// 	body: data
-	// 	// })
-	// }
-
-	// constructor(props) {
-	// 		super(props)
-	// 		//console.log('v?', this.props.location.state.viz)
-	// }
-
   render() {
     return (
       <div>

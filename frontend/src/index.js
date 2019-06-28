@@ -12,7 +12,7 @@ import Main from './pages/Main'
 import './css/index.css'
 import './css/unsemantic-grid-responsive-tablet-no-ie7.css'
 //import 'bootstrap/dist/css/bootstrap.css'
-import './css/okta-sign-in.min.js'
+//import './css/okta-sign-in.min.js'
 
 //import registerServiceWorker from './registerServiceWorker'
 
@@ -33,16 +33,7 @@ function onAuthRequired({ history }) {
 // );
 
 ReactDOM.render(
-  <Router>
-    <Security
-      issuer={ config.issuer }
-      client_id={ config.client_id }
-      redirect_uri={ config.redirect_uri }
-      onAuthRequired={ onAuthRequired }
-    >
-      <Main />
-    </Security>
-  </Router>,
+      <Main />,
   document.getElementById('root')
 )
 //registerServiceWorker()

@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 import { Grid, GridContainer} from "unsemantic"
 
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 // import bnvLogo from "../img/beyond-napa-logo-2x.png"
 
@@ -24,7 +24,7 @@ class Footer extends Component {
 				<Grid desktop="33">
 				<h3>Connect on Social Media</h3>
 					<ul>
-						<li><NavLink to="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></NavLink></li>
+						<li><Link to="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></Link></li>
 						<li><NavLink to="https://www.instagram.com/beyondnapavalley/"><span>Instagram</span></NavLink></li>
 						<li><NavLink to="https://twitter.com/beyond_napa"><span>Twitter</span></NavLink></li>
 					</ul>
