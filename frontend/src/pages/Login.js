@@ -73,6 +73,7 @@ export default withAuth(
   	          <div className="content synopsis">
   	            <GridContainer>
   	            	<Grid desktop="100">
+                  Whatzit: { this.props.baseUrl }
                     <OktaSignInWidget
                       baseUrl = { this.props.baseUrl }
                       onSuccess = { this.onSuccess }

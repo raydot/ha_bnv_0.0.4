@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-//import { Grid, GridContainer} from 'unsemantic'
-
-//import { Route, NavLink } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
-//import MustardVines from "../img/mustard-vines.jpg"
 
 import OktaAuth from '@okta/okta-auth-js'
 import { withAuth } from '@okta/okta-react'
 
 import config from '../app.config'
+
+// FORMIK & YUP, THOSE WACKY KIDS!
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as yup from 'yup' // Import everything, must be fixed
 
 export default withAuth(
 	class RegistrationDetails extends Component {
@@ -88,6 +88,28 @@ export default withAuth(
 			    .catch(err => console.log);
 			}
 
+			//YUP -- This could be it's own component?
+			const validationSchema = Yup.object().shape({
+				email: Yup.string()
+					.email('Please enter a valid email')
+					.required('An email address is required')
+				password: Yup.string()
+					.min(8, 'Password must be at least 8 characters')
+					.required('A password is required')
+				password2: Yup.string()
+					.oneOf([value.password], 'The passwords do not match')
+				// NOT USING THIS BUT:
+				consent: Yup.bool()
+					.test(
+						'consent',
+						'You must agree with the Terms and Conditions to register',
+						value => value === true
+					)
+					.required (
+						'You must agree with the Terms and Conditions to register'
+					)
+			})
+
 
 		render() {
 			if (this.state.sessionToken) {
@@ -97,19 +119,43 @@ export default withAuth(
     	return (
 				<div className="form-setup grey-signup-box">
 							<h2>Create Account</h2>
-							<form onSubmit={this.handleSubmit}>
+							<Formik
+								initialValues={{ email: '', password: '', password2: '' }}
+								validate={values => {
+									let errors = {}
+									if (!values.email) {
+										errors.email='Required'
+									} else if (
+					          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+					        ) {
+					          errors.email = 'Invalid email address';
+					        }
+					        return errors;
+								}}
+								onSubmit={(values, { setSubmitting}) => {
+									setTimeout(() => {
+										alert(JSON.stringify(values, null, 2))
+										setSubmitting(false)
+									}, 400)
+								}}
+							>
+							{({ isSubmitting }) => (
+								// <form onSubmit={this.handleSubmit}>
+								<Form>
 								<div className="form-group">
 									<label>E-mail Address</label>
 									<input
 								      className="form-input"
 								      type="email"
+								      name="email"
 								      id="email"
 								      value={this.state.email}
 								      onChange={this.handleEmailChange}
 								      
 								    />
+								   <ErrorMessage name="email" component="div" />
 							<label>First Name</label>
-						    <input
+						    <Field
 						      className="form-input"
 						      type="text"
 						      id="firstName"
@@ -117,7 +163,7 @@ export default withAuth(
 						      onChange={this.handleFirstNameChange}
 						    />
 						    <label>Last Name</label>
-						    <input
+						    <Field
 						      className="form-input"
 						      type="text"
 						      id="lastName"
@@ -125,7 +171,7 @@ export default withAuth(
 						      onChange={this.handleLastNameChange}
 						    />
 						    <label>Password</label>
-						    <input
+						    <Field
 						      className="form-input"
 						      type="password"
 						      id="password"
@@ -133,7 +179,7 @@ export default withAuth(
 						      onChange={this.handlePasswordChange}
 						    />
 						    <label>Confirm Password</label>
-						    <input
+						    <Field
 						      className="form-input"
 						      type="password2"
 						      id="password2"
@@ -141,8 +187,12 @@ export default withAuth(
 						      onChange={this.handlePassword2Change}
 						    />
 						  </div>
-						  <input type="submit" id="submit" className="flat-button button-full-width" value="Become a Wine Explorer Member" />
-						</form>
+						  <button type="submit" id="submit" className="flat-button button-full-width" disabled={isSubmitting}>
+						  	Become a Wine Explorer Member!
+						  </button>
+						</Form>
+						)}
+					</Formik>
 						<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="/tos">Terms and Conditions</NavLink></p>
 						<p className="center">Already have an account? <NavLink to="/login">Sign in</NavLink></p>
 						</div>

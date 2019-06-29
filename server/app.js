@@ -9,6 +9,7 @@ var logger = require('morgan')
 var cors = require('cors')
 
 var port = process.env.PORT || 8080
+console.warn('SERVER RUNNING ON: ', port)
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')

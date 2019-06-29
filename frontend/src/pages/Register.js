@@ -16,6 +16,8 @@ import RegistrationDetails from '../components/RegistrationDetails.js'
 import OktaAuth from '@okta/okta-auth-js'
 import { withAuth } from '@okta/okta-react'
 import config from '../app.config'
+
+
  
 
 export default withAuth(

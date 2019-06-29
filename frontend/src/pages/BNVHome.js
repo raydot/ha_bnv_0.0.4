@@ -2,7 +2,7 @@
 
 import React,  { Component } from 'react'
 import { Link } from 'react-router-dom'
-imoort { withAuth } from '@okta/okta-react'
+import { withAuth } from '@okta/okta-react'
 
 export default withAuth (
   class BNVHome extends Component {
@@ -15,7 +15,7 @@ export default withAuth (
     }
 
     async checkAuthentication() {
-      const authenticated = await this.paops.auth.isAuthenticate()
+      const authenticated = await this.props.auth.isAuthenticate()
       if (authenticated !== this.state.authenticated) {
         this.setState({ authenticated })
       }
@@ -25,7 +25,7 @@ export default withAuth (
       this.checkAuthentication()
     }
 
-    async compoentDidUpdate() {
+    async componentDidUpdate() {
       this.checkAuthentication()
     }
 

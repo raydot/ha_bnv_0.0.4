@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 //okta
-// import { Security } from '@okta/okta-react'
+import { Security } from '@okta/okta-react'
 // import config from './app.config'
 
 import Main from './pages/Main'
@@ -16,9 +16,9 @@ import './css/unsemantic-grid-responsive-tablet-no-ie7.css'
 
 //import registerServiceWorker from './registerServiceWorker'
 
-// function onAuthRequired({ history }) {
-//   history.push('/login')
-// }
+function onAuthRequired({ history }) {
+  history.push('/login')
+}
 
 
 // This can probably be moved into main...  AUTH0!
@@ -33,7 +33,16 @@ import './css/unsemantic-grid-responsive-tablet-no-ie7.css'
 // );
 
 ReactDOM.render(
-      <Main />,
+  <Router>
+    <Security issuer='https://dev-310767.okta.com/oauth2/default'
+      client_id='0oaryf5txlK6fVanX356'
+      redirect_uri={window.location.origin + '/implicit/callback'}
+      onAuthRequired={onAuthRequired} 
+    >
+      <Main />
+    </Security>
+  </Router>,
   document.getElementById('root')
 )
+
 //registerServiceWorker()
