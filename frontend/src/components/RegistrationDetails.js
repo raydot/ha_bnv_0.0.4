@@ -14,6 +14,8 @@ import getValidationSchema from './forms/getValidationSchema-spected'
 
 const initialValues = {
 	email: '',
+	firstName: '',
+	lastName: '',
 	password: '',
 	passwordConfirmation: '',
 	consent: false
@@ -27,7 +29,7 @@ export default function SignUpFormContainer() {
 			initialValues={ initialValues }
 			validate={ validate(getValidationSchema) }
 			onSubmit={ onSubmit }
-			render={ SignUpForm }
+			render={ SignUpForm } 
 		/>
 	)
 }
@@ -49,7 +51,6 @@ function SignUpForm(props) {
 					      className="form-input"
 					      type="email"
 					      name="email"
-					      id="email"
 					      onChange={handleChange}
 					    />
 					  <div className="form-field-error">{ errors.email }</div>
@@ -59,35 +60,39 @@ function SignUpForm(props) {
 					      className="form-input"
 					      type="text"
 					      name="firstName"
-					      id="firstName"
 					      onChange={handleChange}
 					    />
-					    <label>Last Name</label>
+					   <div className="form-field-error">{ errors.firstName }</div>
+					   
+					   <label>Last Name</label>
 					    <input
 					      className="form-input"
 					      type="text"
 					      name="lastName"
-					      id="lastName"
 					      onChange={handleChange}
 					    />
+					    <div className="form-field-error">{ errors.lastName }</div>
+
+
 					    <label>Password</label>
 					    <input
 					      className="form-input"
 					      type="password"
 					      name="password"
-					      id="password"
 					      onChange={handleChange}
 					    />
+					    <div className="form-field-error">{ errors.password }</div>
+
 					    <label>Confirm Password</label>
 					    <input
 					      className="form-input"
 					      name="passwordConfirmation"
 					      type="password"
-					      id="password"
 					      onChange={handleChange}
 					    />
+					    <div className="form-field-error">{ errors.passwordConfirmation }</div>
 			  </div>
-			  <button onClick={handleSubmit}>{isSubmitting ? 'Loading...' : 'Become a Wine Explorer!'}</button>
+			  <button type="submit" onClick={handleSubmit}>{isSubmitting ? 'Loading...' : 'Become a Wine Explorer!'}</button>
 			</div>
 			<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="/tos">Terms and Conditions</NavLink></p>
 			<p className="center">Already have an account? <NavLink to="/login">Sign in</NavLink></p>
