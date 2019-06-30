@@ -24,9 +24,9 @@ class Footer extends Component {
 				<Grid desktop="33">
 				<h3>Connect on Social Media</h3>
 					<ul>
-						<li><Link to="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></Link></li>
-						<li><NavLink to="https://www.instagram.com/beyondnapavalley/"><span>Instagram</span></NavLink></li>
-						<li><NavLink to="https://twitter.com/beyond_napa"><span>Twitter</span></NavLink></li>
+						<li><a href="https://www.facebook.com/beyondnapavalley/"><span>Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/beyondnapavalley/"><span>Instagram</span></a></li>
+						<li><a href="https://twitter.com/beyond_napa"><span>Twitter</span></a></li>
 					</ul>
 				
 				</Grid>

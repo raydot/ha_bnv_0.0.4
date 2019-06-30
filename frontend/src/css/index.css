@@ -1174,6 +1174,28 @@ input[type=checkbox]:not(old):checked + label > span:before {
   }
 }
 
+/* Form Field Errors */
+
+/*
+.form-field-error:before {
+	content: ' | ';
+}
+*/
+
+.form-field-error {
+	color: #920505;
+	font-size: .8em;
+	margin-left: 1%;
+	margin-bottom: 10px;
+}
+
+/* Auth Container */
+
+#okta-sign-in {
+	margin: 0 auto;
+    /* border: 0; */
+    margin-bottom: 10px;
+}
 
 
 

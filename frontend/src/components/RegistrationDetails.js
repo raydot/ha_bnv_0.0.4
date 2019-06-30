@@ -46,53 +46,52 @@ function SignUpForm(props) {
 				<div className='form'>
 					<div className="form-group">
 
-						<label>E-mail Address</label>
+						<label>E-mail Address</label> <span className="form-field-error"> { errors.email }</span>
 						<input
 					      className="form-input"
 					      type="email"
 					      name="email"
 					      onChange={handleChange}
 					    />
-					  <div className="form-field-error">{ errors.email }</div>
-
-						<label>First Name</label>
+					  
+						<label>First Name</label><span className="form-field-error">{ errors.firstName }</span>
 					    <input
 					      className="form-input"
 					      type="text"
 					      name="firstName"
 					      onChange={handleChange}
 					    />
-					   <div className="form-field-error">{ errors.firstName }</div>
 					   
-					   <label>Last Name</label>
+					   
+					   <label>Last Name</label> <span className="form-field-error"> { errors.lastName }</span>
 					    <input
 					      className="form-input"
 					      type="text"
 					      name="lastName"
 					      onChange={handleChange}
 					    />
-					    <div className="form-field-error">{ errors.lastName }</div>
+					    
 
 
-					    <label>Password</label>
+					    <label>Password</label> <span className="form-field-error">{ errors.password }</span>
 					    <input
 					      className="form-input"
 					      type="password"
 					      name="password"
 					      onChange={handleChange}
 					    />
-					    <div className="form-field-error">{ errors.password }</div>
+					    
 
-					    <label>Confirm Password</label>
+					    <label>Confirm Password</label> <span className="form-field-error">{ errors.passwordConfirmation }</span>
 					    <input
 					      className="form-input"
 					      name="passwordConfirmation"
 					      type="password"
 					      onChange={handleChange}
 					    />
-					    <div className="form-field-error">{ errors.passwordConfirmation }</div>
+					    
 			  </div>
-			  <button type="submit" onClick={handleSubmit}>{isSubmitting ? 'Loading...' : 'Become a Wine Explorer!'}</button>
+			  <button className="flat-button button-full-width" type="submit" onClick={handleSubmit}>{isSubmitting ? 'Loading...' : 'Become a Wine Explorer!'}</button>
 			</div>
 			<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="/tos">Terms and Conditions</NavLink></p>
 			<p className="center">Already have an account? <NavLink to="/login">Sign in</NavLink></p>
