@@ -37,6 +37,8 @@ function isEmpty(value) {
 }
 
 function isEmail(value) {
+  // The regex throws a still escape character error...
+  // eslint-disable-next-line
   const EMAIL_REGEXP = /([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/
   return EMAIL_REGEXP.test(value)
 }
@@ -56,6 +58,7 @@ function hasNumber(value) {
   return NUMBER_REGEXP.test(value)
 }
 
+// THIS ONE ISN'T WORKING
 // function notMatching(value) {
 //   var MATCHING_EXP = '/^((?!' + value + ').)*$/'
 //   return MATCHING_EXP.text(value)

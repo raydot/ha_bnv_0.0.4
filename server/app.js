@@ -8,8 +8,8 @@ var app = express()
 var logger = require('morgan')
 var cors = require('cors')
 
-var port = process.env.PORT || 8080
-console.warn('SERVER RUNNING ON: ', port)
+// var port = process.env.PORT || 8080
+// console.warn('SERVER RUNNING ON: ', port)
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
@@ -29,6 +29,6 @@ app.get('/authorized', function (req, res) {
   res.send('Secured Resource')
 })
 
-app.listen(port)
+// app.listen(port)
 
 module.exports = app

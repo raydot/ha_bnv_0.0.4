@@ -4,7 +4,6 @@ import { NavLink, Redirect } from 'react-router-dom'
 
 // DISPLAY
 import { Grid, GridContainer} from "unsemantic"
-
 import MustardVines from "../img/mustard-vines.jpg"
 
 // OKTA
@@ -37,14 +36,15 @@ export default withAuth(
       }
 
       onSuccess(res) {
-        if (res.status === 'SUCEESS') {
+        if (res.status === 'SUCCESS') {
+          console.log('SUCCESS!!!!!!')
           return this.props.auth.redirect({
             sessionToken: res.session.token
           })
         } else {
           // The user can be in another authentication state that requires further action
           // https://github.com/okta/okta-signin-widget#rendereloptions-success-error
-
+          console.log('Not success:', res.status)
         }
       }
 
@@ -73,7 +73,7 @@ export default withAuth(
   	          <div className="content synopsis">
   	            <GridContainer>
   	            	<Grid desktop="100">
-                  Whatzit: { this.props.baseUrl }
+                  this.props.baseUrl: { this.props.baseUrl }
                     <OktaSignInWidget
                       baseUrl = { this.props.baseUrl }
                       onSuccess = { this.onSuccess }

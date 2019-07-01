@@ -19,7 +19,7 @@ export default withAuth(
       this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 
-    // FUNCITONS
+    // FUNCTIONS
     handleSubmit(e) {
       e.preventDefault();
       this.oktaAuth

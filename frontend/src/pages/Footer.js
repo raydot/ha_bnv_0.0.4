@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 import { Grid, GridContainer} from "unsemantic"
 
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 // import bnvLogo from "../img/beyond-napa-logo-2x.png"
 

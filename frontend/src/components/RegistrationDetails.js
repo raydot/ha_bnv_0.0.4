@@ -34,18 +34,19 @@ export default function SignUpFormContainer() {
 	)
 }
 
-///EMAIL IS THE ONLY ONE THAT'S RIGHT
+
+
 ///IS THE ID FIELD REALLY NEEDED?
 function SignUpForm(props) {
 
-	const { isSubmitting, errors, handleChange, handleSubmit } = props
+	const { isSubmitting, errors, handleChange, onSubmit } = props
 
 	return (
 		<div className="form-setup grey-signup-box">
 				<h2>Create Account</h2>
 				<div className='form'>
 					<div className="form-group">
-
+					<form>
 						<label>E-mail Address</label> <span className="form-field-error"> { errors.email }</span>
 						<input
 					      className="form-input"
@@ -61,7 +62,6 @@ function SignUpForm(props) {
 					      name="firstName"
 					      onChange={handleChange}
 					    />
-					   
 					   
 					   <label>Last Name</label> <span className="form-field-error"> { errors.lastName }</span>
 					    <input
@@ -90,9 +90,11 @@ function SignUpForm(props) {
 					      onChange={handleChange}
 					    />
 					    
-			  </div>
-			  <button className="flat-button button-full-width" type="submit" onClick={handleSubmit}>{isSubmitting ? 'Loading...' : 'Become a Wine Explorer!'}</button>
+			  	<button className="flat-button button-full-width" type="submit" onClick={onSubmit}>{isSubmitting ? 'Loading...' : 'Become a Wine Explorer!'}</button>
+				</form>
+				</div>
 			</div>
+			
 			<p className="small">By signing in you agree to Beyond Napa Valley <NavLink to="/tos">Terms and Conditions</NavLink></p>
 			<p className="center">Already have an account? <NavLink to="/login">Sign in</NavLink></p>
 		</div>
@@ -100,6 +102,27 @@ function SignUpForm(props) {
 }
 
 function onSubmit(values, { setSubmitting, setErrors }) {
+	fetch('/api/users', {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(this.state)
+	})
+		.then(user => {
+			this.oktaAuth
+				.signIn({
+					username: this.state.email,
+					password: this.state.password
+				})
+				.then(res => 
+					this.setState({
+						sessionToken: res.sessionToken
+					})
+				)
+		})
+		.catch(err => console.log)
 	setTimeout(() => {
 		console.log('User has been successfully saved!', values)
 		setSubmitting(false)
