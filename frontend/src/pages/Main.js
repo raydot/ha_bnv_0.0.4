@@ -108,7 +108,7 @@ export default withAuth (
             	            <li><NavLink className='topMenuClass' to='/explore'>Explore</NavLink></li>
             	            <li><NavLink className='topMenuClass' to='/membership'>Membership Benefits</NavLink></li>
             	            <li><NavLink className='topMenuClass' to='/join'>Join</NavLink></li>
-            	            <li>{ loginLink }</li>
+            	            <li><NavLink className='topMenuClass join' to='/' onClick={() => this.props.auth.logout() }>Logout</NavLink></li>
                           { /* THIS WILL BECOME THE HAMBURGER MENU
                           <li>
                             <button className='hbIcon' onclick='this.hbClick'>
@@ -126,7 +126,7 @@ export default withAuth (
 
 
               <div className='mainContent'>
-                <Route exact path='/' component={Home}/>
+                <Route exact={true} path='/' component={Home} />
                 <SecureRoute exact path='/check-in' component={checkIn}/>
                 <Route path='/explore' component={Explore}/>
                 <Route path='/story' component={Story}/>
@@ -137,9 +137,9 @@ export default withAuth (
                 <Route path='/join' component={Join}/>
                 <Route path='/myvisits' component={MyVisits}/>
                 <Route path='/tos' component={TOS}/>
-                <SecureRoute path='/dashboard' component={Dashboard}/>
+                <SecureRoute path='/dashboard' component={Dashboard} />
                 <Route path='/register' component={Register} />
-                <Route path='/login' render={() => <Login baseUrl='https://dev-310767.okta.com'/>} />
+                <Route path='/login' render={() => <Login baseUrl='https://dev-310767.okta.com' />} />
                 <SecureRoute path='/purchase' component={Purchase} />
                 <Route path='/404' component={error404} />
                 <Route path='/implicit/callback' component={ ImplicitCallback } />

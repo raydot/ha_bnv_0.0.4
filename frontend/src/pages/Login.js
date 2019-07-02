@@ -19,9 +19,9 @@ export default withAuth(
         super(props)
         this.onSuccess = this.onSuccess.bind(this)
         this.onError = this.onError.bind(this)
-        this.state = { authenticated: null };
+        this.state = { authenticated: null }
         //this.checkAuthentication = this.checkAuthentication.bind(this);
-        this.checkAuthentication();
+        this.checkAuthentication()
       }
 
       async checkAuthentication() {
@@ -37,9 +37,11 @@ export default withAuth(
 
       onSuccess(res) {
         if (res.status === 'SUCCESS') {
-          console.log('SUCCESS!!!!!!')
+          //console.log('SUCCESS!!!!!!')
           return this.props.auth.redirect({
             sessionToken: res.session.token
+            //res.session.setCookieAndRedirect('http://localhost:3000/dashboard')
+            //return
           })
         } else {
           // The user can be in another authentication state that requires further action

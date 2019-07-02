@@ -8,6 +8,8 @@ import digitalCard from '../img/wine-explorer-digital-card.png'
 // OKTA
 import { withAuth } from '@okta/okta-react'
 
+//import LoginPage from './components/auth/LoginPage'
+
  
 export default withAuth(
 		class Dashboard extends Component {
@@ -90,11 +92,7 @@ export default withAuth(
 		            	</Grid>
 		            </GridContainer>
 		          </div>
-		          
-		          
-		          
-		          	       
-		       
+		              
 	       </div> // Close mainContent
 	    );
 	  }

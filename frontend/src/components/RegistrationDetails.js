@@ -102,6 +102,7 @@ function SignUpForm(props) {
 }
 
 function onSubmit(values, { setSubmitting, setErrors }) {
+	console.log('ON SUBMIT')
 	fetch('/api/users', {
 		method: 'POST',
 		headers: {
