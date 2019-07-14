@@ -3,7 +3,8 @@
   <img src="https://img.shields.io/badge/version-0.0.4-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Beyond Napa Valley App
+
+> Beyond Napa Valley App (Unused)
 
 ## Install
 
