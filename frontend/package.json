@@ -6,7 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@hapi/hoek": "^7.1.0",
+    "@hapi/hoek": "^9.0.4",
     "@okta/okta-react": "^1.2.0",
     "@okta/okta-signin-widget": "^2.20.1",
     "auth0-js": "^9.10.4",
